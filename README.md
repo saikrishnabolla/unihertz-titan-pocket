@@ -11,7 +11,7 @@ The port uses the stock MediaTek kernel and vendor drivers. A permanent clean in
 |---|---|
 | Boot | Permanent September build boots with SELinux Enforcing and encrypted userdata. Full SUPER, BOOT, recovery and vbmeta readback hashes match; a normal reboot passed. |
 | Keyboard surface | First-unlock scrolling, normal typing, Alt+A and keyboard light timeout passed owner checks after the permanent install. The same SYSTEM also passed two lock/wake cycles, touchscreen/keyboard scrolling together and no-cursor checks in the guest. |
-| Camera app | Greatness Camera Go NoAux is the sole active system camera through a reversible add-on. Photo/video capture intents resolve to it; BSG was removed. Capture quality remains unverified. |
+| Camera app | GrapheneOS Camera 93 is the sole active system camera through a reversible add-on. Photo/video capture intents resolve to it; Camera Go and BSG were removed. Capture quality remains unverified. |
 | Earlier hardware checks | In the earlier guest, physical PIN, Alt+A, navigation keys, keyboard light timeout, fingerprint enrollment, Bluetooth music, front camera preview and green notification LED passed owner tests. The clean install requires fresh enrollment and pairing. |
 | Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, remaining permanent-install hardware rechecks, and full stock restore. |
 | Cellular | No SIM is available. Carrier calls, SMS, mobile data and VoLTE remain untested. |
@@ -50,6 +50,6 @@ Use an empty services output directory. Firmware, Google/system binaries, device
 
 ## Other hardware sources
 
-The current camera add-on is built with `python3 hardware/system-camera/build.py --apk inputs/CameraGo_2.5_Greatness_210726_1455_NoAux.apk --output build/system-camera`. See [its instructions](hardware/system-camera/README.md) for the pinned download, installation and checks.
+The current camera add-on is built with `python3 hardware/system-camera/build.py --apk inputs/Camera-93.apk --output build/system-camera`. See [its instructions](hardware/system-camera/README.md) for the pinned download, installation and checks.
 
 See [hardware/README.md](hardware/README.md) for the recovered boot-chain, keyboard, lighting, fingerprint, Bluetooth, camera and layout sources, their pinned inputs and remaining build limits. Firmware, signing keys, original compiled components and animation assets must be supplied separately. Upstream notices are retained; no new license is granted for third-party material.

@@ -107,17 +107,15 @@
   },
   "system_camera": {
     "build": "CP3A.260905.010",
-    "package": "com.google.android.apps.cameralite",
-    "version": "Greatness.210726.1455Test",
-    "apk_sha256": "ebe906d3d00cd8596c4015975ff58c496f4ce0a946e689da718b295612445f95",
+    "package": "app.grapheneos.camera",
+    "version": "93",
+    "apk_sha256": "6e1d05a7b96b308f3a9dff3103db55cfee2cbea38b3249b5879fe35cfcf179ff",
     "system_package": true,
     "aosp_camera_masked": true,
+    "camera_go_removed": true,
     "bsg_removed": true,
     "photo_video_and_secure_camera_intents_resolve": true,
     "selinux": "Enforcing",
-    "photo_video_capture_quality": "unverified",
-    "builder_byte_identical_rebuild": true,
-    "builder_rejects_wrong_apk": true,
-    "rear_front_live_previews": true
+    "photo_video_capture_quality": "unverified"
   }
 }

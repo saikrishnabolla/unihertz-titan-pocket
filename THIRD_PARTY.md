@@ -9,4 +9,4 @@ The PIN adapter builder transforms a caller-supplied, hash-pinned SystemUI class
 
 No project-wide license has been chosen for the remaining code.
 
-The system-camera builder requires Greatness’s Camera Go NoAux modification of Google Camera Go. Its APK is an external, hash-pinned input; this repository contains no Google camera code or APK and grants no license to it. The maintainer’s release is linked in `hardware/system-camera/README.md`.
+The system-camera builder uses the official GrapheneOS Camera 93 APK as an external, hash-pinned input. GrapheneOS Camera is MIT licensed; its source and license are at https://github.com/GrapheneOS/Camera. The APK is not included in this repository. The release is linked in `hardware/system-camera/README.md`.

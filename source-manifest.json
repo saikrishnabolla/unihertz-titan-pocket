@@ -1,9 +1,9 @@
 {
   ".gitignore": "8cd8edb54db7143c688d16824bda286238bca253ddbe22ab703b363e443654bc",
   "LICENSES/Apache-2.0.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-  "README.md": "50f94732a81be292b96173a063351852929c33f586bdb69cfc6a7cc7f6374734",
-  "THIRD_PARTY.md": "dcc4a5a26c7338e905d5c88d0e933b21189d6520c0899857b754697934467c14",
-  "hardware/README.md": "1d32b7367f2f67451bd136ca28b9c25dcfce71f0d1b2f87201cd3778e8bc24c8",
+  "README.md": "29fd3beefd46ffa115ffe70c2b8dddbb474be987f816615da182806053e578e7",
+  "THIRD_PARTY.md": "7cfd57ccd25205abcb587ff85b8b85da95d788c8f7e2da52c2884467de2d7262",
+  "hardware/README.md": "4c183ec8bea4a1cd223b069705f700a60b316ea19ca0ebf96b9af604060497f0",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightPolicy.java": "22c397d01f11c696cf17eb3e8febe92932d6aee4717fd684b8ab763b3f9ad899",
   "hardware/backlight/adapter/stubs/android/content/ContentResolver.java": "e7e159d3b9c42591c63c6de5b639297f92bcec4f338b111f328fd399941a6e30",
@@ -210,8 +210,8 @@
   "hardware/pin-hardware-v1/rebuild/test_builder.py": "3421e38144ce2bf8ac48edf1c0615bf3854d2833d4ed4f99ab74c5e99dadc931",
   "hardware/pin-hardware-v1/rebuild/upstream-source-manifest.json": "e6f87a9341061eaddf8b60dc14fbbd9e0bf01bb0a7aaf54734e870ac85943954",
   "hardware/source-selection.json": "5d6c100558f6d92b0a1ec5084b6169c87d2386bbe902edfad703c059f2307421",
-  "hardware/system-camera/README.md": "721fc285e1ea5fb72cca39b4f6e20eabeea710932c1cf98f4c6d6d0722e935e7",
-  "hardware/system-camera/build.py": "965f060959f072166054613ed1638372269c7444cd65117d479745f8df92b17d",
+  "hardware/system-camera/README.md": "240c95cfa77a64fc59ef85219ef398c06679d1663f4f9db7cc871793305aef90",
+  "hardware/system-camera/build.py": "0c4591e72377945a1bdbcedab8634aef1257405add89a2d88b9f56750565ab1b",
   "hardware/ui-spacing-v1/apk-source/SignVerified.java": "1f116925e4ae31454040724bbe8cd1d9848b1fad75ccb56e517db974d9686442",
   "hardware/ui-spacing-v1/apk-source/launcher/build_overlay.py": "76ea2502285af27ab054eeeb00229bb6fd4bea30f724c9796faf384191934355",
   "hardware/ui-spacing-v1/apk-source/launcher/test_overlay.py": "b0a64b5ad297792f3483c14588100fc679a64824dc7510ba4f49b3128c41c9ca",
@@ -327,5 +327,5 @@
   "tools/test.py": "b528ee90e3b44e77e5bff68be4b2992f06a570f7ef007656ff97f750d4a5ebf0",
   "tools/test_keyguard.py": "e6523c3e049c4b9ad5063c9b20115b5339d9289461c9677ed351c1bec67927be",
   "tools/test_runtime.py": "31367bf6e50887a147b78b974956ba6662751542daf293e8a616499dc91d0783",
-  "verification.json": "d69b2a5eb33e22f8fda5bd8a59fa3aeb0f47e87c2af98abad2734e8f1a159310"
+  "verification.json": "0b53b5052cdc8a45a9f438aab5c3de1944e5393fe3fbd2bbfd35c9f4c56aae95"
 }

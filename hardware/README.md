@@ -8,7 +8,7 @@ Source and offline build steps for the Titan Pocket Android 17 guest. The phone 
 - `bluetooth-module`, `bluetooth-system`: controller patch and pinned APEX/image rebuilds.
 - `navigation-overlay`, `native-ui-v1`, `ui-spacing-v1`: physical navigation and layout changes.
 - `notification-led-v1`: notification light resource overlay and image builder.
-- `camera-layout-fix`, `camera-app-update`: camera layout patch, verifier and signing source. The current replacement is [`system-camera`](system-camera/README.md): a pinned Greatness Camera Go NoAux system add-on that masks AOSP Camera2. The earlier camera patches remain historical sources.
+- `camera-layout-fix`, `camera-app-update`: camera layout patch, verifier and signing source. The current replacement is [`system-camera`](system-camera/README.md): a pinned GrapheneOS Camera system add-on that masks AOSP Camera2. The earlier camera patches remain historical sources.
 - `legacy-kernel`: CLAT label adapter, local-network capability guards and LPM backport experiments. Host tests do not prove a kernel module is safe to load.
 
 Firmware, APKs, APEX files, framework JARs, decompiled original classes, tool binaries and signing keys are excluded. Builders retain exact input hashes and reject a different build. Supply your own matching inputs and signing keys; follow the source manifests for each step. Original source notices remain in the files. This directory grants no new license for third-party material.
