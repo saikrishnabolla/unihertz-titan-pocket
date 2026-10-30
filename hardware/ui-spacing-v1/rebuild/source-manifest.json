@@ -1,0 +1,78 @@
+{
+  "tools": {
+    "debugfs": {
+      "sha256": "814284f7a5147a0286983fbc1dd64f3969826e5501b03f3fc05225f45287f2c9"
+    },
+    "e2fsck": {
+      "sha256": "a14c5f8efe8ccf099e6048efbd5f8aabf3938676b55457e4462b3a6e7461bf9e"
+    },
+    "openssl": {
+      "sha256": "49db04c17e3a8c169ebc48a1149d78c165a86c04913203f46b2a14ce7f4a14fc"
+    },
+    "avbtool": {
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    }
+  },
+  "bundle_files": [
+    {
+      "path": "InspectApk.java",
+      "sha256": "772d764e53b5aa89c636cab3bd63204326246837f7c1d6aa7639edb5ddcdbba2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "487e1868260da9349a2ff698bc614ac37c84127f7b8a0022e24ff4103af57021"
+    },
+    {
+      "path": "assets/SystemUI.apk",
+      "sha256": "73bd53387659f11e981420d2c2b7e709778871819628959fc930785f0683bc77"
+    },
+    {
+      "path": "assets/TitanPocketLauncherSpacing.apk",
+      "sha256": "29db785963ded652716704983908209f3b999545e154835af57badeb9e946d2f"
+    },
+    {
+      "path": "assets/platform.x509.pem",
+      "sha256": "9837de028f460c35cc8d3fa45f14eecce30f6fbfe4b93d399aef1acb80c20d14"
+    },
+    {
+      "path": "build_system.py",
+      "sha256": "750638792bece0598cce0c5a13f6c3f9b32371adc4242252071625647c13beca"
+    },
+    {
+      "path": "helpers/check_google_dsu_pair_avb.py",
+      "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+    },
+    {
+      "path": "helpers/image_helpers.py",
+      "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+    },
+    {
+      "path": "helpers/inventory_helpers.py",
+      "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+    },
+    {
+      "path": "signature-verification.txt",
+      "sha256": "20042943ee0e734c0317edd659198d3e046e16577729e2e7214a6d3ef414f5e2"
+    },
+    {
+      "path": "signed-payload-verification.json",
+      "sha256": "caf89dec3519121285c5ee243c8ed37d96583a64dcdc4d75e2b3f5c7e37a2969"
+    },
+    {
+      "path": "test-baseline.json",
+      "sha256": "eaee1ac9dda1d02ac0d3f836bff4c84f2fc54046ec4ac6873c7cadb40ce26731"
+    },
+    {
+      "path": "test_builder.py",
+      "sha256": "30f3bc915a020e14a14a00b7df6a74b1031365dd8c487f8d04b665ffaab7fa81"
+    },
+    {
+      "path": "tools/avbtool.py",
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    },
+    {
+      "path": "upstream-source-manifest.json",
+      "sha256": "b3743666ddad7e8eacd6404a04f77ff59f707317837c72362d8e78cf4734aeeb"
+    }
+  ]
+}

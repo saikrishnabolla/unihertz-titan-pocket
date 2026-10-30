@@ -1,0 +1,82 @@
+{
+  "cxx": "clang++",
+  "linker": "ld.lld",
+  "readelf": "llvm-readelf",
+  "target_flags": [
+    "--target=aarch64-linux-android37",
+    "-fPIC",
+    "-fno-exceptions",
+    "-fno-rtti",
+    "-nostdinc++",
+    "-Wno-invalid-specialization",
+    "-std=c++20",
+    "-O2",
+    "-Werror",
+    "-mno-outline-atomics"
+  ],
+  "include_dirs": [
+    "inputs/headers/continuation-v2/libsystem-include",
+    "inputs/headers/continuation-v2/perfetto-include/perfetto/base/build_configs/android_tree",
+    "inputs/headers/continuation-v2/perfetto-include",
+    "inputs/headers/continuation-v2/generated/protos",
+    "inputs/headers/continuation-v2/generated",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/include",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/include",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/mapper",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/mapper/gestures",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/include",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/include/android",
+    "inputs/headers/libui-include",
+    "inputs/headers/libmath-include",
+    "inputs/headers/libcutils-include",
+    "inputs/headers/jni",
+    "inputs/headers/fmt-include",
+    "inputs/headers/libutils-binder-include",
+    "inputs/headers/binder-include",
+    "inputs/headers/gui-include",
+    "inputs/headers/nativewindow-include",
+    "inputs/headers/batteryservice-include",
+    "inputs/headers/gestures",
+    "inputs/headers/arect-include",
+    "inputs/headers/generated",
+    "inputs/headers/binder-ndk-include",
+    "inputs/headers/generated-aconfig/include",
+    "inputs/headers/stats-api-include",
+    "inputs/headers/libutils-include",
+    "inputs/headers/libbase-include",
+    "inputs/headers/liblog-include",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/mapper/accumulator",
+    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/controller"
+  ],
+  "system_include_dirs": [
+    "inputs/headers/platform-libcxx",
+    "inputs/headers/bionic",
+    "inputs/headers/uapi/asm-arm64",
+    "inputs/headers/uapi",
+    "inputs/headers/android-uapi"
+  ],
+  "link_libraries": [
+    {
+      "path": "inputs/link/libc++.so",
+      "sha256": "cb118e98c74d3454858921123b9b51ba13df9cad7dfa141dd892c453661a4d78"
+    },
+    {
+      "path": "inputs/link/libc.so",
+      "sha256": "4ff19962145f3e471ae73d68bd30136164c7bafa5950d0410cc55792ed080425"
+    },
+    {
+      "path": "inputs/link/libdl.so",
+      "sha256": "a9d3405f5147e195921896ab6a8d6e58fb7970311d55b60bad4c14de27bc2582"
+    },
+    {
+      "path": "inputs/link/liblog.so",
+      "sha256": "8dab885114a41c63e2c4451dfb59ec745610418faeead26c7607173eaf57e8c4"
+    },
+    {
+      "path": "inputs/link/libm.so",
+      "sha256": "d55f716c4e4be4d7999c2baacb5b8dda433125580a997670f9f4205d8824400d"
+    }
+  ]
+}

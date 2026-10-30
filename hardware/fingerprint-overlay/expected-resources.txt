@@ -1,0 +1,6 @@
+Binary APK
+Package name=org.titanpocket.overlay.fingerprint id=7f
+  type array id=01 entryCount=1
+    resource 0x7f010000 array/config_biometric_sensors
+      () (array) size=1
+        ["0:2:4095"]

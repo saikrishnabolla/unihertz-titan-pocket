@@ -1,0 +1,66 @@
+{
+  "tools": {
+    "debugfs": {
+      "sha256": "814284f7a5147a0286983fbc1dd64f3969826e5501b03f3fc05225f45287f2c9"
+    },
+    "e2fsck": {
+      "sha256": "a14c5f8efe8ccf099e6048efbd5f8aabf3938676b55457e4462b3a6e7461bf9e"
+    },
+    "openssl": {
+      "sha256": "49db04c17e3a8c169ebc48a1149d78c165a86c04913203f46b2a14ce7f4a14fc"
+    },
+    "avbtool": {
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    }
+  },
+  "bundle_files": [
+    {
+      "path": "InspectApk.java",
+      "sha256": "772d764e53b5aa89c636cab3bd63204326246837f7c1d6aa7639edb5ddcdbba2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "120de42a66e29fade0d224b1b2dfe2641dea494507b2abcee468d26e680c0f80"
+    },
+    {
+      "path": "assets/SystemUI.apk",
+      "sha256": "0c7b88f96d4e895b8431a3808191602b32a36cc1f9415a3cfc86820ed455803e"
+    },
+    {
+      "path": "build_system.py",
+      "sha256": "2a064c4802cbf7dc207f2421e9ae923392365d844d3d508e478645d1fba4c487"
+    },
+    {
+      "path": "helpers/check_google_dsu_pair_avb.py",
+      "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+    },
+    {
+      "path": "helpers/image_helpers.py",
+      "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+    },
+    {
+      "path": "helpers/inventory_helpers.py",
+      "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+    },
+    {
+      "path": "signature-verification.txt",
+      "sha256": "101e8da3a3210adb4ec0ca05d42bbd4085532a531f2a6a9b9028ff34cc103483"
+    },
+    {
+      "path": "test-baseline.json",
+      "sha256": "683f55354cf3f90b222433597e982eb82458b12b10f4f1386414639db5d9f3b6"
+    },
+    {
+      "path": "test_builder.py",
+      "sha256": "3421e38144ce2bf8ac48edf1c0615bf3854d2833d4ed4f99ab74c5e99dadc931"
+    },
+    {
+      "path": "tools/avbtool.py",
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    },
+    {
+      "path": "upstream-source-manifest.json",
+      "sha256": "e6f87a9341061eaddf8b60dc14fbbd9e0bf01bb0a7aaf54734e870ac85943954"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "integration_guard": {
+    "source_system_sha256": "43e1b4644f92ecef4c6a1aac96c474f2445d91565d4d9a805370632510384368",
+    "source_system_bytes": 3288334336,
+    "old_system_path": "/system/apex/com.android.bt.capex",
+    "old_capex_sha256": "0563f0fb1f5b31b7cb91b64b78d9674c2fcbc01ad7b52d9c6d0ad12e5d43872a",
+    "new_system_path": "/system/apex/com.android.bt.apex",
+    "expected_vendor_device": "Titan_pocket",
+    "expected_platform": "mt6771",
+    "expected_uname_release": "4.14.186-g40b2a1864-dirty",
+    "runtime_hardware_guard": false,
+    "required_installer_guard": "Verified authorized phone identity plus all three hardware/kernel values; no generic distribution",
+    "capex_to_apex": "Remove old CAPEX from copied SYSTEM; install standalone APEX with correctly restored owner/mode/security.selinux and image signatures. No stale duplicate package.",
+    "full_system_gate": "Update source-image and full readback hashes in any trial driver; old signed-image hash gate must not be bypassed."
+  }
+}

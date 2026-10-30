@@ -1,0 +1,117 @@
+{
+  "inputs": {
+    "inputs/KeyboardBacklightController-original.smali": {
+      "bytes": 47295,
+      "sha256": "f632b0c1410dcf0f5f38d2aa1c4e400ac1ea5d2d1d021a36d98a5778c4507f09"
+    },
+    "inputs/patch_controller.py": {
+      "bytes": 10589,
+      "sha256": "98b2c552c5ff3ce1d79bbabd60a29dd926b3188baacc61ebb7a256b412add525"
+    },
+    "inputs/services-original.jar": {
+      "bytes": 25716529,
+      "sha256": "bc5d11f4f09ec079c5804a01008e8317a0854231502550acaff89aa9f1083a86"
+    },
+    "inputs/src/com/android/server/input/LegacyKeyboardLightBridge.java": {
+      "bytes": 10393,
+      "sha256": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c"
+    },
+    "inputs/src/com/android/server/input/LegacyKeyboardLightPolicy.java": {
+      "bytes": 5311,
+      "sha256": "22c397d01f11c696cf17eb3e8febe92932d6aee4717fd684b8ab763b3f9ad899"
+    },
+    "inputs/stubs/android/content/ContentResolver.java": {
+      "bytes": 1387,
+      "sha256": "e7e159d3b9c42591c63c6de5b639297f92bcec4f338b111f328fd399941a6e30"
+    },
+    "inputs/stubs/android/content/Context.java": {
+      "bytes": 436,
+      "sha256": "6e004828f345973d574dcc24dcd8d2cbdadb2b23276674aad16f74facea43269"
+    },
+    "inputs/stubs/android/database/ContentObserver.java": {
+      "bytes": 275,
+      "sha256": "5eca7892e2cc7a3561a588207dbddf4145f0c0e005d2ec5ddcd6f7f81ecbe384"
+    },
+    "inputs/stubs/android/hardware/Sensor.java": {
+      "bytes": 92,
+      "sha256": "a7a6c3caabee617822dfe368a2305e88da93b8c96945aab33d981bdb9134630c"
+    },
+    "inputs/stubs/android/hardware/SensorEvent.java": {
+      "bytes": 192,
+      "sha256": "191a2e3ccea758a46f80ec3e419714aff9aaf3ba4d42639395d9d254935b519f"
+    },
+    "inputs/stubs/android/hardware/SensorEventListener.java": {
+      "bytes": 157,
+      "sha256": "db160fd1d71aeb8c995c4d1e3925e16ad540e177c1b4a189f6dd3d2cd55076dc"
+    },
+    "inputs/stubs/android/hardware/SensorManager.java": {
+      "bytes": 901,
+      "sha256": "e9169e62a8c55d86fa2cecfc2143518160c9d244a148f619741bdbf2b250f25b"
+    },
+    "inputs/stubs/android/net/Uri.java": {
+      "bytes": 289,
+      "sha256": "653cf56a8add8aa125f3b0981de4126f22fa9be3d3ee63b0020883ee567ad0f4"
+    },
+    "inputs/stubs/android/os/Handler.java": {
+      "bytes": 1251,
+      "sha256": "11ce332acbfc5f70f11c3cadbe21af1123ae7fe1eca879a3034edf35d340452b"
+    },
+    "inputs/stubs/android/os/Looper.java": {
+      "bytes": 129,
+      "sha256": "165031394d9bff62d64e68e151a88a18df81337770543a18420ff5b20af2c8bf"
+    },
+    "inputs/stubs/android/os/SystemClock.java": {
+      "bytes": 159,
+      "sha256": "159435202976f5bb120c0bd69037fbd3c17c6c7240312fae2fe75c9fa601e11c"
+    },
+    "inputs/stubs/android/os/SystemProperties.java": {
+      "bytes": 245,
+      "sha256": "ca6d544f3c8b54825cc1b7f9f1bba412c1c5264676f36e4897899514fbf5c0e1"
+    },
+    "inputs/stubs/android/provider/Settings.java": {
+      "bytes": 485,
+      "sha256": "9087f790e490fe3c92dadd7691b00bbb1ee56d790ab3f17ecd027b890a6b22e4"
+    },
+    "inputs/stubs/android/system/Os.java": {
+      "bytes": 246,
+      "sha256": "8aed07214b28b782124e9aac827ae7544fd83c364f66d57ac30e789551c00af0"
+    },
+    "inputs/stubs/android/system/StructUtsname.java": {
+      "bytes": 150,
+      "sha256": "17643e104f43f3a6ce2c017c759ace25bdb52162d90929555cab89c34272edbb"
+    },
+    "inputs/stubs/com/android/server/LocalServices.java": {
+      "bytes": 359,
+      "sha256": "205af8cfc2a70a58d69372b435499095c348737b294abf7c372f966d719bfdc3"
+    },
+    "inputs/stubs/com/android/server/lights/LightsManager.java": {
+      "bytes": 170,
+      "sha256": "c0d9aa682010afcede7d9f49f32631e74b59e47c0d6e6cd9f1e197f8fc0ee864"
+    },
+    "inputs/stubs/com/android/server/lights/LogicalLight.java": {
+      "bytes": 266,
+      "sha256": "fd3b3634ec577f2461cb625005e60e9b7efe946025203b2579ab533cd8151589"
+    }
+  },
+  "shared_tools": {
+    "jadx-1.5.3-all.jar": "05b8f908d6f5cdde2e5fae25e87c2d74095ca2e0fc1ef6aa8aa9b9619ecc3cb3",
+    "DexTool.java": "c729e81b0352823b07aa3ee48da89d899b5e653f4a7e878d202fd7545845aef8"
+  },
+  "production_classfiles": {
+    "com/android/server/input/LegacyKeyboardLightBridge$2.class": "2debf698cc5ca24b597e563b2653bb601baf5a42e111d90cbc89b40bdb223a3c",
+    "com/android/server/input/LegacyKeyboardLightPolicy$Sink.class": "39093ca62e925a6374c9e37e5684bf299ce975ce62655e94fae7246ba7d189ad",
+    "com/android/server/input/LegacyKeyboardLightPolicy$Result.class": "832fe0e4524536b79d4979e6595294e87b7823280becf4bda72f11de214de4a3",
+    "com/android/server/input/LegacyKeyboardLightBridge$1.class": "e43486492168683d112778f5ffb342ca8ef31ccd89f3b7f9a94a2cee75c5f844",
+    "com/android/server/input/LegacyKeyboardLightPolicy$Clock.class": "14fb17929c93de918fed07874212e0e11819bfd1ec59b89e8bd8597ba94f6553",
+    "com/android/server/input/LegacyKeyboardLightBridge.class": "ec5a3e0f50c91c073121ee361dadc3dffa4383e357ffe69839e153d823b79ea3",
+    "com/android/server/input/LegacyKeyboardLightPolicy.class": "4c3e6f50369263370218fef3f0b3ef4196f1da47c99a43e3bee322f1c3473b87"
+  },
+  "expected": {
+    "helper_dex": "047f3e58459b96db64a3f174a47b2de8ea7ca12a3c5b8d425bd7ef337349bb1d",
+    "merged_dex": "79e7a820611b58900872e2a6cc3078a093c5f45d9708dea846980a7b993218ee",
+    "services_jar": "6806a4dcf3ef38d8368727297f62a0c7680e575365efbabb156c6bf246694e54",
+    "controller_roundtrip_smali": "bd131f3573ed5fa713f54c5bc8e0f999267f80bd314ae3edd59f0741218d3bd7"
+  },
+  "build_script_sha256": "415a50c04ccea62f536c91b6c6a0c17b1f39b00ef4eca120067f1155ea31c5cd",
+  "variant": "turnOff-v3-reviewed-pins"
+}

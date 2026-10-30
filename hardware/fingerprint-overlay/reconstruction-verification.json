@@ -1,0 +1,9 @@
+{
+  "status": "decoded manifest and resource equivalence passed; unsigned; not device tested",
+  "reference_signed_apk_sha256": "40a0322207dc74fbd716b8d7306528b46503ddbb10f7235bfcfef552d975a7a2",
+  "unsigned_apk_sha256": "1ae28ebddeb2d46e1d6cdb45a2d3dad633f240aa118ef2bb8fce6bafa58e912c",
+  "aapt2_sha256": "7829dec6a3629bc2956cb531ad6e3f1940e74191b4aa35152f5ddb55652d0f3b",
+  "framework_resources_sha256": "297b1f5c3c4e3f2d4289c4bf247311e18046a14af14d988f667703a2b42cc1bb",
+  "reference_checked": true,
+  "signed_binary_reproduction_claimed": false
+}

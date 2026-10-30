@@ -1,0 +1,1140 @@
+[
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java",
+    "staged": "backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java",
+    "sha256": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/src/com/android/server/input/LegacyKeyboardLightPolicy.java",
+    "staged": "backlight/adapter/src/com/android/server/input/LegacyKeyboardLightPolicy.java",
+    "sha256": "22c397d01f11c696cf17eb3e8febe92932d6aee4717fd684b8ab763b3f9ad899"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/content/ContentResolver.java",
+    "staged": "backlight/adapter/stubs/android/content/ContentResolver.java",
+    "sha256": "e7e159d3b9c42591c63c6de5b639297f92bcec4f338b111f328fd399941a6e30"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/content/Context.java",
+    "staged": "backlight/adapter/stubs/android/content/Context.java",
+    "sha256": "6e004828f345973d574dcc24dcd8d2cbdadb2b23276674aad16f74facea43269"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/database/ContentObserver.java",
+    "staged": "backlight/adapter/stubs/android/database/ContentObserver.java",
+    "sha256": "5eca7892e2cc7a3561a588207dbddf4145f0c0e005d2ec5ddcd6f7f81ecbe384"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/hardware/Sensor.java",
+    "staged": "backlight/adapter/stubs/android/hardware/Sensor.java",
+    "sha256": "a7a6c3caabee617822dfe368a2305e88da93b8c96945aab33d981bdb9134630c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/hardware/SensorEvent.java",
+    "staged": "backlight/adapter/stubs/android/hardware/SensorEvent.java",
+    "sha256": "191a2e3ccea758a46f80ec3e419714aff9aaf3ba4d42639395d9d254935b519f"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/hardware/SensorEventListener.java",
+    "staged": "backlight/adapter/stubs/android/hardware/SensorEventListener.java",
+    "sha256": "db160fd1d71aeb8c995c4d1e3925e16ad540e177c1b4a189f6dd3d2cd55076dc"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/hardware/SensorManager.java",
+    "staged": "backlight/adapter/stubs/android/hardware/SensorManager.java",
+    "sha256": "e9169e62a8c55d86fa2cecfc2143518160c9d244a148f619741bdbf2b250f25b"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/net/Uri.java",
+    "staged": "backlight/adapter/stubs/android/net/Uri.java",
+    "sha256": "653cf56a8add8aa125f3b0981de4126f22fa9be3d3ee63b0020883ee567ad0f4"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/os/Handler.java",
+    "staged": "backlight/adapter/stubs/android/os/Handler.java",
+    "sha256": "11ce332acbfc5f70f11c3cadbe21af1123ae7fe1eca879a3034edf35d340452b"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/os/Looper.java",
+    "staged": "backlight/adapter/stubs/android/os/Looper.java",
+    "sha256": "165031394d9bff62d64e68e151a88a18df81337770543a18420ff5b20af2c8bf"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/os/SystemClock.java",
+    "staged": "backlight/adapter/stubs/android/os/SystemClock.java",
+    "sha256": "159435202976f5bb120c0bd69037fbd3c17c6c7240312fae2fe75c9fa601e11c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/os/SystemProperties.java",
+    "staged": "backlight/adapter/stubs/android/os/SystemProperties.java",
+    "sha256": "ca6d544f3c8b54825cc1b7f9f1bba412c1c5264676f36e4897899514fbf5c0e1"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/provider/Settings.java",
+    "staged": "backlight/adapter/stubs/android/provider/Settings.java",
+    "sha256": "9087f790e490fe3c92dadd7691b00bbb1ee56d790ab3f17ecd027b890a6b22e4"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/system/Os.java",
+    "staged": "backlight/adapter/stubs/android/system/Os.java",
+    "sha256": "8aed07214b28b782124e9aac827ae7544fd83c364f66d57ac30e789551c00af0"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/android/system/StructUtsname.java",
+    "staged": "backlight/adapter/stubs/android/system/StructUtsname.java",
+    "sha256": "17643e104f43f3a6ce2c017c759ace25bdb52162d90929555cab89c34272edbb"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/com/android/server/LocalServices.java",
+    "staged": "backlight/adapter/stubs/com/android/server/LocalServices.java",
+    "sha256": "205af8cfc2a70a58d69372b435499095c348737b294abf7c372f966d719bfdc3"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/com/android/server/lights/LightsManager.java",
+    "staged": "backlight/adapter/stubs/com/android/server/lights/LightsManager.java",
+    "sha256": "c0d9aa682010afcede7d9f49f32631e74b59e47c0d6e6cd9f1e197f8fc0ee864"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/stubs/com/android/server/lights/LogicalLight.java",
+    "staged": "backlight/adapter/stubs/com/android/server/lights/LogicalLight.java",
+    "sha256": "fd3b3634ec577f2461cb625005e60e9b7efe946025203b2579ab533cd8151589"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/test/com/android/server/input/LegacyKeyboardLightBridgeTest.java",
+    "staged": "backlight/adapter/test/com/android/server/input/LegacyKeyboardLightBridgeTest.java",
+    "sha256": "eff894cc33c8465d35f793793c62462f52925af69b96f77898e56444b7782efd"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/test/com/android/server/input/LegacyKeyboardLightPolicyTest.java",
+    "staged": "backlight/adapter/test/com/android/server/input/LegacyKeyboardLightPolicyTest.java",
+    "sha256": "d3649fbeced5f2311785dcb210fcf8d0a53fe715c088ccabd6f5b150e829d978"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/adapter/test.sh",
+    "staged": "backlight/adapter/test.sh",
+    "sha256": "5f80b014784f08d3f93584b85c6ff8d07c5f97f3acadcd0cb0fff3c4f274c30c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/patch_controller.py",
+    "staged": "backlight/rebuild/inputs/patch_controller.py",
+    "sha256": "98b2c552c5ff3ce1d79bbabd60a29dd926b3188baacc61ebb7a256b412add525"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/src/com/android/server/input/LegacyKeyboardLightBridge.java",
+    "staged": "backlight/rebuild/inputs/src/com/android/server/input/LegacyKeyboardLightBridge.java",
+    "sha256": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/src/com/android/server/input/LegacyKeyboardLightPolicy.java",
+    "staged": "backlight/rebuild/inputs/src/com/android/server/input/LegacyKeyboardLightPolicy.java",
+    "sha256": "22c397d01f11c696cf17eb3e8febe92932d6aee4717fd684b8ab763b3f9ad899"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/content/ContentResolver.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/content/ContentResolver.java",
+    "sha256": "e7e159d3b9c42591c63c6de5b639297f92bcec4f338b111f328fd399941a6e30"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/content/Context.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/content/Context.java",
+    "sha256": "6e004828f345973d574dcc24dcd8d2cbdadb2b23276674aad16f74facea43269"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/database/ContentObserver.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/database/ContentObserver.java",
+    "sha256": "5eca7892e2cc7a3561a588207dbddf4145f0c0e005d2ec5ddcd6f7f81ecbe384"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/hardware/Sensor.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/hardware/Sensor.java",
+    "sha256": "a7a6c3caabee617822dfe368a2305e88da93b8c96945aab33d981bdb9134630c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/hardware/SensorEvent.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/hardware/SensorEvent.java",
+    "sha256": "191a2e3ccea758a46f80ec3e419714aff9aaf3ba4d42639395d9d254935b519f"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/hardware/SensorEventListener.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/hardware/SensorEventListener.java",
+    "sha256": "db160fd1d71aeb8c995c4d1e3925e16ad540e177c1b4a189f6dd3d2cd55076dc"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/hardware/SensorManager.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/hardware/SensorManager.java",
+    "sha256": "e9169e62a8c55d86fa2cecfc2143518160c9d244a148f619741bdbf2b250f25b"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/net/Uri.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/net/Uri.java",
+    "sha256": "653cf56a8add8aa125f3b0981de4126f22fa9be3d3ee63b0020883ee567ad0f4"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/os/Handler.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/os/Handler.java",
+    "sha256": "11ce332acbfc5f70f11c3cadbe21af1123ae7fe1eca879a3034edf35d340452b"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/os/Looper.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/os/Looper.java",
+    "sha256": "165031394d9bff62d64e68e151a88a18df81337770543a18420ff5b20af2c8bf"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/os/SystemClock.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/os/SystemClock.java",
+    "sha256": "159435202976f5bb120c0bd69037fbd3c17c6c7240312fae2fe75c9fa601e11c"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/os/SystemProperties.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/os/SystemProperties.java",
+    "sha256": "ca6d544f3c8b54825cc1b7f9f1bba412c1c5264676f36e4897899514fbf5c0e1"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/provider/Settings.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/provider/Settings.java",
+    "sha256": "9087f790e490fe3c92dadd7691b00bbb1ee56d790ab3f17ecd027b890a6b22e4"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/system/Os.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/system/Os.java",
+    "sha256": "8aed07214b28b782124e9aac827ae7544fd83c364f66d57ac30e789551c00af0"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/android/system/StructUtsname.java",
+    "staged": "backlight/rebuild/inputs/stubs/android/system/StructUtsname.java",
+    "sha256": "17643e104f43f3a6ce2c017c759ace25bdb52162d90929555cab89c34272edbb"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/com/android/server/LocalServices.java",
+    "staged": "backlight/rebuild/inputs/stubs/com/android/server/LocalServices.java",
+    "sha256": "205af8cfc2a70a58d69372b435499095c348737b294abf7c372f966d719bfdc3"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/com/android/server/lights/LightsManager.java",
+    "staged": "backlight/rebuild/inputs/stubs/com/android/server/lights/LightsManager.java",
+    "sha256": "c0d9aa682010afcede7d9f49f32631e74b59e47c0d6e6cd9f1e197f8fc0ee864"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/inputs/stubs/com/android/server/lights/LogicalLight.java",
+    "staged": "backlight/rebuild/inputs/stubs/com/android/server/lights/LogicalLight.java",
+    "sha256": "fd3b3634ec577f2461cb625005e60e9b7efe946025203b2579ab533cd8151589"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/rebuild.py",
+    "staged": "backlight/rebuild/rebuild.py",
+    "sha256": "415a50c04ccea62f536c91b6c6a0c17b1f39b00ef4eca120067f1155ea31c5cd"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/rebuild/source-manifest.json",
+    "staged": "backlight/rebuild/source-manifest.json",
+    "sha256": "00ffd80a0051a736c2a08455f4198a45323bf0621c0136d575426398b433caa5"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/system-rebuild/build_system.py",
+    "staged": "backlight/system-rebuild/build_system.py",
+    "sha256": "2c0c9c671db9562ab1885c4c0c051499aa8c179e718c4e5e8c7424e0cb71708f"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/system-rebuild/source-manifest.json",
+    "staged": "backlight/system-rebuild/source-manifest.json",
+    "sha256": "157375c84d8e7e97050ad025e93492e30a1a78b4ceea3f9ed3bec660cb71afa7",
+    "original_sha256": "dd931efa70c12fbb6d1fbedb83a2f1b13e2ed0c752ee0f6f70a14512caf5dce9",
+    "sanitized": true
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/system-rebuild/packaging-pins.json",
+    "staged": "backlight/system-rebuild/packaging-pins.json",
+    "sha256": "fbae4c747d7aadfa81ebc9a38468161c2c31dbfe4eb28830c9671c95bb94183b"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/system-rebuild/helpers/check_google_dsu_pair_avb.py",
+    "staged": "backlight/system-rebuild/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/system-rebuild/helpers/image_helpers.py",
+    "staged": "backlight/system-rebuild/helpers/image_helpers.py",
+    "sha256": "045723612eef830073882a645359e98d1580b9854f8907766a2687c8d7717b30"
+  },
+  {
+    "source": "hardware-compat-v1/backlight/integration-v3/system-rebuild/helpers/inventory_helpers.py",
+    "staged": "backlight/system-rebuild/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/build_system.py",
+    "staged": "media-fingerprint-animation-v1/rebuild/build_system.py",
+    "sha256": "ec969e188b86f1804d8ad0ef60a0402cfcbc745b47406935e6363489f1a3c622"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "staged": "media-fingerprint-animation-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/helpers/image_helpers.py",
+    "staged": "media-fingerprint-animation-v1/rebuild/helpers/image_helpers.py",
+    "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/helpers/inventory_helpers.py",
+    "staged": "media-fingerprint-animation-v1/rebuild/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/test_builder.py",
+    "staged": "media-fingerprint-animation-v1/rebuild/test_builder.py",
+    "sha256": "42498848aac1635eff1efad10530a4398200c2dd617be4806cddd29e458e19bc"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/source-manifest.json",
+    "staged": "media-fingerprint-animation-v1/rebuild/source-manifest.json",
+    "sha256": "aaae66a7e65817af50dcd1922f0a1b8c73cf36cb4d03d0b9f904006ae9fe8cad"
+  },
+  {
+    "source": "hardware-compat-v1/media-fingerprint-animation-v1/rebuild/upstream-source-manifest.json",
+    "staged": "media-fingerprint-animation-v1/rebuild/upstream-source-manifest.json",
+    "sha256": "33b7ae6283b08b9c45184ea53fcaa4972e6bfb9b94d242fe78833ea036fb6047"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/all_bounds.py",
+    "staged": "native-ui-v1/rebuild/all_bounds.py",
+    "sha256": "f0d076093f8a51545f24f92ca5630c043dc48f3b374a1738ff1bba687c27d76c"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/build_system.py",
+    "staged": "native-ui-v1/rebuild/build_system.py",
+    "sha256": "55c97b374d2744b05b77b86e97b727b85cd9cdec1dbf7f8329de4b70b0d7204e"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/convert_square.py",
+    "staged": "native-ui-v1/rebuild/convert_square.py",
+    "sha256": "44cd4fe84e08a4f7dfa522859bb89d99e32f9b8ba49f6811c11313891a24c599"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "staged": "native-ui-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/helpers/image_helpers.py",
+    "staged": "native-ui-v1/rebuild/helpers/image_helpers.py",
+    "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/helpers/inventory_helpers.py",
+    "staged": "native-ui-v1/rebuild/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/test_builder.py",
+    "staged": "native-ui-v1/rebuild/test_builder.py",
+    "sha256": "d338d8966d441684d8020c066896831e1f0b244f2087167c722ec7032739e7f1"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/source-manifest.json",
+    "staged": "native-ui-v1/rebuild/source-manifest.json",
+    "sha256": "54c67ab5bf13aa799ff3ef350ed46e453f47615bae9887e6e7d59746d6f68e04"
+  },
+  {
+    "source": "hardware-compat-v1/native-ui-v1/rebuild/upstream-source-manifest.json",
+    "staged": "native-ui-v1/rebuild/upstream-source-manifest.json",
+    "sha256": "aaae66a7e65817af50dcd1922f0a1b8c73cf36cb4d03d0b9f904006ae9fe8cad"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/build_system.py",
+    "staged": "notification-led-v1/rebuild/build_system.py",
+    "sha256": "0303c7e203858b03126f1f8c5583fe1a23165afad1084a31d612848a5ac7e630"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "staged": "notification-led-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/helpers/image_helpers.py",
+    "staged": "notification-led-v1/rebuild/helpers/image_helpers.py",
+    "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/helpers/inventory_helpers.py",
+    "staged": "notification-led-v1/rebuild/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/test_builder.py",
+    "staged": "notification-led-v1/rebuild/test_builder.py",
+    "sha256": "8b55132c3a6e180d2baecb37827a9948ee702a2feaf7742b0764ccebe17f1aea"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/source-manifest.json",
+    "staged": "notification-led-v1/rebuild/source-manifest.json",
+    "sha256": "b3743666ddad7e8eacd6404a04f77ff59f707317837c72362d8e78cf4734aeeb"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/rebuild/upstream-source-manifest.json",
+    "staged": "notification-led-v1/rebuild/upstream-source-manifest.json",
+    "sha256": "54c67ab5bf13aa799ff3ef350ed46e453f47615bae9887e6e7d59746d6f68e04"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/InspectApk.java",
+    "staged": "ui-spacing-v1/rebuild/InspectApk.java",
+    "sha256": "772d764e53b5aa89c636cab3bd63204326246837f7c1d6aa7639edb5ddcdbba2"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/build_system.py",
+    "staged": "ui-spacing-v1/rebuild/build_system.py",
+    "sha256": "750638792bece0598cce0c5a13f6c3f9b32371adc4242252071625647c13beca"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "staged": "ui-spacing-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/helpers/image_helpers.py",
+    "staged": "ui-spacing-v1/rebuild/helpers/image_helpers.py",
+    "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/helpers/inventory_helpers.py",
+    "staged": "ui-spacing-v1/rebuild/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/test_builder.py",
+    "staged": "ui-spacing-v1/rebuild/test_builder.py",
+    "sha256": "30f3bc915a020e14a14a00b7df6a74b1031365dd8c487f8d04b665ffaab7fa81"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/source-manifest.json",
+    "staged": "ui-spacing-v1/rebuild/source-manifest.json",
+    "sha256": "e6f87a9341061eaddf8b60dc14fbbd9e0bf01bb0a7aaf54734e870ac85943954"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/rebuild/upstream-source-manifest.json",
+    "staged": "ui-spacing-v1/rebuild/upstream-source-manifest.json",
+    "sha256": "b3743666ddad7e8eacd6404a04f77ff59f707317837c72362d8e78cf4734aeeb"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/InspectApk.java",
+    "staged": "pin-hardware-v1/rebuild/InspectApk.java",
+    "sha256": "772d764e53b5aa89c636cab3bd63204326246837f7c1d6aa7639edb5ddcdbba2"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/build_system.py",
+    "staged": "pin-hardware-v1/rebuild/build_system.py",
+    "sha256": "2a064c4802cbf7dc207f2421e9ae923392365d844d3d508e478645d1fba4c487"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "staged": "pin-hardware-v1/rebuild/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/helpers/image_helpers.py",
+    "staged": "pin-hardware-v1/rebuild/helpers/image_helpers.py",
+    "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/helpers/inventory_helpers.py",
+    "staged": "pin-hardware-v1/rebuild/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/test_builder.py",
+    "staged": "pin-hardware-v1/rebuild/test_builder.py",
+    "sha256": "3421e38144ce2bf8ac48edf1c0615bf3854d2833d4ed4f99ab74c5e99dadc931"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/source-manifest.json",
+    "staged": "pin-hardware-v1/rebuild/source-manifest.json",
+    "sha256": "d0547d8787b2b6cf15335160a3a3f84e112b9ec20b94c271bb203993cb57b4de"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/rebuild/upstream-source-manifest.json",
+    "staged": "pin-hardware-v1/rebuild/upstream-source-manifest.json",
+    "sha256": "e6f87a9341061eaddf8b60dc14fbbd9e0bf01bb0a7aaf54734e870ac85943954"
+  },
+  {
+    "source": "hardware-compat-v1/navigation-overlay/AndroidManifest.xml",
+    "staged": "navigation-overlay/AndroidManifest.xml",
+    "sha256": "c83dfd9706779b826301f06bd3481d7608b3826180db71cc54600372cd489b64"
+  },
+  {
+    "source": "hardware-compat-v1/navigation-overlay/res/values/config.xml",
+    "staged": "navigation-overlay/res/values/config.xml",
+    "sha256": "d66f49899812d40dae0b25f4dce7484cc5f48e33ee3086a333f547774f8d81e7"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/overlay-source/AndroidManifest.xml",
+    "staged": "notification-led-v1/overlay-source/AndroidManifest.xml",
+    "sha256": "4213e060c7e193a28633961a6af11b9fc159b21f9df549e4c6fbea2e0120d93d"
+  },
+  {
+    "source": "hardware-compat-v1/notification-led-v1/overlay-source/res/values/config.xml",
+    "staged": "notification-led-v1/overlay-source/res/values/config.xml",
+    "sha256": "f017ea8d7ad945b1cc84e679ca07b18b8b75e077bd14a804f16febd942cd5e42"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/apk-source/CompareDex.java",
+    "staged": "pin-hardware-v1/apk-source/CompareDex.java",
+    "sha256": "8ee9eae298e8f691e514a219af393a3604c24b4dd28efbc969d10939105431d3"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/apk-source/prepare_unsigned.py",
+    "staged": "pin-hardware-v1/apk-source/prepare_unsigned.py",
+    "sha256": "0a77684137a54e6ef63fa711027230fb76a4b447f227e3eb104ab16199406f35"
+  },
+  {
+    "source": "hardware-compat-v1/pin-hardware-v1/apk-source/test_adapter.py",
+    "staged": "pin-hardware-v1/apk-source/test_adapter.py",
+    "sha256": "05d1b1e998f4e3fa178985f43aa4f526537eaac12d85560ecf640533620ef531"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/launcher/build_overlay.py",
+    "staged": "ui-spacing-v1/apk-source/launcher/build_overlay.py",
+    "sha256": "76ea2502285af27ab054eeeb00229bb6fd4bea30f724c9796faf384191934355"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/launcher/test_overlay.py",
+    "staged": "ui-spacing-v1/apk-source/launcher/test_overlay.py",
+    "sha256": "b0a64b5ad297792f3483c14588100fc679a64824dc7510ba4f49b3128c41c9ca"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/qs/patch_dex.py",
+    "staged": "ui-spacing-v1/apk-source/qs/patch_dex.py",
+    "sha256": "5dda64cdf4f7fab321b12c34c0a08d4b5378e06dba061d8c2ca6eab12db88f8f"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/qs/prepare_unsigned_ui.py",
+    "staged": "ui-spacing-v1/apk-source/qs/prepare_unsigned_ui.py",
+    "sha256": "6133f305db0908e3ad9f7c8034a62a2477cf7b16555642181d6911e1ce63a606"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/qs/test_repack.py",
+    "staged": "ui-spacing-v1/apk-source/qs/test_repack.py",
+    "sha256": "45b2c13af87a74c19462afec42706e5b0d240c87be82dc7e70311a836084ee94"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/qs/verify_candidate.py",
+    "staged": "ui-spacing-v1/apk-source/qs/verify_candidate.py",
+    "sha256": "0d335c85085b5dcc37d94750392f017accd6749b09d1ccb04731f7c35eae6be8"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/SignVerified.java",
+    "staged": "ui-spacing-v1/apk-source/SignVerified.java",
+    "sha256": "1f116925e4ae31454040724bbe8cd1d9848b1fad75ccb56e517db974d9686442"
+  },
+  {
+    "source": "hardware-compat-v1/ui-spacing-v1/apk-source/source-manifest.json",
+    "staged": "ui-spacing-v1/apk-source/source-manifest.json",
+    "sha256": "5d4bd44d089a27fec8bc8cda8898220e828f588f20cce909b61df6534b607a71"
+  },
+  {
+    "source": "hardware-compat-v1/camera-layout-fix/patch_layout_dex.py",
+    "staged": "camera-layout-fix/patch_layout_dex.py",
+    "sha256": "4a347d55739196512612a7f143eb2faf295020df5153ebecf08493cea20ebe37"
+  },
+  {
+    "source": "hardware-compat-v1/camera-layout-fix/verify_candidate.py",
+    "staged": "camera-layout-fix/verify_candidate.py",
+    "sha256": "0f7819f44a4a510a5a6846f03b512ff636b28893cd26389d0d5d66e6c84e471a"
+  },
+  {
+    "source": "hardware-compat-v1/camera-app-update/SignCamera.java",
+    "staged": "camera-app-update/SignCamera.java",
+    "sha256": "c4d6a870ff1fee66bf07d135fee2474690d81b11981c70c57e498abd956963c1"
+  },
+  {
+    "source": "hardware-compat-v1/camera-app-update/build-tool-pins.json",
+    "staged": "camera-app-update/build-tool-pins.json",
+    "sha256": "cd9c77c3f04f1648611cda6e6b74749c76cb22595030d2fd40077dd78b86379a"
+  },
+  {
+    "source": "hardware-compat-v1/camera-app-update/public-signing-source.json",
+    "staged": "camera-app-update/public-signing-source.json",
+    "sha256": "3e47a236aa2dc12104b77c1aa6dfb5df96526002525cc4ffaae6733f15f1b631"
+  },
+  {
+    "source": "keyboard-layout-v1/AndroidManifest.xml",
+    "staged": "keyboard-layout-v1/AndroidManifest.xml",
+    "sha256": "30353a77d004045d0d8c94473ffb789b36cee423939cdf27a987b7402c942a43"
+  },
+  {
+    "source": "keyboard-layout-v1/HelperSignature.java",
+    "staged": "keyboard-layout-v1/HelperSignature.java",
+    "sha256": "78bc46c918a49854a8bea618f3b7d0e54c55c32c678f62add007e4b604d6aa0f"
+  },
+  {
+    "source": "keyboard-layout-v1/package_apk.py",
+    "staged": "keyboard-layout-v1/package_apk.py",
+    "sha256": "e161b0da616d6dc949da47c8a25a74182e9f2fc6337b7d8202e6699e7326d4e1"
+  },
+  {
+    "source": "keyboard-layout-v1/verify.py",
+    "staged": "keyboard-layout-v1/verify.py",
+    "sha256": "ee6bda0e440595624f9d520069ceb8e59e70dfe3c350fd3b3616854d5728afcd"
+  },
+  {
+    "source": "keyboard-layout-v1/res/raw/titan_pocket_symbols.kcm",
+    "staged": "keyboard-layout-v1/res/raw/titan_pocket_symbols.kcm",
+    "sha256": "e5e89ec2d43e99ae59f4c0aaa262a4b6b67ff233ffe613c7b822561c6b54647d"
+  },
+  {
+    "source": "keyboard-layout-v1/res/values/strings.xml",
+    "staged": "keyboard-layout-v1/res/values/strings.xml",
+    "sha256": "0b6a58f6165fd2da6dcdbdbb8d9c47727116b003011aaf35b1e402199399481d"
+  },
+  {
+    "source": "keyboard-layout-v1/res/xml/keyboard_layouts.xml",
+    "staged": "keyboard-layout-v1/res/xml/keyboard_layouts.xml",
+    "sha256": "432a34141848c5b12fb55564527ad0a675339c6ccae729ee2d49435ec76e9af7"
+  },
+  {
+    "source": "keyboard-layout-v1/smali/org/titanpocket/keyboard/KeyboardLayoutReceiver.smali",
+    "staged": "keyboard-layout-v1/smali/org/titanpocket/keyboard/KeyboardLayoutReceiver.smali",
+    "sha256": "32b7ac0ce2390e2c30cf6a40f490d1e48a7eb1816255cd2da4eae87618793e93"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-module/titan-controller-compat.patch",
+    "staged": "bluetooth-module/titan-controller-compat.patch",
+    "sha256": "7650c8ae33c3f405dfc012deb6201a61cf583afd5b3223fae06d49193bfee935"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-module/rebuild-v2/helpers/zip_helpers.py",
+    "staged": "bluetooth-module/rebuild-v2/helpers/zip_helpers.py",
+    "sha256": "39327f1f8c8f7fb5f349acec99dbeac4c9a53eaa2896c8001185d8f93d8626b9"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-module/rebuild-v2/rebuild.py",
+    "staged": "bluetooth-module/rebuild-v2/rebuild.py",
+    "sha256": "ef63778b5c9535be8967c8e03a422384ac6b486e10e2e07b644d126f1b7c2f59"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-module/rebuild-v2/source-manifest.json",
+    "staged": "bluetooth-module/rebuild-v2/source-manifest.json",
+    "sha256": "300239f7e0db5bb61416351d6dc5b55d44dacead8897749b2b700d3d6a8bd813",
+    "original_sha256": "9bd31198ea084e9bc8f9cc6693c8e932f359c50c0f110486029aa4da578dfcda",
+    "sanitized": true
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-module/rebuild-v2/integration-guard.json",
+    "staged": "bluetooth-module/rebuild-v2/integration-guard.json",
+    "sha256": "e329d6c792da48be3bf1b4dd01ecf2318b640f516973fc0f8dfb2358c6924ce9"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-system/rebuild-v2/build_system.py",
+    "staged": "bluetooth-system/rebuild-v2/build_system.py",
+    "sha256": "29c7cf1d84e1b7234d22d2febd30fef3fdd55163419ea19c2817774075578ccc"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-system/rebuild-v2/helpers/check_google_dsu_pair_avb.py",
+    "staged": "bluetooth-system/rebuild-v2/helpers/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-system/rebuild-v2/helpers/image_helpers.py",
+    "staged": "bluetooth-system/rebuild-v2/helpers/image_helpers.py",
+    "sha256": "045723612eef830073882a645359e98d1580b9854f8907766a2687c8d7717b30"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-system/rebuild-v2/helpers/inventory_helpers.py",
+    "staged": "bluetooth-system/rebuild-v2/helpers/inventory_helpers.py",
+    "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-system/rebuild-v2/test_scope.py",
+    "staged": "bluetooth-system/rebuild-v2/test_scope.py",
+    "sha256": "c40bbd24545f05f2e0cf13b5e194bcd22ddf47e5b4e31fcba46e690f0b53dc5b"
+  },
+  {
+    "source": "hardware-compat-v1/bluetooth-system/rebuild-v2/source-manifest.json",
+    "staged": "bluetooth-system/rebuild-v2/source-manifest.json",
+    "sha256": "85fc96038bf5788dee87019e0efcc44e35af8f755340b4006f86d9fc6ffb8583"
+  },
+  {
+    "source": "bpf-label-compat-v1/adapter/clat_label_adapter.py",
+    "staged": "legacy-kernel/clat-label/clat_label_adapter.py",
+    "sha256": "2400609dcb312a4603e17d888ff338d57c75010a9201d1ec120ef40b56af343b"
+  },
+  {
+    "source": "bpf-label-compat-v1/adapter/test_clat_label_adapter.py",
+    "staged": "legacy-kernel/clat-label/test_clat_label_adapter.py",
+    "sha256": "1aefc863889ea3b0a1636b481e2f324739128af0de5b79d5373ca00fce13787e",
+    "original_sha256": "db7de1eff31117a9cb8dbc403f05858a9d7b780fa9612ea77ff02a36663cd919",
+    "sanitized": true
+  },
+  {
+    "source": "google-legacy-local-policy-v3/dex/patch.py",
+    "staged": "legacy-kernel/local-policy/patch.py",
+    "sha256": "17046b22b7fbec0c2604ca2b89a878fd972a4fb57c163a02d555766dbdaebaa6",
+    "original_sha256": "482ff131132ec382bfd156bccf6eeb5a00b2ea1fcfb67afa514206ef5c20c7d2",
+    "sanitized": true
+  },
+  {
+    "source": "google-legacy-local-policy-v3/dex/test_candidate.py",
+    "staged": "legacy-kernel/local-policy/test_candidate.py",
+    "sha256": "958fd6aba116bd3131521d8e51987932eccbbea27f4e57a23d4760a4bc41986f",
+    "original_sha256": "78ed9d693d46801189cdf4ebaf78b348e308f00c86b3d6d4f04c2233a1cc0315",
+    "sanitized": true
+  },
+  {
+    "source": "google-legacy-local-policy-v3/dex/DexTool.java",
+    "staged": "legacy-kernel/local-policy/DexTool.java",
+    "sha256": "c729e81b0352823b07aa3ee48da89d899b5e653f4a7e878d202fd7545845aef8"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/module/module.c",
+    "staged": "legacy-kernel/lpm-source/module/module.c",
+    "sha256": "054d56cd6ace489afa0183ea42f73f90b5f0531dc39f1d51b1cbeb8d7739b9a0"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/module/backport-functions.h",
+    "staged": "legacy-kernel/lpm-source/module/backport-functions.h",
+    "sha256": "1c6780902d7cb4edd5d5b205ac15c4ca1db4ef22ad37ce95726be053caae26c1"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/module/hook-test-body.h",
+    "staged": "legacy-kernel/lpm-source/module/hook-test-body.h",
+    "sha256": "a5daba09573f8724136671c39a1f348a77186b3164aaa165a3e164259a6a56db"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/module/test_guards.c",
+    "staged": "legacy-kernel/lpm-source/module/test_guards.c",
+    "sha256": "e01e0f8c45f75637202f1b749807a7e92ddd98893166e63b4559a1a5a087b47a"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/module/versions.h",
+    "staged": "legacy-kernel/lpm-source/module/versions.h",
+    "sha256": "fbc8d358fedf399b5a128aa2c7cb34740c89762938270187ef3749d1db321ade"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/module/validate_elf.py",
+    "staged": "legacy-kernel/lpm-source/module/validate_elf.py",
+    "sha256": "70978cbd28f4c9964ef2e7a44d0586ddf7584477417c46360f7352f7a0e0f9fd"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/v4.16-exact.patch",
+    "staged": "legacy-kernel/lpm-source/backport/v4.16-exact.patch",
+    "sha256": "dcf3bced98483273f440447068919380d12f1d9dd138931457efff887bf228a0"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/lpm-iterate-delete-backport.patch",
+    "staged": "legacy-kernel/lpm-source/backport/lpm-iterate-delete-backport.patch",
+    "sha256": "13aa039d4aa3e7995e5c46012b0b49bbe1ba364968b706dd782fefd4522cf969"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/lpm_trie-v4.16-exact-backport.c",
+    "staged": "legacy-kernel/lpm-source/backport/lpm_trie-v4.16-exact-backport.c",
+    "sha256": "4d75cc7585d70297bdf4fc3d36f0e98c0afb41c762e5ec115017d8f375d079d8"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/linux-v4.14.186-lpm_trie.c",
+    "staged": "legacy-kernel/lpm-source/backport/linux-v4.14.186-lpm_trie.c",
+    "sha256": "180e4c67b149e9aa76f8938a2396b423cf0423d8b09474bbefe0634e6a132479"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/linux-v4.16-lpm_trie.c",
+    "staged": "legacy-kernel/lpm-source/backport/linux-v4.16-lpm_trie.c",
+    "sha256": "4ba25d48fecd16ac1084306ab3e4b1cd2446540c41eddbca303d0e5b084e33e7"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/run_tests.py",
+    "staged": "legacy-kernel/lpm-source/backport/run_tests.py",
+    "sha256": "3da07081b1849d682e66952b0a2fcf545f8a67f9df70b2300972ad3896f849eb"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/test_iterator.c",
+    "staged": "legacy-kernel/lpm-source/backport/test_iterator.c",
+    "sha256": "08d0b528d1d6485ba815f763e39671ba1e8ff864aed4f99198fa0a0c265b11b3"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/corrected-iterator.h",
+    "staged": "legacy-kernel/lpm-source/backport/corrected-iterator.h",
+    "sha256": "0adf1febd953d766659a756fc225edce169a15c047e0b7c2e5b3aeccfef5946d"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/upstream-iterator.h",
+    "staged": "legacy-kernel/lpm-source/backport/upstream-iterator.h",
+    "sha256": "378699e564d7bf88c69642cda8e83f47ef8627dddc1ea777bdf1294099e9770d"
+  },
+  {
+    "source": "Research/scripts/build_connectivity_apex.py",
+    "staged": "boot-chain/build_connectivity_apex.py",
+    "sha256": "2cb7026325f1043e82566d264e2954f9f4c3578783f66040e1d80d2695a34259"
+  },
+  {
+    "source": "Research/scripts/build_dsu_system.py",
+    "staged": "boot-chain/build_dsu_system.py",
+    "sha256": "74101840e6a51c5489d07511de89abfe0cba31ed5da4ab38e98018befbc33ec9"
+  },
+  {
+    "source": "Research/scripts/build_google_cgroup_fix.py",
+    "staged": "boot-chain/build_google_cgroup_fix.py",
+    "sha256": "100c2370eff297c381a0086b793855f343d02ecdd4182251213a724db0304fef"
+  },
+  {
+    "source": "Research/scripts/build_google_connectivity.py",
+    "staged": "boot-chain/build_google_connectivity.py",
+    "sha256": "70965a1536071cf769a7b20766d91aba26ebe3879ba2ccd8318c8aa5b3d36f97"
+  },
+  {
+    "source": "Research/scripts/build_google_vndk_draft.py",
+    "staged": "boot-chain/build_google_vndk_draft.py",
+    "sha256": "34cdd090de0643a3cdeef78c2ea68379b1d685df21accb623f6e6c412cb6aa1a"
+  },
+  {
+    "source": "Research/scripts/check_dsu_system_avb.py",
+    "staged": "boot-chain/check_dsu_system_avb.py",
+    "sha256": "62a11d99178c85ee76d2003578c12845ba43d1ce0db33c5e169cac2f7a1f6fd0"
+  },
+  {
+    "source": "Research/scripts/check_google_dsu_pair_avb.py",
+    "staged": "boot-chain/check_google_dsu_pair_avb.py",
+    "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+  },
+  {
+    "source": "Research/scripts/check_google_source_patches.py",
+    "staged": "boot-chain/check_google_source_patches.py",
+    "sha256": "0f693ccfb50ea1c623916819d02fbaa6e2ad07e873df225a0f27cf89ccdce196"
+  },
+  {
+    "source": "Research/scripts/compare_vendor_trees.py",
+    "staged": "boot-chain/compare_vendor_trees.py",
+    "sha256": "aafebdea5d9181777816dab8094899c7af6cf2a2767066c0c3a70e3266212a77"
+  },
+  {
+    "source": "Research/scripts/fix_google_ir_feature.py",
+    "staged": "boot-chain/fix_google_ir_feature.py",
+    "sha256": "d79a97ad6c7d3b4b03c63a14fa662972e30a7a0077864b1bafbece2e7f073e35"
+  },
+  {
+    "source": "Research/scripts/fix_google_zygote_stdio.py",
+    "staged": "boot-chain/fix_google_zygote_stdio.py",
+    "sha256": "946bee89badbdc7a91dec9831169aa9a328f81d574909fc48377909762af5fd0"
+  },
+  {
+    "source": "Research/scripts/google_diag_build.py",
+    "staged": "boot-chain/google_diag_build.py",
+    "sha256": "f2b87b3d38cea5bfddfdf347e8a64aba55a6974187d4e87ad70568671111cd00"
+  },
+  {
+    "source": "Research/scripts/google_diag_exec_fixture.c",
+    "staged": "boot-chain/google_diag_exec_fixture.c",
+    "sha256": "3b134805eb9c398cee12946c1034961fa5df0b9c1d998a4275a15017ea709f07"
+  },
+  {
+    "source": "Research/scripts/google_diag_snapshot.c",
+    "staged": "boot-chain/google_diag_snapshot.c",
+    "sha256": "ce3b4886eb178c510d6f933c9c603224b2c00451e120c6b288155edd09122a91"
+  },
+  {
+    "source": "Research/scripts/inspect_kernel_bpf.py",
+    "staged": "boot-chain/inspect_kernel_bpf.py",
+    "sha256": "0f98888fa7286594fa1c96757217ed904282c47c2b29c3d5ffedfdbda6a1abc7"
+  },
+  {
+    "source": "Research/scripts/integrate_google_connectivity.py",
+    "staged": "boot-chain/integrate_google_connectivity.py",
+    "sha256": "76b9d92f8a3e1b76861ec5cc401801562c4214a4393a74c29e711ee6d0e2b1fc"
+  },
+  {
+    "source": "Research/scripts/integrate_google_policy.py",
+    "staged": "boot-chain/integrate_google_policy.py",
+    "sha256": "7d5cd35e416df266e5d3784e67179921545d62080f2693d64753f41d888e856a"
+  },
+  {
+    "source": "Research/scripts/integrate_google_system_policy30.py",
+    "staged": "boot-chain/integrate_google_system_policy30.py",
+    "sha256": "f64c828101215567a29f4bc0ee80299a613529f7275de8421a34dfcf9d0e8d49"
+  },
+  {
+    "source": "Research/scripts/integrate_vendor_policy.py",
+    "staged": "boot-chain/integrate_vendor_policy.py",
+    "sha256": "23a120ace234fb862b63c78a227a35080da9d589e2cea62251c5584507d4ede4"
+  },
+  {
+    "source": "Research/scripts/inventory_candidate_product.py",
+    "staged": "boot-chain/inventory_candidate_product.py",
+    "sha256": "f2d78bc04830ab524705c2cca9a869905e2fdef16fe904c1d40ceb906a4b30e4"
+  },
+  {
+    "source": "Research/scripts/patch_google_network_gates.py",
+    "staged": "boot-chain/patch_google_network_gates.py",
+    "sha256": "8138923020fbd9c90f4b0e73524635e9b0bd1d98e571b7c415d5e8cd7f673939"
+  },
+  {
+    "source": "Research/scripts/prepare_bpf_array_semantics.py",
+    "staged": "boot-chain/prepare_bpf_array_semantics.py",
+    "sha256": "a0e7f94f9c690c4524e98eb2e1b41a8fbc2c3ba7ce837320cc48a16f6a190e76"
+  },
+  {
+    "source": "Research/scripts/prepare_bpf_boot_derivative.py",
+    "staged": "boot-chain/prepare_bpf_boot_derivative.py",
+    "sha256": "cba6969eb12f0fd004c26ff788a294b94989e0856f5fe8ac79a88b34fbd3c6db"
+  },
+  {
+    "source": "Research/scripts/prepare_early_log_payload.py",
+    "staged": "boot-chain/prepare_early_log_payload.py",
+    "sha256": "3a67cb59df70e01a752b12d48cb6b65995791bad0134829a68319c4b4c08979b"
+  },
+  {
+    "source": "Research/scripts/prepare_google_early_log_guest.py",
+    "staged": "boot-chain/prepare_google_early_log_guest.py",
+    "sha256": "468655cec6a6da747f587385319090fe2e88a07e3c6e4c7e52ea121a14dde407"
+  },
+  {
+    "source": "Research/scripts/prepare_google_legacy_guest.py",
+    "staged": "boot-chain/prepare_google_legacy_guest.py",
+    "sha256": "d9f1d3ead729594bec1123aa165c09000dd106a47ebccb2e75d52ff2f69e6f4a"
+  },
+  {
+    "source": "Research/scripts/prepare_google_zygote_stdio_guest.py",
+    "staged": "boot-chain/prepare_google_zygote_stdio_guest.py",
+    "sha256": "14eb788bf60bc9b4dc535da25c4b4e4f71845b9b1797ee1f440d3976599e0b34"
+  },
+  {
+    "source": "Research/scripts/repair_google_legacy_config.py",
+    "staged": "boot-chain/repair_google_legacy_config.py",
+    "sha256": "a567fc58bccf06c8ec790921fec2cd24f31bfabbfe67971e61485326bbe6aceb"
+  },
+  {
+    "source": "Research/scripts/sign_dsu_product.py",
+    "staged": "boot-chain/sign_dsu_product.py",
+    "sha256": "1e84d1dabfda3042285c747522d57743ea11e0816cdf817a6b90e647aea5c176"
+  },
+  {
+    "source": "Research/scripts/sign_google_cgroup_system.py",
+    "staged": "boot-chain/sign_google_cgroup_system.py",
+    "sha256": "2539015caac43758b1875251a664b4193623780479ffdba75cda3d184da17b70"
+  },
+  {
+    "source": "Research/scripts/sign_google_dsu_pair.py",
+    "staged": "boot-chain/sign_google_dsu_pair.py",
+    "sha256": "74b0ecd1153809d24fb66d35df997acab4c4a79cfe8f388db81b94e57b8f7154"
+  },
+  {
+    "source": "Research/scripts/sign_google_early_log_guest.py",
+    "staged": "boot-chain/sign_google_early_log_guest.py",
+    "sha256": "5d5cd95a44ea70f87dfa76a1744ee0e6fe0016f4b9f508cd64cad5394ed59687"
+  },
+  {
+    "source": "Research/scripts/sign_google_legacy_guest.py",
+    "staged": "boot-chain/sign_google_legacy_guest.py",
+    "sha256": "d8301b872bab60b99fff470604b6a3881d5470f69250c49e576ac56dc3ef2b92"
+  },
+  {
+    "source": "Research/scripts/test_build_connectivity_apex.py",
+    "staged": "boot-chain/test_build_connectivity_apex.py",
+    "sha256": "621568dee1e02ef162d3fa75057ae8dcb501cd889b25d966bad623b4e3ae0234"
+  },
+  {
+    "source": "Research/scripts/test_build_dsu_system.py",
+    "staged": "boot-chain/test_build_dsu_system.py",
+    "sha256": "eb8d429dc8820b5cef2cc6ce183e87e43cf8bab345a6f6258a989de684980788"
+  },
+  {
+    "source": "Research/scripts/test_build_google_cgroup_fix.py",
+    "staged": "boot-chain/test_build_google_cgroup_fix.py",
+    "sha256": "e70ead80449f91d6766c55c82ad93c7fa0279168eaea7724e386a76618760ea1",
+    "original_sha256": "b6e572d74a6e8322fbfce1b8305c48fd3f077d1ef70989f5b59d961aae2fcc4f",
+    "sanitized": true
+  },
+  {
+    "source": "Research/scripts/test_build_google_connectivity.py",
+    "staged": "boot-chain/test_build_google_connectivity.py",
+    "sha256": "96128749cf66ea3e709d61a1f7714c0c5943d143b63b8e00087d8e3a851a93f5"
+  },
+  {
+    "source": "Research/scripts/test_build_google_vndk_draft.py",
+    "staged": "boot-chain/test_build_google_vndk_draft.py",
+    "sha256": "5771b2e994becb5bc13724e8cdccf71962e7ca1bd2409a114f17301777565bb4"
+  },
+  {
+    "source": "Research/scripts/test_check_dsu_system_avb.py",
+    "staged": "boot-chain/test_check_dsu_system_avb.py",
+    "sha256": "1cc40781d069aa52d359fd355237d8f7f3231264c6a833f785d54f365334e672"
+  },
+  {
+    "source": "Research/scripts/test_compare_vendor_trees.py",
+    "staged": "boot-chain/test_compare_vendor_trees.py",
+    "sha256": "78528db2a50d2aaa02f43342f8fd1e490f5f43e1adf597cdd28647db07154988"
+  },
+  {
+    "source": "Research/scripts/test_fix_google_ir_feature.py",
+    "staged": "boot-chain/test_fix_google_ir_feature.py",
+    "sha256": "714a2feb60a197bc25e1bf4229d73c035afa81f97f40c5a8af1d775d773a37a0"
+  },
+  {
+    "source": "Research/scripts/test_fix_google_zygote_stdio.py",
+    "staged": "boot-chain/test_fix_google_zygote_stdio.py",
+    "sha256": "55bc179ee61f880e427d98fa535087455ec68693baa9c6d60f0036613d0bcf28"
+  },
+  {
+    "source": "Research/scripts/test_google_diag_build.py",
+    "staged": "boot-chain/test_google_diag_build.py",
+    "sha256": "c852b91520e4f40d44746bf484b50d86de5a62b60d17f4c682c8a26084661ca4"
+  },
+  {
+    "source": "Research/scripts/test_inspect_kernel_bpf.py",
+    "staged": "boot-chain/test_inspect_kernel_bpf.py",
+    "sha256": "d3e707ccb9608baa78cd3dae20923aad5643bba8c29ca456411d0a1f76042ee6"
+  },
+  {
+    "source": "Research/scripts/test_integrate_google_connectivity.py",
+    "staged": "boot-chain/test_integrate_google_connectivity.py",
+    "sha256": "64d2fd92c901910b998ec448f3d88a734594df788c436a369d401f88086b1951"
+  },
+  {
+    "source": "Research/scripts/test_integrate_google_policy.py",
+    "staged": "boot-chain/test_integrate_google_policy.py",
+    "sha256": "20e4bd6592d4c2e59ca7a2f82dd4e0e246f52235c8b2bd1b1d26b2d46e818e19"
+  },
+  {
+    "source": "Research/scripts/test_integrate_google_system_policy30.py",
+    "staged": "boot-chain/test_integrate_google_system_policy30.py",
+    "sha256": "cdc2f8594d3a3db2269ca15fae00722057ad06aa6321c79a21dbb6b607b5e44a",
+    "original_sha256": "925d80580648b6b45d9e2e5312ddfe4379577b6bb43911294d90117221f3f253",
+    "sanitized": true
+  },
+  {
+    "source": "Research/scripts/test_integrate_vendor_policy.py",
+    "staged": "boot-chain/test_integrate_vendor_policy.py",
+    "sha256": "a159425a1a6300c2701a6fa68b827ef1cd65db146ab1b5f0046d4515a42fc025"
+  },
+  {
+    "source": "Research/scripts/test_inventory_candidate_product.py",
+    "staged": "boot-chain/test_inventory_candidate_product.py",
+    "sha256": "635f493aa54664ceb1c2f9dab75d74bd8edd606dd1286e36c1159d0ee53ab22b"
+  },
+  {
+    "source": "Research/scripts/test_patch_google_network_gates.py",
+    "staged": "boot-chain/test_patch_google_network_gates.py",
+    "sha256": "81d9003348452d5f22e2146314811e760c71beb1c5c2cb0871cc4068e5335733"
+  },
+  {
+    "source": "Research/scripts/test_prepare_bpf_boot_derivative.py",
+    "staged": "boot-chain/test_prepare_bpf_boot_derivative.py",
+    "sha256": "8de967770a93d8dbdf28e155e4f54605682d7e3d5f3435fc03f8c9463e71fdd4",
+    "original_sha256": "d2d12b0f214bc0703a651972c9d62f287e5b52a1c454a2129daded6381602f7d",
+    "sanitized": true
+  },
+  {
+    "source": "Research/scripts/test_prepare_early_log_payload.py",
+    "staged": "boot-chain/test_prepare_early_log_payload.py",
+    "sha256": "33d6935f48a338587044fc26d3f843764fd9afd73e8707c33dc12a41a2a198fb"
+  },
+  {
+    "source": "Research/scripts/test_prepare_google_early_log_guest.py",
+    "staged": "boot-chain/test_prepare_google_early_log_guest.py",
+    "sha256": "d16df7283b571bf0bdb5af6daf78fbc4ef388d921390bfaf51fabfd9d2efbb1e"
+  },
+  {
+    "source": "Research/scripts/test_prepare_google_legacy_guest.py",
+    "staged": "boot-chain/test_prepare_google_legacy_guest.py",
+    "sha256": "e07d82438b37de780ff45f7bd133759c4c86a98ced6426a138bac3c1967badba",
+    "original_sha256": "4af5aff702b9020321bd3ef17ee049ab6e976728944ca9d171235b8c56f35762",
+    "sanitized": true
+  },
+  {
+    "source": "Research/scripts/test_repair_google_legacy_config.py",
+    "staged": "boot-chain/test_repair_google_legacy_config.py",
+    "sha256": "fbbd2b6ba1f504614a56ddfac89ef935f6d56747af8ba9d0de44ca5d4b02ae5f"
+  },
+  {
+    "source": "Research/scripts/test_sign_google_cgroup_system.py",
+    "staged": "boot-chain/test_sign_google_cgroup_system.py",
+    "sha256": "baf9c988d91d4e72dd46be925d77087889b3162d952538030f5f1693fb346c8b",
+    "original_sha256": "bbb4516d0a1b795b2eb968f31c1f4122ca665109a5176ef3dbdd49272d9aff44",
+    "sanitized": true
+  },
+  {
+    "source": "Research/scripts/test_sign_google_dsu_pair.py",
+    "staged": "boot-chain/test_sign_google_dsu_pair.py",
+    "sha256": "b0f85f62ae5ab425807049fc47792129bdd9d391a23f8a37ab8aae58b8937ca6",
+    "original_sha256": "d62c49ae98aca00097155bfa4c6d657999840047d0ea0748c7c1b49b7830ec20",
+    "sanitized": true
+  },
+  {
+    "source": "Research/scripts/test_sign_google_early_log_guest.py",
+    "staged": "boot-chain/test_sign_google_early_log_guest.py",
+    "sha256": "386a43cd649c7851c55612a55056ed4b5bbbeb2f7e0ba9a8f72612843369a2d6"
+  },
+  {
+    "source": "Research/scripts/transform_policy_legacy_netlink.c",
+    "staged": "boot-chain/transform_policy_legacy_netlink.c",
+    "sha256": "61e851b414c19c7594a06bf120fb8e4d96ef6ce9a0541d5f324deb7b79d4c7cc"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/prepare.py",
+    "staged": "legacy-kernel/lpm-source/backport/prepare.py",
+    "sha256": "d28b5905c791694bae8b8413143e86126b64ae60cf084a5c30b8984679afa3ce"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/linux-v4.19.325-lpm_trie.c",
+    "staged": "legacy-kernel/lpm-source/backport/linux-v4.19.325-lpm_trie.c",
+    "sha256": "058cae425949550ff15f9d7d4252d78e7d3acd13249a58958c6f3a823a4fcb40"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/linux-v5.10.240-lpm_trie.c",
+    "staged": "legacy-kernel/lpm-source/backport/linux-v5.10.240-lpm_trie.c",
+    "sha256": "2d0b854140c172016b91a1d43dbdf03693f8b78976a2a24d61c6181fce717c1b"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/lpm_trie-backport.c",
+    "staged": "legacy-kernel/lpm-source/backport/lpm_trie-backport.c",
+    "sha256": "e068eba39f1343aed1df523e84cb92aa630b1482bffb65f92ea92cbddccda3fa"
+  },
+  {
+    "source": "kernel-lpm-backport-v1/backport/v4.19-iterator.h",
+    "staged": "legacy-kernel/lpm-source/backport/v4.19-iterator.h",
+    "sha256": "9ed0d5230198aa3b2be646a7c8dee7557d78ee382145dffca1677a3534eeeb34"
+  },
+  {
+    "source": "reconstructed from pinned fingerprint APK decoded configuration",
+    "staged": "fingerprint-overlay/build.py",
+    "sha256": "1f7f11f515fcf685f90b95e1ce15cb400c03343d28170b376476f5cd1561f16f",
+    "original_source_claimed": false
+  },
+  {
+    "source": "reconstructed from pinned fingerprint APK decoded configuration",
+    "staged": "fingerprint-overlay/expected-resources.txt",
+    "sha256": "5398cf7e451c59f056983b33d14ea174a744570a900a6a4b6a743570aee17e76",
+    "original_source_claimed": false
+  },
+  {
+    "source": "reconstructed from pinned fingerprint APK decoded configuration",
+    "staged": "fingerprint-overlay/AndroidManifest.xml",
+    "sha256": "eaeb5238f645968a574e708bbae1f01f5e5d46b322dde88cc4ea77fa558341c2",
+    "original_source_claimed": false
+  },
+  {
+    "source": "reconstructed from pinned fingerprint APK decoded configuration",
+    "staged": "fingerprint-overlay/reconstruction-verification.json",
+    "sha256": "b7a9ae0742ceebbe5af8d05bad17651034c82af13b4dce1cfb4a7afdc426205a",
+    "original_source_claimed": false
+  },
+  {
+    "source": "reconstructed from pinned fingerprint APK decoded configuration",
+    "staged": "fingerprint-overlay/expected-manifest.txt",
+    "sha256": "a8bd237890a826d28cd23a9e189d76df91d1c614ac97ab415805b9b87e60eccd",
+    "original_source_claimed": false
+  },
+  {
+    "source": "reconstructed from pinned fingerprint APK decoded configuration",
+    "staged": "fingerprint-overlay/res/values/config.xml",
+    "sha256": "5e03e7799d35f6a8e9f13433195083aca7dc534454fbfe219c802ecb73d645fc",
+    "original_source_claimed": false
+  },
+  {
+    "source": "stage documentation",
+    "staged": "README.md",
+    "sha256": "aa10d4ea4714a1c99b49257c3cd9fd031ce75766ebca46a79113a376a43a1d0f"
+  },
+  {
+    "source": "public-source-review/pin-hardware-v1/apk-source/transform_adapter.py",
+    "staged": "pin-hardware-v1/apk-source/transform_adapter.py",
+    "sha256": "d201bbbff2c64695e7042821288124e3c1dea1c9469874da6bfeccbb842b8c6c"
+  }
+]

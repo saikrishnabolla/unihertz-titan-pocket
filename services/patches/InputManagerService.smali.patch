@@ -1,0 +1,178 @@
+--- a/com/android/server/input/InputManagerService.smali
++++ b/com/android/server/input/InputManagerService.smali
+@@ -93,6 +93,10 @@
+ 
+ .field public final mModifierKeyRemapper:Lcom/android/server/input/ModifierKeyRemapper;
+ 
++.field private final mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++
++.field private mKeyboardSurfaceKeyguardManager:Landroid/app/KeyguardManager;
++
+ .field public final mNative:Lcom/android/server/input/NativeInputManagerService;
+ 
+ .field public mNextVibratorTokenValue:I
+@@ -1085,6 +1089,17 @@
+     move-result-object v4
+ 
+     iput-object v4, p0, Lcom/android/server/input/InputManagerService;->mNative:Lcom/android/server/input/NativeInputManagerService;
++
++    new-instance v5, Lcom/android/server/input/KeyboardSurfaceSessionPoster;
++    iget-object v6, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
++    invoke-direct {v5, v6}, Lcom/android/server/input/KeyboardSurfaceSessionPoster;-><init>(Landroid/os/Handler;)V
++    invoke-static {v5}, Lcom/android/server/input/NativeKeyboardSurfaceSession;->configure(Lcom/android/server/input/AsyncKeyboardSurfaceSessionPublisher$Poster;)V
++
++    new-instance v5, Lcom/android/server/input/KeyboardSurfaceSessionPublisher;
++    invoke-direct {v5}, Lcom/android/server/input/KeyboardSurfaceSessionPublisher;-><init>()V
++    new-instance v6, Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-direct {v6, v5}, Lcom/android/server/input/KeyboardSurfaceSessionState;-><init>(Ljava/util/function/Consumer;)V
++    iput-object v6, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
+ 
+     .line 587
+     new-instance v2, Lcom/android/server/input/InputSettingsObserver;
+@@ -1850,6 +1865,10 @@
+ 
+ .method private onUserSwitching(Lcom/android/server/SystemService$TargetUser;Lcom/android/server/SystemService$TargetUser;)V
+     .registers 5
++
++    iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v0}, Lcom/android/server/input/KeyboardSurfaceSessionState;->failed()V
++
+ 
+     .line 3814
+     sget-boolean v0, Lcom/android/server/input/InputManagerService;->DEBUG:Z
+@@ -10967,6 +10986,11 @@
+ 
+     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mDisplayManagerInternal:Landroid/hardware/display/DisplayManagerInternal;
+ 
++    iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
++    new-instance v1, Lcom/android/server/input/KeyboardSurfaceSessionInitializer;
++    invoke-direct {v1, p0}, Lcom/android/server/input/KeyboardSurfaceSessionInitializer;-><init>(Lcom/android/server/input/InputManagerService;)V
++    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++
+     .line 688
+     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mSettingsObserver:Lcom/android/server/input/InputSettingsObserver;
+ 
+@@ -12607,3 +12631,123 @@
+ 
+     return p0
+ .end method
++
++
++.method final initializeKeyboardSurfaceSession()V
++    .registers 7
++    :try_start
++    iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
++    const-class v1, Landroid/app/KeyguardManager;
++    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
++    move-result-object v0
++    check-cast v0, Landroid/app/KeyguardManager;
++    iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceKeyguardManager:Landroid/app/KeyguardManager;
++    if-eqz v0, :unavailable
++    iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
++    if-eqz v1, :unavailable
++    new-instance v1, Lcom/android/server/input/KeyboardSurfaceSessionExecutor;
++    iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
++    iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-direct {v1, v2, v3}, Lcom/android/server/input/KeyboardSurfaceSessionExecutor;-><init>(Landroid/os/Handler;Lcom/android/server/input/KeyboardSurfaceSessionState;)V
++    new-instance v2, Lcom/android/server/input/KeyboardSurfaceKeyguardListener;
++    invoke-direct {v2, p0}, Lcom/android/server/input/KeyboardSurfaceKeyguardListener;-><init>(Lcom/android/server/input/InputManagerService;)V
++    invoke-virtual {v0, v1, v2}, Landroid/app/KeyguardManager;->addKeyguardLockedStateListener(Ljava/util/concurrent/Executor;Landroid/app/KeyguardManager$KeyguardLockedStateListener;)V
++    const-class v0, Lcom/android/server/wm/WindowManagerInternal;
++    invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
++    move-result-object v0
++    check-cast v0, Lcom/android/server/wm/WindowManagerInternal;
++    if-eqz v0, :keyguard_unavailable
++    invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerInternal;->isKeyguardShowing()Z
++    move-result v0
++    iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v1, v0}, Lcom/android/server/input/KeyboardSurfaceSessionState;->keyguardReady(Z)V
++    iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
++    const-class v1, Landroid/os/PowerManager;
++    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
++    move-result-object v0
++    check-cast v0, Landroid/os/PowerManager;
++    if-eqz v0, :unavailable
++    const/4 v1, 0x0
++    invoke-virtual {v0, v1}, Landroid/os/PowerManager;->isInteractive(I)Z
++    move-result v0
++    iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    const/4 v2, 0x1
++    invoke-virtual {v1, v2, v0}, Lcom/android/server/input/KeyboardSurfaceSessionState;->initializeInteractivity(ZZ)V
++    goto :done
++    :unavailable
++    new-instance v0, Ljava/lang/IllegalStateException;
++    const-string v1, "Keyboard surface state is unavailable"
++    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
++    throw v0
++    :keyguard_unavailable
++    new-instance v0, Ljava/lang/IllegalStateException;
++    const-string v1, "Keyboard surface keyguard source is unavailable"
++    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
++    throw v0
++    :try_end
++    .catch Ljava/lang/RuntimeException; {:try_start .. :try_end} :failed
++    :failed
++    move-exception v0
++    iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v1}, Lcom/android/server/input/KeyboardSurfaceSessionState;->failed()V
++    const-string v1, "InputManager"
++    const-string v2, "Keyboard surface remains blocked: session initialization unavailable"
++    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
++    :done
++    return-void
++.end method
++
++.method final refreshKeyboardSurfaceKeyguard(Z)V
++    .registers 5
++    if-eqz p1, :read_current
++    iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v0}, Lcom/android/server/input/KeyboardSurfaceSessionState;->keyguardLockedEdge()V
++    return-void
++    :read_current
++    :try_start
++    const-class v0, Lcom/android/server/wm/WindowManagerInternal;
++    invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
++    move-result-object v0
++    check-cast v0, Lcom/android/server/wm/WindowManagerInternal;
++    if-eqz v0, :keyguard_unavailable
++    invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerInternal;->isKeyguardShowing()Z
++    move-result v0
++    iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v1, v0}, Lcom/android/server/input/KeyboardSurfaceSessionState;->keyguardChanged(Z)V
++    goto :keyguard_complete
++    :keyguard_unavailable
++    new-instance v0, Ljava/lang/IllegalStateException;
++    const-string v1, "Keyboard surface keyguard source is unavailable"
++    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
++    throw v0
++    :try_end
++    .catch Ljava/lang/RuntimeException; {:try_start .. :try_end} :failed
++    :keyguard_complete
++    return-void
++    :failed
++    move-exception v0
++    iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v1}, Lcom/android/server/input/KeyboardSurfaceSessionState;->failed()V
++    const-string v1, "InputManager"
++    const-string v2, "Keyboard surface blocked: keyguard state unavailable"
++    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
++    return-void
++.end method
++
++.method final keyboardSurfaceInteractivityChanged(Landroid/util/SparseBooleanArray;)V
++    .registers 5
++    const/4 v0, 0x0
++    invoke-virtual {p1, v0}, Landroid/util/SparseBooleanArray;->indexOfKey(I)I
++    move-result v1
++    if-ltz v1, :unknown
++    const/4 v1, 0x1
++    goto :read_value
++    :unknown
++    const/4 v1, 0x0
++    :read_value
++    invoke-virtual {p1, v0}, Landroid/util/SparseBooleanArray;->get(I)Z
++    move-result v0
++    iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mKeyboardSurfaceSession:Lcom/android/server/input/KeyboardSurfaceSessionState;
++    invoke-virtual {v2, v1, v0}, Lcom/android/server/input/KeyboardSurfaceSessionState;->interactiveChanged(ZZ)V
++    return-void
++.end method

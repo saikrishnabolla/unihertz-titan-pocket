@@ -1,0 +1,23 @@
+--- a/com/android/server/input/InputManagerService$LocalService.smali
++++ b/com/android/server/input/InputManagerService$LocalService.smali
+@@ -710,7 +710,9 @@
+ .end method
+ 
+ .method public setDisplayInteractivities(Landroid/util/SparseBooleanArray;)V
+-    .registers 7
++    .registers 8
++
++    move-object v5, p1
+ 
+     .line 4355
+     new-instance v0, Landroid/util/ArraySet;
+@@ -785,6 +787,9 @@
+ 
+     .line 4365
+     invoke-interface {p1, v0}, Lcom/android/server/input/NativeInputManagerService;->setNonInteractiveDisplays([I)V
++
++    iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
++    invoke-virtual {v0, v5}, Lcom/android/server/input/InputManagerService;->keyboardSurfaceInteractivityChanged(Landroid/util/SparseBooleanArray;)V
+ 
+     .line 4367
+     iget-object p1, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;

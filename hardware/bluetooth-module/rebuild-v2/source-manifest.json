@@ -1,0 +1,64 @@
+{
+  "provenance": [
+    {
+      "source": "Research/scripts/build_connectivity_apex.py",
+      "sha256": "2cb7026325f1043e82566d264e2954f9f4c3578783f66040e1d80d2695a34259"
+    },
+    {
+      "source": "titan-bpf-label-v1/retained/avbtool.py",
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    },
+    {
+      "source": "titan-bpf-label-v1/apksig-9.5.0.jar",
+      "sha256": "7ae2e5980c77d853e3513074ee7c822bbdcdcde1668889d17faa7fe8bc8aa821"
+    },
+    {
+      "source": "titan-bpf-label-v1/ApexSignature.java",
+      "sha256": "5e29bbafddb3ef688068219407f68c2269acd7d617ff511f829af254e5630334"
+    },
+    {
+      "source": "artifacts/hardware-compat-v1/bluetooth-module/build_offline_apex.py",
+      "sha256": "2c303b43a144daae07643f6318bce32896be7defd676d929d4e71e9788d3e61c"
+    }
+  ],
+  "external_tools": {
+    "debugfs": {
+      "sha256": "814284f7a5147a0286983fbc1dd64f3969826e5501b03f3fc05225f45287f2c9"
+    },
+    "e2fsck": {
+      "sha256": "a14c5f8efe8ccf099e6048efbd5f8aabf3938676b55457e4462b3a6e7461bf9e"
+    },
+    "java": {
+      "sha256": "ef037d39b4f8d90ab14312e2aa4238a1642640ee024ac3d399a42702725f47a9"
+    },
+    "openssl": {
+      "sha256": "49db04c17e3a8c169ebc48a1149d78c165a86c04913203f46b2a14ce7f4a14fc"
+    }
+  },
+  "bundle_files": [
+    {
+      "path": "rebuild.py",
+      "sha256": "ef63778b5c9535be8967c8e03a422384ac6b486e10e2e07b644d126f1b7c2f59"
+    },
+    {
+      "path": "integration-guard.json",
+      "sha256": "e329d6c792da48be3bf1b4dd01ecf2318b640f516973fc0f8dfb2358c6924ce9"
+    },
+    {
+      "path": "helpers/zip_helpers.py",
+      "sha256": "39327f1f8c8f7fb5f349acec99dbeac4c9a53eaa2896c8001185d8f93d8626b9"
+    },
+    {
+      "path": "tools/ApexSignature.java",
+      "sha256": "5e29bbafddb3ef688068219407f68c2269acd7d617ff511f829af254e5630334"
+    },
+    {
+      "path": "tools/apksig-9.5.0.jar",
+      "sha256": "7ae2e5980c77d853e3513074ee7c822bbdcdcde1668889d17faa7fe8bc8aa821"
+    },
+    {
+      "path": "tools/avbtool.py",
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    }
+  ]
+}

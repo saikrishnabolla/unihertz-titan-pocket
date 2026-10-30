@@ -1,0 +1,18 @@
+N: android=http://schemas.android.com/apk/res/android
+  E: manifest
+    A: http://schemas.android.com/apk/res/android:compileSdkVersion(0x01010572)=37
+    A: http://schemas.android.com/apk/res/android:compileSdkVersionCodename(0x01010573)="17" (Raw: "17")
+    A: package="org.titanpocket.overlay.fingerprint" (Raw: "org.titanpocket.overlay.fingerprint")
+    A: platformBuildVersionCode=37
+    A: platformBuildVersionName=17
+      E: uses-sdk
+        A: http://schemas.android.com/apk/res/android:minSdkVersion(0x0101020c)=37
+        A: http://schemas.android.com/apk/res/android:targetSdkVersion(0x01010270)=37
+      E: application
+        A: http://schemas.android.com/apk/res/android:hasCode(0x0101000c)=false
+      E: overlay
+        A: http://schemas.android.com/apk/res/android:priority(0x0101001c)=500
+        A: http://schemas.android.com/apk/res/android:targetPackage(0x01010021)="android" (Raw: "android")
+        A: http://schemas.android.com/apk/res/android:isStatic(0x0101055a)=true
+        A: http://schemas.android.com/apk/res/android:requiredSystemPropertyName(0x01010565)="ro.product.vendor.device" (Raw: "ro.product.vendor.device")
+        A: http://schemas.android.com/apk/res/android:requiredSystemPropertyValue(0x01010566)="Titan_pocket" (Raw: "Titan_pocket")

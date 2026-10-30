@@ -1,0 +1,3 @@
+<keyboard-layouts xmlns:android="http://schemas.android.com/apk/res/android">
+  <keyboard-layout android:name="titan_pocket_symbols" android:label="@string/layout_label" android:keyboardLayout="@raw/titan_pocket_symbols" android:keyboardLocale="en-US" android:keyboardLayoutType="qwerty" />
+</keyboard-layouts>

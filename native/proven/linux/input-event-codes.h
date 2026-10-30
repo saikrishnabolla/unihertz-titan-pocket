@@ -1,0 +1,19 @@
+#pragma once
+#define EV_SYN 0
+#define EV_ABS 3
+#define SYN_MT_REPORT 2
+#define ABS_MT_SLOT 47
+#define ABS_MT_TOUCH_MAJOR 48
+#define ABS_MT_TOUCH_MINOR 49
+#define ABS_MT_WIDTH_MAJOR 50
+#define ABS_MT_WIDTH_MINOR 51
+#define ABS_MT_ORIENTATION 52
+#define ABS_MT_POSITION_X 53
+#define ABS_MT_POSITION_Y 54
+#define ABS_MT_TOOL_TYPE 55
+#define ABS_MT_TRACKING_ID 57
+#define ABS_MT_PRESSURE 58
+#define ABS_MT_DISTANCE 59
+#define MT_TOOL_FINGER 0
+#define MT_TOOL_PEN 1
+#define MT_TOOL_PALM 2

@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.titanpocket.overlay.notifications">
+    <uses-sdk android:minSdkVersion="37" android:targetSdkVersion="37" />
+    <application android:hasCode="false" />
+    <overlay android:targetPackage="android" android:isStatic="true" android:priority="500"
+        android:requiredSystemPropertyName="ro.product.vendor.device"
+        android:requiredSystemPropertyValue="Titan_pocket" />
+</manifest>

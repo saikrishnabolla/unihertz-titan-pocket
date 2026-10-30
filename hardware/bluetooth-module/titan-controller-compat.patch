@@ -1,0 +1,51 @@
+--- a/system/gd/hci/controller_impl.cc
++++ b/system/gd/hci/controller_impl.cc
+@@ -16,6 +16,8 @@
+ 
+ #include "hci/controller_impl.h"
+ 
++#include <sys/utsname.h>
++
+ #include <android_bluetooth_sysprop.h>
+ #include <bluetooth/log.h>
+ #include <bluetooth/metrics/os_metrics.h>
+@@ -29,6 +31,7 @@
+ #include "hci/controller.h"
+ #include "hci/event_checkers.h"
+ #include "hci/hci_interface.h"
++#include "hci/titan_controller_compat.h"
+ #include "os/system_properties.h"
+ #include "stack/include/hcidefs.h"
+ 
+@@ -236,7 +239,14 @@
+               handler_->BindOnceOn(this, &ControllerImpl::impl::le_set_host_feature_handler));
+     }
+ 
+-    if (is_supported(OpCode::READ_DEFAULT_ERRONEOUS_DATA_REPORTING)) {
++    struct utsname kernel {};
++    const bool skip_erroneous_data_query =
++            uname(&kernel) == 0 &&
++            IsTitanPocketLegacyBluetooth(
++                    os::GetSystemProperty("ro.product.vendor.device").value_or(""),
++                    os::GetSystemProperty("ro.board.platform").value_or(""), kernel.release);
++    if (!skip_erroneous_data_query &&
++        is_supported(OpCode::READ_DEFAULT_ERRONEOUS_DATA_REPORTING)) {
+       hci_->EnqueueCommand(
+               ReadDefaultErroneousDataReportingBuilder::Create(),
+               handler_->BindOnceOn(
+--- /dev/null
++++ b/system/gd/hci/titan_controller_compat.h
+@@ -0,0 +1,13 @@
++/* SPDX-License-Identifier: Apache-2.0 */
++#pragma once
++
++#include <string_view>
++
++namespace bluetooth::hci {
++// This controller advertises an optional command with an incompatible response.
++inline bool IsTitanPocketLegacyBluetooth(std::string_view device, std::string_view platform,
++                                         std::string_view release) {
++  return device == "Titan_pocket" && platform == "mt6771" &&
++         release == "4.14.186-g40b2a1864-dirty";
++}
++}  // namespace bluetooth::hci

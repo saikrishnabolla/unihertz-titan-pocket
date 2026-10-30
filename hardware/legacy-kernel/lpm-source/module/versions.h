@@ -1,0 +1,18 @@
+static const struct modversion_info titan_versions[] __used __attribute__((section("__versions"))) = {
+    { 0xd2b09ce5UL, "__kmalloc" },
+    { 0xf0fdf6cbUL, "__stack_chk_fail" },
+    { 0x8f678b07UL, "__stack_chk_guard" },
+    { 0x96220280UL, "_raw_spin_lock_irqsave" },
+    { 0x97fdbab9UL, "_raw_spin_unlock_irqrestore" },
+    { 0xa04f945aUL, "cpus_read_lock" },
+    { 0x18fb2cafUL, "cpus_read_unlock" },
+    { 0x92aa4d55UL, "init_uts_ns" },
+    { 0xe007de41UL, "kallsyms_lookup_name" },
+    { 0x37a0cbaUL, "kfree" },
+    { 0x19f462abUL, "kfree_call_rcu" },
+    { 0x4829a47eUL, "memcpy" },
+    { 0x65ed7447UL, "module_layout" },
+    { 0x37ac74baUL, "param_ops_uint" },
+    { 0x985558a1UL, "printk" },
+    { 0xf9be19d7UL, "try_module_get" },
+};

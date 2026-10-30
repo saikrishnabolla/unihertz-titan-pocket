@@ -1,0 +1,35 @@
+{
+  "status": "portable source only; no signing/device/SYSTEM build",
+  "files": {
+    "README.md": "0d5bc01d1daabcde458f96b7165bebfbc361b62e9eba288f22217fa66c9b98b0",
+    "launcher/aapt2-download.json": "dcd121960fc14f8eec8100e268133bd0577fdfcefcd2ea4f6b3ba3d01952fae6",
+    "launcher/build_overlay.py": "76ea2502285af27ab054eeeb00229bb6fd4bea30f724c9796faf384191934355",
+    "launcher/input-pins.json": "5149787b0306f27b6049102ddd964442331e6b81f979ffa3357ae88d91e7e522",
+    "launcher/layout-source-excerpts.json": "b851ab5c197ccef391c5b943d47a38c6cf62738bacd3d0db640d1540f2fc42fd",
+    "launcher/sources/IdmapManager.smali": "c5ac3eeaff596aa4bb05c6fe259c92ad0ddec4edebc7f34d542e659d9dfdc0e9",
+    "launcher/sources/ResourceMapping.cpp": "fa92295a7fd820818c1c343c10b2a22ed6ed3717981f3a96645e1f12c3b50d5b",
+    "launcher/test-results.txt": "932171a9c2fc08e5e07c848c1c09c622dc4117a0f100022518debf0b52255376",
+    "launcher/test_overlay.py": "b0a64b5ad297792f3483c14588100fc679a64824dc7510ba4f49b3128c41c9ca",
+    "qs/independent-compare.json": "9f37b1f30d54108952e16777a8ea037c63a04001878a4e25ba9db6db9706d9f1",
+    "qs/layout-helper-smali/androidx/compose/foundation/layout/PaddingKt.smali": "23deeb0023adbba1b57651911776e72a19b269f17397224b5a2a2f38dea5cac2",
+    "qs/method-identity.json": "9231ff49db83b33e4cad9ef184a23abc24cc25282bde2b900e0cb0f24f0dcf1e",
+    "qs/original-smali/com/android/systemui/shade/ui/composable/ShadeSceneKt$$ExternalSyntheticLambda20.smali": "b6b50d0c7fde5cd91d6d28fc6db1a95fc36415fb38b301f1c099aaf1a64beed9",
+    "qs/patch_dex.py": "5dda64cdf4f7fab321b12c34c0a08d4b5378e06dba061d8c2ca6eab12db88f8f",
+    "qs/patched-smali/com/android/systemui/shade/ui/composable/ShadeSceneKt$$ExternalSyntheticLambda20.smali": "4658f94e4403b184655559e41f278cec6b0353e79c50d434ca60af7829fff52b",
+    "qs/platform-certificate-source.json": "f3bbf2745f694714a919717a033cf5be85bc6f9e3e07a7901b629006d264b29a",
+    "qs/platform.x509.pem": "9837de028f460c35cc8d3fa45f14eecce30f6fbfe4b93d399aef1acb80c20d14",
+    "qs/prepare_unsigned_ui.py": "6133f305db0908e3ad9f7c8034a62a2477cf7b16555642181d6911e1ce63a606",
+    "qs/repack-test-results.txt": "a376cff23194e3dde4769e5aaa183f5169ae9a59f7ef3d0f6230988c489c2c47",
+    "qs/smali.diff": "3141bba913018804bdde86ae3881a5a4e7c22170ea76436ab201365ef88db3b4",
+    "qs/test-results.txt": "1d07a878cd86d6a93658c1db8f333c72c43b1fcc762248414738b7a1416c80bd",
+    "qs/test_repack.py": "45b2c13af87a74c19462afec42706e5b0d240c87be82dc7e70311a836084ee94",
+    "qs/tool-pins.json": "9150a2b5415f94e6e0ce1ec992a50f15383d84b49c342e5c3bd44f200c1edcf6",
+    "qs/verify_candidate.py": "0d335c85085b5dcc37d94750392f017accd6749b09d1ccb04731f7c35eae6be8"
+  },
+  "tests_passed": {
+    "launcher": 10,
+    "qs_dex": 10,
+    "unsigned_repack": 3
+  },
+  "total_source_bytes": 101714
+}

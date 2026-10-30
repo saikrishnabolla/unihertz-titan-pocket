@@ -1,0 +1,21 @@
+[
+  "CombinedProbe.cpp",
+  "ProductionSink.cpp",
+  "NativeMotionAdapter.cpp",
+  "OriginalMetadata.cpp",
+  "OriginalApiResolver.cpp",
+  "OriginalViewportAdapter.cpp",
+  "TitanReaderLifecycle.cpp",
+  "TitanSessionRegistry.cpp",
+  "TitanSessionJni.cpp",
+  "DispatchEndpoint.cpp",
+  "proven/mapper/accumulator/MultiTouchMotionAccumulator.cpp",
+  "ReaderNotifyBoundary.cpp",
+  "FailureReset.cpp",
+  "RuntimePrerequisites.cpp",
+  "installed/InstalledHooks.cpp",
+  "PhysicalArbitration.cpp",
+  "ProductionBridge.cpp",
+  "NativeReaderOwner.cpp",
+  "Runtime.cpp"
+]

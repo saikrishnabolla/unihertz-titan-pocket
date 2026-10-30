@@ -1,0 +1,156 @@
+[
+  {
+    "source": "/system/framework/services.jar",
+    "local": "system_framework_services.jar",
+    "bytes": 25716529,
+    "sha256": "bc5d11f4f09ec079c5804a01008e8317a0854231502550acaff89aa9f1083a86",
+    "header_hex": "504b0304140000000000000021380c59a35564e1910064e191000b000300636c61737365732e6465780000006465780a3033390029ae06168c770b493bde418f",
+    "metadata": {
+      "stat": "Inode: 1886   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 25716529\nFile ACL: 0\nLinks: 1   Blockcount: 50240\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(ETB0):227297, (0-6195):221100-227295, (6196):482596, (6197):482597, (6198):482598, (6199):227296, (6200-6278):227298-227376\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/services.jar.fsv_meta",
+    "local": "system_framework_services.jar.fsv_meta",
+    "bytes": 212992,
+    "sha256": "c2ca6b5f07c10049786da9b88d6edabb73c9e1d80c144daebeb0478df95973b5",
+    "header_hex": "0100000001010c000000000031678801000000000758645a29a8a9ce3716467be30d23e38ffd002121c603d9326ec80b29b41b3e000000000000000000000000",
+    "metadata": {
+      "stat": "Inode: 1887   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 212992\nFile ACL: 0\nLinks: 1   Blockcount: 416\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-51):227377-227428\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/services.jar.prof",
+    "local": "system_framework_services.jar.prof",
+    "bytes": 46381,
+    "sha256": "c3df7cdbde9122400cb661bfd97097b57d210754c57d342924d7f7dce4bb7d08",
+    "header_hex": "70726f003031350004000000000000004c0000006a0000000000000001000000b6000000cd030000c20c00000200000083040000be040000920d000003000000",
+    "metadata": {
+      "stat": "Inode: 1888   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 46381\nFile ACL: 0\nLinks: 1   Blockcount: 96\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-11):227429-227440\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/services.jar.prof.fsv_meta",
+    "local": "system_framework_services.jar.prof.fsv_meta",
+    "bytes": 8192,
+    "sha256": "6004a080c8b435c81f2eb51161e0dcba5c89394bdfbcf2ed0bcde0723b7107d7",
+    "header_hex": "0100000001010c00000000002db5000000000000392a613ab855b2218cd2fa6dcc6da7df444d074efe145881ee07256a467aec7a000000000000000000000000",
+    "metadata": {
+      "stat": "Inode: 1889   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 8192\nFile ACL: 0\nLinks: 1   Blockcount: 16\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-1):227441-227442\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/oat/arm64/services.art",
+    "local": "system_framework_oat_arm64_services.art",
+    "bytes": 846256,
+    "sha256": "136688013dc80457a32efe4baa10bd11c8e0c400498121edb826bb01e908c542",
+    "header_hex": "6172740a31313900004021000100000000c03d720c0a21001416a568e0e1ea7c00005f7260065f72188ca1720040a2720000007000c03d0234000000d989ef7f",
+    "metadata": {
+      "stat": "Inode: 1850   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 846256\nFile ACL: 0\nLinks: 1   Blockcount: 1656\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-206):219547-219753\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/oat/arm64/services.art.fsv_meta",
+    "local": "system_framework_oat_arm64_services.art.fsv_meta",
+    "bytes": 16384,
+    "sha256": "3b75db18778c21cec4ac231c37e6aa576ce910374e8bb4168c215ada6d97a88c",
+    "header_hex": "0100000001010c0000000000b0e90c0000000000ea04ec9d98cbfc994149e7cfe4235e36e2963b346ef7a610752c985fc7182d23000000000000000000000000",
+    "metadata": {
+      "stat": "Inode: 1851   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 16384\nFile ACL: 0\nLinks: 1   Blockcount: 32\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-3):219754-219757\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/oat/arm64/services.odex",
+    "local": "system_framework_oat_arm64_services.odex",
+    "bytes": 4432792,
+    "sha256": "772f694c43e91f81adf9c286924737d5104e9aa37ab879aece65b57f6cb8ea0e",
+    "header_hex": "7f454c460201010300000000000000000300b700010000000000000000000000400000000000000098a04300000000000000000040003800070040000c000b00",
+    "metadata": {
+      "stat": "Inode: 1852   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 4432792\nFile ACL: 0\nLinks: 1   Blockcount: 8640\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-1056):219758-220814, (1060-1082):220815-220837\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/oat/arm64/services.odex.fsv_meta",
+    "local": "system_framework_oat_arm64_services.odex.fsv_meta",
+    "bytes": 45056,
+    "sha256": "1b7f38982414a81774118de91733bc12b0f3bbabff1f9c13769ab7af8183ee07",
+    "header_hex": "0100000001010c000000000098a3430000000000fb889aaf14f3085d603433f88f24ae11d34701d193ee1967e3e35b8bc8ddd7a3000000000000000000000000",
+    "metadata": {
+      "stat": "Inode: 1853   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 45056\nFile ACL: 0\nLinks: 1   Blockcount: 88\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-10):220838-220848\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/oat/arm64/services.vdex",
+    "local": "system_framework_oat_arm64_services.vdex",
+    "bytes": 378916,
+    "sha256": "8ccf1b991ff100b68138f3a92da6c4ad063ab6df965f98b80b795d379c662f1c",
+    "header_hex": "766465783032370004000000000000003c0000000c0000000100000000000000000000000200000048000000cec702000300000018c802000c0003000c59a355",
+    "metadata": {
+      "stat": "Inode: 1854   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 378916\nFile ACL: 0\nLinks: 1   Blockcount: 744\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-92):220849-220941\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/framework/oat/arm64/services.vdex.fsv_meta",
+    "local": "system_framework_oat_arm64_services.vdex.fsv_meta",
+    "bytes": 8192,
+    "sha256": "0b9e41c2e275c6f6084ee10c34a7061489be7359f60762826a3317bde2faac41",
+    "header_hex": "0100000001010c000000000024c8050000000000a31523b2e27c863fb533085945fbd0d5d0796090716f40f7d56a80c857fee114000000000000000000000000",
+    "metadata": {
+      "stat": "Inode: 1855   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 8192\nFile ACL: 0\nLinks: 1   Blockcount: 16\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0-1):220942-220943\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/etc/classpaths/bootclasspath.pb",
+    "local": "system_etc_classpaths_bootclasspath.pb",
+    "bytes": 822,
+    "sha256": "622b19c69a42e7fe377e166e39339484e58b4dd5ad9de93b5411076b2b7b1958",
+    "header_hex": "0a230a1f2f73797374656d2f6672616d65776f726b2f6672616d65776f726b2e6a617210010a230a1f2f73797374656d2f6672616d65776f726b2f6672616d65",
+    "metadata": {
+      "stat": "Inode: 694   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 822\nFile ACL: 0\nLinks: 1   Blockcount: 8\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0):104139\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/etc/classpaths/systemserverclasspath.pb",
+    "local": "system_etc_classpaths_systemserverclasspath.pb",
+    "bytes": 93,
+    "sha256": "4c93144d7ee0d12a19dd9ffbdebe5a4cd9e816ccf401225b8ad378a91dddc494",
+    "header_hex": "0a370a332f73797374656d2f6672616d65776f726b2f636f6d2e616e64726f69642e6c6f636174696f6e2e70726f76696465722e6a617210020a220a1e2f7379",
+    "metadata": {
+      "stat": "Inode: 696   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 93\nFile ACL: 0\nLinks: 1   Blockcount: 8\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\nEXTENTS:\n(0):104141\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/init.environ.rc",
+    "local": "init.environ.rc",
+    "bytes": 621,
+    "sha256": "460eecf019489a02ad7be82a9cc2234784f561b644f8f2bf1741e43514593060",
+    "header_hex": "23207365742075702074686520676c6f62616c20656e7669726f6e6d656e740a6f6e206561726c792d696e69740a202020206578706f727420414e44524f4944",
+    "metadata": {
+      "stat": "Inode: 26   Type: regular    Mode:  0750   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:  2000   Project:     0   Size: 621\nFile ACL: 0\nLinks: 1   Blockcount: 8\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (21) = \"u:object_r:rootfs:s0\\000\"\nEXTENTS:\n(0):35\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (21) = \"u:object_r:rootfs:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  },
+  {
+    "source": "/system/etc/selinux/plat_file_contexts",
+    "local": "system_etc_selinux_plat_file_contexts",
+    "bytes": 51177,
+    "sha256": "8268f97750cda3fd1b22b6f9dde56b579aead0e2b8cc2923d6c02de112c951eb",
+    "header_hex": "2f20202020202020202020202020202020202020753a6f626a6563745f723a726f6f7466733a73300a2f6164625f6b6579732020202020202020202020753a6f",
+    "metadata": {
+      "stat": "Inode: 1015   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 51177\nFile ACL: 0\nLinks: 1   Blockcount: 104\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n atime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\n mtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\ncrtime: 0x495c0780:00000000 -- Wed Dec 31 19:00:00 2008\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (33) = \"u:object_r:file_contexts_file:s0\\000\"\nEXTENTS:\n(0-12):105228-105240\ndebugfs 1.47.4 (6-Mar-2025)\n",
+      "ea_list": "Extended attributes:\n  security.selinux (33) = \"u:object_r:file_contexts_file:s0\\000\"\ndebugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  }
+]

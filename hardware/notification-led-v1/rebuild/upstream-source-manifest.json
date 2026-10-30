@@ -1,0 +1,82 @@
+{
+  "tools": {
+    "debugfs": {
+      "sha256": "814284f7a5147a0286983fbc1dd64f3969826e5501b03f3fc05225f45287f2c9"
+    },
+    "e2fsck": {
+      "sha256": "a14c5f8efe8ccf099e6048efbd5f8aabf3938676b55457e4462b3a6e7461bf9e"
+    },
+    "openssl": {
+      "sha256": "49db04c17e3a8c169ebc48a1149d78c165a86c04913203f46b2a14ce7f4a14fc"
+    },
+    "avbtool": {
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    }
+  },
+  "bundle_files": [
+    {
+      "path": "build_system.py",
+      "sha256": "55c97b374d2744b05b77b86e97b727b85cd9cdec1dbf7f8329de4b70b0d7204e"
+    },
+    {
+      "path": "test_builder.py",
+      "sha256": "d338d8966d441684d8020c066896831e1f0b244f2087167c722ec7032739e7f1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a4c5d1a7a795096990e236ee7a577f97198a7b492aa049395e0ba2bb65304e2e"
+    },
+    {
+      "path": "convert_square.py",
+      "sha256": "44cd4fe84e08a4f7dfa522859bb89d99e32f9b8ba49f6811c11313891a24c599"
+    },
+    {
+      "path": "all_bounds.py",
+      "sha256": "f0d076093f8a51545f24f92ca5630c043dc48f3b374a1738ff1bba687c27d76c"
+    },
+    {
+      "path": "bootanimation-titan-square-v1.zip",
+      "sha256": "b370920629c6a751a5a67e8f7e09e37824c5e02bf818eeca480f9bb54d969714"
+    },
+    {
+      "path": "conversion-report.json",
+      "sha256": "223dda9886b3342d3eaf66c07d8639533d54b86a4b84cd41d6fbf2964cd2e5ad"
+    },
+    {
+      "path": "frame-bounds.json",
+      "sha256": "a9fc0a11838eb3b57e0b55523a42deb644ff9314547c288f4453f70f9472eda9"
+    },
+    {
+      "path": "all-original-bounds.json",
+      "sha256": "f172f142b9e39d0bb70748e12fd3a56805d7c3963751adc42b5a9140825c3313"
+    },
+    {
+      "path": "contact-sheet.png",
+      "sha256": "10fa61ac210bbb12e9ac319046359d324cd780edef6623cf0af47569a247952b"
+    },
+    {
+      "path": "base-build.prop",
+      "sha256": "a74b318ac3f5cd114b69313202a55f8991e2d88261c495b339787571a0f55689"
+    },
+    {
+      "path": "test-source-tree.json",
+      "sha256": "e3d049fe67bf6dab65616ded2181c218f7e5eb36be799a514e9ea45b6aa4a53c"
+    },
+    {
+      "path": "helpers/check_google_dsu_pair_avb.py",
+      "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+    },
+    {
+      "path": "helpers/image_helpers.py",
+      "sha256": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140"
+    },
+    {
+      "path": "helpers/inventory_helpers.py",
+      "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+    },
+    {
+      "path": "tools/avbtool.py",
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    }
+  ]
+}

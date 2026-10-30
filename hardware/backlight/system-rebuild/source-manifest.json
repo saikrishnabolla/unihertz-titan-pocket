@@ -1,0 +1,62 @@
+{
+  "provenance": [
+    {
+      "source": "Research/scripts/inventory_candidate_product.py",
+      "sha256": "f2d78bc04830ab524705c2cca9a869905e2fdef16fe904c1d40ceb906a4b30e4"
+    },
+    {
+      "source": "Research/scripts/check_google_dsu_pair_avb.py",
+      "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+    },
+    {
+      "source": "artifacts/hardware-compat-v1/bluetooth-system/build_system.py",
+      "sha256": "499ea10faf05463848ff44744b7b2e2e3c8f9a6718a844a9399d3ee13d573b34"
+    },
+    {
+      "source": "titan-backlight-merged-v1/build_system.py",
+      "sha256": "fc032b35ed94e52b8a0cc77dc290860806ce2db7790bc46903671e92a221cab1"
+    }
+  ],
+  "tools": {
+    "debugfs": {
+      "sha256": "814284f7a5147a0286983fbc1dd64f3969826e5501b03f3fc05225f45287f2c9"
+    },
+    "e2fsck": {
+      "sha256": "a14c5f8efe8ccf099e6048efbd5f8aabf3938676b55457e4462b3a6e7461bf9e"
+    },
+    "openssl": {
+      "sha256": "49db04c17e3a8c169ebc48a1149d78c165a86c04913203f46b2a14ce7f4a14fc"
+    },
+    "avbtool": {
+      "sha256": "69783733ce5e198317b02a5567cc356e898c891de872f58a963e9d5c082973c6"
+    }
+  },
+  "bundle_files": [
+    {
+      "path": "build_system.py",
+      "sha256": "2c0c9c671db9562ab1885c4c0c051499aa8c179e718c4e5e8c7424e0cb71708f"
+    },
+    {
+      "path": "compare_existing.py",
+      "sha256": "25e61c4d29300e7a3590aa729e24432f619618ac4a359b29d48258ec06926fcf"
+    },
+    {
+      "path": "packaging-pins.json",
+      "sha256": "fbae4c747d7aadfa81ebc9a38468161c2c31dbfe4eb28830c9671c95bb94183b"
+    },
+    {
+      "path": "helpers/check_google_dsu_pair_avb.py",
+      "sha256": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51"
+    },
+    {
+      "path": "helpers/image_helpers.py",
+      "sha256": "045723612eef830073882a645359e98d1580b9854f8907766a2687c8d7717b30"
+    },
+    {
+      "path": "helpers/inventory_helpers.py",
+      "sha256": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0"
+    }
+  ],
+  "variant": "turnOff-v3",
+  "reviewed_jar_sha256": "6806a4dcf3ef38d8368727297f62a0c7680e575365efbabb156c6bf246694e54"
+}

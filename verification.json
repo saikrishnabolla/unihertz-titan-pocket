@@ -1,0 +1,52 @@
+{
+  "core_tests": {
+    "owner_ASan_UBSan": 98,
+    "owner_TSan": 96,
+    "inventory_ASan_UBSan": "passed",
+    "inventory_TSan": "passed",
+    "production_session_state": 42,
+    "async_publication_scenarios": 12,
+    "keyguard_regression": {
+      "old_failures": 9,
+      "current_passes": 9,
+      "scope": "extracted smali control flow with host Android-state substitutes"
+    }
+  },
+  "actual_runtime_fixture": {
+    "ASan_UBSan": 799,
+    "TSan": 799,
+    "android_originals_and_owner": "host substitutes"
+  },
+  "android_build": {
+    "source_units": 19,
+    "no_undefined_symbols": true,
+    "no_TEXTREL": true,
+    "NODELETE": true,
+    "native_sha256": "1f931ea86d356ec6bba53cb3f2344099492df0da0c629c9683ea5427bdc029fb",
+    "source_prefix_remapped_native_sha256": "8d6cf749c197e8fdb337c70fff756d2ea08551d812509e7f1fa62192f25336dc",
+    "remapped_native_matches_original_v5_bytes": true,
+    "hooks_sha256": "d7ce6ab0a55591aa87515307771a43ce9f2c4465e0f1c301fefecd21726a3b10",
+    "services_sha256": "33f7f32494303add655e889110973dc6d0ae32ba3652380a96520f32c56132da",
+    "checkout_path_reproducibility": {
+      "copied_checkouts": 2,
+      "same_private_inputs_and_toolchain": true,
+      "byte_identical": true,
+      "private_source_paths_in_binary": false,
+      "native_prefix": "native",
+      "external_header_prefix": "android-headers"
+    },
+    "original_v5_comparison": "Byte-identical original output was separately reproduced using its source prefix; canonical public output uses normalized prefixes."
+  },
+  "missing_private_inputs": "all three builders stop with explicit errors",
+  "clean_environment_rebuild": "not verified; tests used existing matching private header/link inputs",
+  "device_actions": false,
+  "phone_observations": {
+    "build": "CP3A.260905.010",
+    "selinux": "Enforcing",
+    "mounted_payload_hashes_match": true,
+    "owner_first_unlock_scrolls": true,
+    "owner_cursor_visible": false,
+    "owner_typing_normal": true,
+    "cellular": "untested without SIM"
+  }
+}
