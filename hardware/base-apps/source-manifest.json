@@ -1,0 +1,10 @@
+{
+  "README.md": "b0b50aaa2708ca5a02d82b56804f4ce9b81a2c6386333a1a15b768d161963094",
+  "build.py": "0b63c8a5a339971fd2e314d749cedee9b6803d3ea72b09a2a54fb05b7d9b749c",
+  "helpers/check_google_dsu_pair_avb.py": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51",
+  "helpers/image_helpers.py": "fcb02abd4c64a00414254b308241b10fed2979809ba89374aa5a7cbf2523c77a",
+  "helpers/inventory_helpers.py": "e54adf92d0600af72061cf1cc3561668d9c61ce2205e72628f735c391f30ba94",
+  "private-inputs.example.json": "82b58485d10f17d8d2a86ad742e5226d9becd3a12f230f240dc78a6abc4602b4",
+  "super_helpers/assemble_super.py": "2b493ee71ff3f96af7ae48e67d6323c00b627e71d4cc503fa06aef2989b466b7",
+  "super_helpers/build_metadata.py": "2e911320295b0080c196a610a02cf34f950c3e24414c1b18b65c82032382ef4e"
+}

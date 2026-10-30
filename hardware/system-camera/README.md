@@ -1,4 +1,4 @@
-GrapheneOS Camera 93 is installed as the system camera. The add-on masks AOSP Camera2 without changing the raw SYSTEM partition. Removing the add-on and rebooting restores AOSP Camera2. GrapheneOS Camera is an open-source project under the MIT license. The upstream source and license remain at https://github.com/GrapheneOS/Camera. This builder uses the official APK unchanged.
+GrapheneOS Camera 93 is now integrated into SYSTEM by the [base-app recipe](../base-apps/README.md). This earlier add-on builder masks AOSP Camera2 on the previous base image. Removing that add-on restores AOSP Camera2 only on the previous image; the updated base removes Camera2 itself. GrapheneOS Camera is an open-source project under the MIT license. The upstream source and license remain at https://github.com/GrapheneOS/Camera. This builder uses the official APK unchanged.
 
 Supply `Camera-93.apk` from [the official release](https://github.com/GrapheneOS/Camera/releases/tag/93). The builder checks SHA256 `6e1d05a7b96b308f3a9dff3103db55cfee2cbea38b3249b5879fe35cfcf179ff`:
 

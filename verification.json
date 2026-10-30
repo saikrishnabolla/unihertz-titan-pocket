@@ -97,7 +97,7 @@
     "actual_Runtime_fixture": 799,
     "regression": "Live thread checks use retained reads; identity changes are observed; successful stop blocks further reads. Attach and manager checks remain maps-backed.",
     "phone_boot_verified": true,
-    "deployment": "Reversible single-library Magisk override; raw system image unchanged.",
+    "deployment": "Integrated into SYSTEM; superseded Magisk override disabled.",
     "selinux": "Enforcing",
     "owner_touchscreen_response": "much faster",
     "profile_before": "InputReader dominated by memory-map formatting/parsing.",
@@ -111,11 +111,36 @@
     "version": "93",
     "apk_sha256": "6e1d05a7b96b308f3a9dff3103db55cfee2cbea38b3249b5879fe35cfcf179ff",
     "system_package": true,
-    "aosp_camera_masked": true,
+    "aosp_camera_masked": false,
     "camera_go_removed": true,
     "bsg_removed": true,
     "photo_video_and_secure_camera_intents_resolve": true,
     "selinux": "Enforcing",
-    "photo_video_capture_quality": "unverified"
+    "photo_video_capture_quality": "unverified",
+    "aosp_camera_removed_from_base": true,
+    "deployment": "Integrated into SYSTEM; superseded Magisk override disabled."
+  },
+  "base_apps_update": {
+    "super_sha256": "b73e5c4f2f58e606a0600670fe331255946a11b4e792fe0c2b2a8209a1774c49",
+    "system_sha256": "a9bd8c4728cc2169e28d8ff21d4eb73cb5aacaa438aff17d4a1faf76c008fd7b",
+    "camera": "GrapheneOS Camera 93",
+    "browser": "Brave 1.98.63 / Chromium 156.0.8078.80",
+    "webview": "Cromite 153.0.8010.37, mixed ARM32/ARM64",
+    "webview_current": false,
+    "removed_from_base": [
+      "AOSP Camera2",
+      "QuickSearchBox",
+      "Browser2",
+      "old WebView"
+    ],
+    "userdata_sentinel_preserved": true,
+    "super_readback_matches": true,
+    "protected_partition_hashes_unchanged": true,
+    "webview_both_abi_relros_complete": true,
+    "webview_registered_signer_sha256": "633fa41d8211d6d0916a819b89668c6de92e64232da67f9d16fd81c3b7e923ff",
+    "stale_trial_parser_cache": "One exact derived cache entry backed up and removed; correct provider and signer verified afterward.",
+    "selinux": "Enforcing",
+    "factory_reset_tested": false,
+    "browser_page_rendering": "unverified"
   }
 }

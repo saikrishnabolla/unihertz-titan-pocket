@@ -10,3 +10,5 @@ The PIN adapter builder transforms a caller-supplied, hash-pinned SystemUI class
 No project-wide license has been chosen for the remaining code.
 
 The system-camera builder uses the official GrapheneOS Camera 93 APK as an external, hash-pinned input. GrapheneOS Camera is MIT licensed; its source and license are at https://github.com/GrapheneOS/Camera. The APK is not included in this repository. The release is linked in `hardware/system-camera/README.md`.
+
+The base-app recipe takes Brave and Cromite WebView APKs as external inputs. Their source and notices are at https://github.com/brave/brave-browser and https://github.com/uazo/cromite. APKs are not included.

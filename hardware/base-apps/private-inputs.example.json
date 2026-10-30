@@ -1,0 +1,18 @@
+{
+  "system": "inputs/system.img",
+  "source_tree": "inputs/candidate-tree-final.json",
+  "vendor": "inputs/vendor.img",
+  "prefix": "inputs/minimal-super-metadata-prefix.bin",
+  "camera": "inputs/Camera-93.apk",
+  "browser": "inputs/Bravearm64Universal.apk",
+  "webview": "inputs/CromiteWebView.apk",
+  "touchpad": "inputs/libtitan_keyboard_surface.so",
+  "avb_key": "inputs/private/system-avb.pem",
+  "tools": {
+    "debugfs": "tools/debugfs",
+    "e2fsck": "tools/e2fsck",
+    "openssl": "tools/openssl",
+    "avbtool": "tools/avbtool.py",
+    "aapt2": "tools/aapt2"
+  }
+}

@@ -1,8 +1,8 @@
 {
   ".gitignore": "8cd8edb54db7143c688d16824bda286238bca253ddbe22ab703b363e443654bc",
   "LICENSES/Apache-2.0.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-  "README.md": "29fd3beefd46ffa115ffe70c2b8dddbb474be987f816615da182806053e578e7",
-  "THIRD_PARTY.md": "7cfd57ccd25205abcb587ff85b8b85da95d788c8f7e2da52c2884467de2d7262",
+  "README.md": "a66bce9fe4cf244607d99d6647cce24118a281bc34857c8478802136f302930e",
+  "THIRD_PARTY.md": "c73a69bcc4675b76dc10fefe7e04cfc20ae2855078c52f3321af666870fe629c",
   "hardware/README.md": "4c183ec8bea4a1cd223b069705f700a60b316ea19ca0ebf96b9af604060497f0",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightPolicy.java": "22c397d01f11c696cf17eb3e8febe92932d6aee4717fd684b8ab763b3f9ad899",
@@ -56,6 +56,15 @@
   "hardware/backlight/system-rebuild/helpers/inventory_helpers.py": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0",
   "hardware/backlight/system-rebuild/packaging-pins.json": "fbae4c747d7aadfa81ebc9a38468161c2c31dbfe4eb28830c9671c95bb94183b",
   "hardware/backlight/system-rebuild/source-manifest.json": "157375c84d8e7e97050ad025e93492e30a1a78b4ceea3f9ed3bec660cb71afa7",
+  "hardware/base-apps/README.md": "b0b50aaa2708ca5a02d82b56804f4ce9b81a2c6386333a1a15b768d161963094",
+  "hardware/base-apps/build.py": "0b63c8a5a339971fd2e314d749cedee9b6803d3ea72b09a2a54fb05b7d9b749c",
+  "hardware/base-apps/helpers/check_google_dsu_pair_avb.py": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51",
+  "hardware/base-apps/helpers/image_helpers.py": "fcb02abd4c64a00414254b308241b10fed2979809ba89374aa5a7cbf2523c77a",
+  "hardware/base-apps/helpers/inventory_helpers.py": "e54adf92d0600af72061cf1cc3561668d9c61ce2205e72628f735c391f30ba94",
+  "hardware/base-apps/private-inputs.example.json": "82b58485d10f17d8d2a86ad742e5226d9becd3a12f230f240dc78a6abc4602b4",
+  "hardware/base-apps/source-manifest.json": "f2d6be06b72c48fd2bc0f15764de79e8065e7fd89e3f3d38baca7190ab7a0308",
+  "hardware/base-apps/super_helpers/assemble_super.py": "2b493ee71ff3f96af7ae48e67d6323c00b627e71d4cc503fa06aef2989b466b7",
+  "hardware/base-apps/super_helpers/build_metadata.py": "2e911320295b0080c196a610a02cf34f950c3e24414c1b18b65c82032382ef4e",
   "hardware/bluetooth-module/rebuild-v2/helpers/zip_helpers.py": "39327f1f8c8f7fb5f349acec99dbeac4c9a53eaa2896c8001185d8f93d8626b9",
   "hardware/bluetooth-module/rebuild-v2/integration-guard.json": "e329d6c792da48be3bf1b4dd01ecf2318b640f516973fc0f8dfb2358c6924ce9",
   "hardware/bluetooth-module/rebuild-v2/rebuild.py": "ef63778b5c9535be8967c8e03a422384ac6b486e10e2e07b644d126f1b7c2f59",
@@ -210,7 +219,7 @@
   "hardware/pin-hardware-v1/rebuild/test_builder.py": "3421e38144ce2bf8ac48edf1c0615bf3854d2833d4ed4f99ab74c5e99dadc931",
   "hardware/pin-hardware-v1/rebuild/upstream-source-manifest.json": "e6f87a9341061eaddf8b60dc14fbbd9e0bf01bb0a7aaf54734e870ac85943954",
   "hardware/source-selection.json": "5d6c100558f6d92b0a1ec5084b6169c87d2386bbe902edfad703c059f2307421",
-  "hardware/system-camera/README.md": "240c95cfa77a64fc59ef85219ef398c06679d1663f4f9db7cc871793305aef90",
+  "hardware/system-camera/README.md": "3909dffa2550e0c9dff412604d934021c676601aede2c86f41104d198eaebf73",
   "hardware/system-camera/build.py": "0c4591e72377945a1bdbcedab8634aef1257405add89a2d88b9f56750565ab1b",
   "hardware/ui-spacing-v1/apk-source/SignVerified.java": "1f116925e4ae31454040724bbe8cd1d9848b1fad75ccb56e517db974d9686442",
   "hardware/ui-spacing-v1/apk-source/launcher/build_overlay.py": "76ea2502285af27ab054eeeb00229bb6fd4bea30f724c9796faf384191934355",
@@ -327,5 +336,5 @@
   "tools/test.py": "b528ee90e3b44e77e5bff68be4b2992f06a570f7ef007656ff97f750d4a5ebf0",
   "tools/test_keyguard.py": "e6523c3e049c4b9ad5063c9b20115b5339d9289461c9677ed351c1bec67927be",
   "tools/test_runtime.py": "31367bf6e50887a147b78b974956ba6662751542daf293e8a616499dc91d0783",
-  "verification.json": "0b53b5052cdc8a45a9f438aab5c3de1944e5393fe3fbd2bbfd35c9f4c56aae95"
+  "verification.json": "d9730c6e007ab18ae36ad26d4cc074e3423990ffcf73f81750dcd189da72730c"
 }

@@ -11,12 +11,12 @@ The port uses the stock MediaTek kernel and vendor drivers. A permanent clean in
 |---|---|
 | Boot | Permanent September build boots with SELinux Enforcing and encrypted userdata. Full SUPER, BOOT, recovery and vbmeta readback hashes match; a normal reboot passed. |
 | Keyboard surface | First-unlock scrolling, normal typing, Alt+A and keyboard light timeout passed owner checks after the permanent install. The same SYSTEM also passed two lock/wake cycles, touchscreen/keyboard scrolling together and no-cursor checks in the guest. |
-| Camera app | GrapheneOS Camera 93 is the sole active system camera through a reversible add-on. Photo/video capture intents resolve to it; Camera Go and BSG were removed. Capture quality remains unverified. |
+| Camera app | GrapheneOS Camera 93 is built into SYSTEM. AOSP Camera2, Camera Go and BSG are absent. Photo/video capture intents resolve to GrapheneOS Camera; capture quality remains unverified. |
 | Earlier hardware checks | In the earlier guest, physical PIN, Alt+A, navigation keys, keyboard light timeout, fingerprint enrollment, Bluetooth music, front camera preview and green notification LED passed owner tests. The clean install requires fresh enrollment and pairing. |
 | Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, remaining permanent-install hardware rechecks, and full stock restore. |
 | Cellular | No SIM is available. Carrier calls, SMS, mobile data and VoLTE remain untested. |
 
-A performance fix removes repeated `/proc/self/maps` scans from live input-thread checks. The phone boots with the fixed library in a reversible Magisk override; the owner reports faster touchscreen scrolling and animations. A second input-thread profile no longer lists memory-map parsing among symbols above 1%. These profiles used different input activity and do not establish a percentage speedup.
+A performance fix removes repeated `/proc/self/maps` scans from live input-thread checks. The fixed library is now built into SYSTEM; the owner reported faster touchscreen scrolling and animations when it was first tested as an override. A second input-thread profile no longer lists memory-map parsing among symbols above 1%. These profiles used different input activity and do not establish a percentage speedup.
 
 The old kernel/vendor security level is unchanged by the newer Android system. An unlocked bootloader and custom system may fail app integrity checks. Relocking has not been tested and must not be attempted. NVRAM, proinfo, TEE, bootloader and DTBO raw hashes match their pre-install values. Four vendor ext4 partitions changed raw hashes while mounted read/write; their calibration files have not been compared individually. Stock firmware backups exist; a full stock userdata backup was waived before erasure.
 
@@ -50,6 +50,8 @@ Use an empty services output directory. Firmware, Google/system binaries, device
 
 ## Other hardware sources
 
-The current camera add-on is built with `python3 hardware/system-camera/build.py --apk inputs/Camera-93.apk --output build/system-camera`. See [its instructions](hardware/system-camera/README.md) for the pinned download, installation and checks.
+The base-app recipe at [hardware/base-apps](hardware/base-apps/README.md) integrates the camera, Brave 1.98.63 (Chromium 156), mixed-ABI Cromite WebView 153 and the input performance fix. It removes AOSP Camera2, QuickSearchBox and the test-shell browser. The phone booted after a SUPER-only update with userdata retained, matching firmware readback and unchanged protected partitions. WebView prepared both architectures. WebView 153 is behind current Chromium 156; browser page rendering remains unverified. Factory-reset behavior has not been tested.
+
+The earlier camera add-on is built with `python3 hardware/system-camera/build.py --apk inputs/Camera-93.apk --output build/system-camera`. See [its instructions](hardware/system-camera/README.md) for the pinned download, installation and checks.
 
 See [hardware/README.md](hardware/README.md) for the recovered boot-chain, keyboard, lighting, fingerprint, Bluetooth, camera and layout sources, their pinned inputs and remaining build limits. Firmware, signing keys, original compiled components and animation assets must be supplied separately. Upstream notices are retained; no new license is granted for third-party material.
