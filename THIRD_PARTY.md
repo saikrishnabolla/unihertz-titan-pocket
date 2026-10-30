@@ -8,3 +8,5 @@ The small `proven` support headers adapt these declarations for this extension. 
 The PIN adapter builder transforms a caller-supplied, hash-pinned SystemUI class. The original class is not included. Its license still applies to the generated output.
 
 No project-wide license has been chosen for the remaining code.
+
+The system-camera builder requires Greatness’s Camera Go NoAux modification of Google Camera Go. Its APK is an external, hash-pinned input; this repository contains no Google camera code or APK and grants no license to it. The maintainer’s release is linked in `hardware/system-camera/README.md`.

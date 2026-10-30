@@ -104,5 +104,20 @@
     "profile_after": "Memory-map parsing absent from symbols above the 1% report threshold.",
     "profile_limit": "Different input activity; no controlled percentage speedup claim.",
     "frame_timings": "inconclusive; zero frames recorded by gfxinfo"
+  },
+  "system_camera": {
+    "build": "CP3A.260905.010",
+    "package": "com.google.android.apps.cameralite",
+    "version": "Greatness.210726.1455Test",
+    "apk_sha256": "ebe906d3d00cd8596c4015975ff58c496f4ce0a946e689da718b295612445f95",
+    "system_package": true,
+    "aosp_camera_masked": true,
+    "bsg_removed": true,
+    "photo_video_and_secure_camera_intents_resolve": true,
+    "selinux": "Enforcing",
+    "photo_video_capture_quality": "unverified",
+    "builder_byte_identical_rebuild": true,
+    "builder_rejects_wrong_apk": true,
+    "rear_front_live_previews": true
   }
 }
