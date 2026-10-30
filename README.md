@@ -3,19 +3,19 @@
 Source patches, build steps and test findings for the Unihertz Titan Pocket running the September Android 17 GSI, `CP3A.260905.010`. This package builds the native scrolling extension, patches its exact `libinputflinger.so`, and patches `services.jar`. It does not build a complete ROM or install anything on a phone.
 
 
-The port uses the stock MediaTek kernel and vendor drivers in a DSU guest. Stock Android remains available for recovery. It is an unofficial adaptation; these sources do not establish a complete clean ROM build or a safe permanent installation.
+The port uses the stock MediaTek kernel and vendor drivers. A permanent clean installation now boots on the test phone, without DSU. Installation erased its apps and settings with the owner’s consent. This is an unofficial port; the source package does not provide a complete ROM build or a general-purpose installer.
 
 ## Phone tests
 
 | Area | Evidence |
 |---|---|
-| Boot | September guest boots with SELinux Enforcing; installed SYSTEM and payload hashes verified. |
-| Keyboard surface | First-unlock scrolling and two lock/wake cycles passed owner tests. Touchscreen and keyboard scrolling both work; no cursor; normal typing works. |
-| Earlier hardware checks | Physical PIN, Alt+A, navigation keys, keyboard light timeout, fingerprint enrollment, Bluetooth music, front camera preview and green notification LED passed owner tests. |
-| Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, and full stock restore/permanent installation. |
+| Boot | Permanent September build boots with SELinux Enforcing and encrypted userdata. Full SUPER, BOOT, recovery and vbmeta readback hashes match; a normal reboot passed. |
+| Keyboard surface | First-unlock scrolling, normal typing, Alt+A and keyboard light timeout passed owner checks after the permanent install. The same SYSTEM also passed two lock/wake cycles, touchscreen/keyboard scrolling together and no-cursor checks in the guest. |
+| Earlier hardware checks | In the earlier guest, physical PIN, Alt+A, navigation keys, keyboard light timeout, fingerprint enrollment, Bluetooth music, front camera preview and green notification LED passed owner tests. The clean install requires fresh enrollment and pairing. |
+| Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, remaining permanent-install hardware rechecks, and full stock restore. |
 | Cellular | No SIM is available. Carrier calls, SMS, mobile data and VoLTE remain untested. |
 
-The old kernel/vendor security level is unchanged by the newer Android system. An unlocked bootloader and custom system may fail app integrity checks. No relocking or permanent flashing has been verified.
+The old kernel/vendor security level is unchanged by the newer Android system. An unlocked bootloader and custom system may fail app integrity checks. Relocking has not been tested and must not be attempted. NVRAM, proinfo, TEE, bootloader and DTBO raw hashes match their pre-install values. Four vendor ext4 partitions changed raw hashes while mounted read/write; their calibration files have not been compared individually. Stock firmware backups exist; a full stock userdata backup was waived before erasure.
 
 ## Build and test
 

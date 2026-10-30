@@ -50,5 +50,44 @@
     "cellular": "untested without SIM",
     "owner_lock_wake_cycles_passed": 2,
     "owner_touchscreen_and_keyboard_scroll_interoperate": true
+  },
+  "permanent_install": {
+    "build": "CP3A.260905.010",
+    "sdk": 37,
+    "normal_boot_without_dsu": true,
+    "normal_reboot_passed": true,
+    "selinux": "Enforcing",
+    "data_encryption": "file",
+    "userdata_filesystem_bytes": 117621223424,
+    "density": 260,
+    "raw_readback_matches": [
+      "super",
+      "boot",
+      "recovery",
+      "vbmeta"
+    ],
+    "protected_raw_hashes_unchanged": [
+      "nvram",
+      "proinfo",
+      "tee1",
+      "tee2",
+      "lk",
+      "lk2",
+      "dtbo"
+    ],
+    "writable_vendor_raw_hashes_changed": [
+      "nvdata",
+      "persist",
+      "protect1",
+      "protect2"
+    ],
+    "calibration_file_equality": "not established",
+    "hardware_owner_rechecks": {
+      "first_unlock_keyboard_scrolling": true,
+      "normal_typing": true,
+      "alt_a_at_symbol": true,
+      "keyboard_light_timeout": true
+    },
+    "stock_userdata_backup": "waived by owner before erase"
   }
 }
