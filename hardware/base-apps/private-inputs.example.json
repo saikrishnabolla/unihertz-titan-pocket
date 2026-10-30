@@ -4,7 +4,7 @@
   "vendor": "inputs/vendor.img",
   "prefix": "inputs/minimal-super-metadata-prefix.bin",
   "camera": "inputs/Camera-93.apk",
-  "browser": "inputs/Bravearm64Universal.apk",
+  "browser": "inputs/ChromePublic_arm64.apk",
   "webview": "inputs/CromiteWebView.apk",
   "touchpad": "inputs/libtitan_keyboard_surface.so",
   "avb_key": "inputs/private/system-avb.pem",

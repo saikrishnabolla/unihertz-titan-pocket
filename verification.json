@@ -121,10 +121,10 @@
     "deployment": "Integrated into SYSTEM; superseded Magisk override disabled."
   },
   "base_apps_update": {
-    "super_sha256": "b73e5c4f2f58e606a0600670fe331255946a11b4e792fe0c2b2a8209a1774c49",
-    "system_sha256": "a9bd8c4728cc2169e28d8ff21d4eb73cb5aacaa438aff17d4a1faf76c008fd7b",
+    "super_sha256": "c91de3a132c40fa2310811d5aa3dc4fae78e8ef30290505ebd0dbf881db7fb49",
+    "system_sha256": "55353cb51948fce0201b069cefb8455841bfa42b9bda9f5ec30055702ec8824b",
     "camera": "GrapheneOS Camera 93",
-    "browser": "Brave 1.98.63 / Chromium 156.0.8078.80",
+    "browser": "Ungoogled Chromium 155.0.8059.39",
     "webview": "Cromite 153.0.8010.37, mixed ARM32/ARM64",
     "webview_current": false,
     "removed_from_base": [
@@ -141,6 +141,10 @@
     "stale_trial_parser_cache": "One exact derived cache entry backed up and removed; correct provider and signer verified afterward.",
     "selinux": "Enforcing",
     "factory_reset_tested": false,
-    "browser_page_rendering": "unverified"
+    "browser_page_rendering": "unverified",
+    "browser_package": "org.ungoogled.chromium.stable",
+    "browser_apk_sha256": "44e0f664d80bf3b1c390f8030ff9a260aab06f137d17f2aa0e3816cc2bd61aee",
+    "brave_removed_from_base_and_phone": true,
+    "browser_default": "org.ungoogled.chromium.stable"
   }
 }

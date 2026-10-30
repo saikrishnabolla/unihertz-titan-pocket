@@ -16,7 +16,7 @@ PREFIX_SHA='b79a001a076880b6679c02d52e51842850e22841ff16b7bc20d999b7459e2acf'
 REMOVE_ROOTS=['/system/product/app/'+n for n in ['Camera2','QuickSearchBox','Browser2','webview']]
 ASSETS={
  '/system/product/app/TitanCamera/TitanCamera.apk':{'file':None,'sha256':'6e1d05a7b96b308f3a9dff3103db55cfee2cbea38b3249b5879fe35cfcf179ff','package':'app.grapheneos.camera','label':'system_file'},
- '/system/product/app/Brave/Brave.apk':{'file':None,'sha256':'e8aa128c52ab7b92c4efc57519935763a8ccefb77800bd240ca5684dbe6368a0','package':'com.brave.browser','label':'system_file'},
+ '/system/product/app/Chromium/Chromium.apk':{'file':None,'sha256':'44e0f664d80bf3b1c390f8030ff9a260aab06f137d17f2aa0e3816cc2bd61aee','package':'org.ungoogled.chromium.stable','label':'system_file'},
  '/system/product/app/TitanWebView/TitanWebView.apk':{'file':None,'sha256':'dcb233a86d58ca922f8aa08dd4216c9158450866286d727a1358e502e935baa3','package':'com.android.webview','label':'system_file'},
  '/system/lib64/libtitan_keyboard_surface.so':{'file':None,'sha256':'a8b78c2fc7a04b3652d03125fc9f7ba075114554c1ba9de3d55d87089014a179','label':'system_lib_file'},
 }
@@ -41,7 +41,7 @@ def main():
  inputs=json.loads(args.inputs.read_text())
  SRC=Path(inputs['system']);TREE=Path(inputs['source_tree']);VENDOR=Path(inputs['vendor']);PREFIX=Path(inputs['prefix']);args.key=Path(inputs['avb_key'])
  AVB=Path(inputs['tools']['avbtool']);AAPT=Path(inputs['tools']['aapt2'])
- for dest,name in {'/system/product/app/TitanCamera/TitanCamera.apk':'camera','/system/product/app/Brave/Brave.apk':'browser','/system/product/app/TitanWebView/TitanWebView.apk':'webview','/system/lib64/libtitan_keyboard_surface.so':'touchpad'}.items():ASSETS[dest]['file']=Path(inputs[name])
+ for dest,name in {'/system/product/app/TitanCamera/TitanCamera.apk':'camera','/system/product/app/Chromium/Chromium.apk':'browser','/system/product/app/TitanWebView/TitanWebView.apk':'webview','/system/lib64/libtitan_keyboard_surface.so':'touchpad'}.items():ASSETS[dest]['file']=Path(inputs[name])
  out=args.output.absolute();assert not out.exists() and not out.is_symlink()
  assert out.parent.is_dir();assert shutil.disk_usage(out.parent).free>h.SIZE+metadata.SUPER_SIZE+6*1024**3
  os.umask(0o077);out.mkdir(mode=0o700)

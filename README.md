@@ -50,7 +50,7 @@ Use an empty services output directory. Firmware, Google/system binaries, device
 
 ## Other hardware sources
 
-The base-app recipe at [hardware/base-apps](hardware/base-apps/README.md) integrates the camera, Brave 1.98.63 (Chromium 156), mixed-ABI Cromite WebView 153 and the input performance fix. It removes AOSP Camera2, QuickSearchBox and the test-shell browser. The phone booted after a SUPER-only update with userdata retained, matching firmware readback and unchanged protected partitions. WebView prepared both architectures. WebView 153 is behind current Chromium 156; browser page rendering remains unverified. Factory-reset behavior has not been tested.
+The base-app recipe at [hardware/base-apps](hardware/base-apps/README.md) integrates the camera, Ungoogled Chromium 155.0.8059.39, mixed-ABI Cromite WebView 153 and the input performance fix. It removes AOSP Camera2, QuickSearchBox and the test-shell browser. Chromium replaces the earlier Brave choice in the base image; Brave is also uninstalled from the phone. The phone booted after a SUPER-only update with userdata retained, matching firmware readback and unchanged protected partitions. WebView prepared both architectures. Chromium 155 and WebView 153 are behind current Chromium 156; browser page rendering remains unverified. Factory-reset behavior has not been tested.
 
 The earlier camera add-on is built with `python3 hardware/system-camera/build.py --apk inputs/Camera-93.apk --output build/system-camera`. See [its instructions](hardware/system-camera/README.md) for the pinned download, installation and checks.
 
