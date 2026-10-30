@@ -89,5 +89,20 @@
       "keyboard_light_timeout": true
     },
     "stock_userdata_backup": "waived by owner before erase"
+  },
+  "input_thread_performance_fix": {
+    "native_sha256": "a8b78c2fc7a04b3652d03125fc9f7ba075114554c1ba9de3d55d87089014a179",
+    "owner_ASan_UBSan": 108,
+    "owner_TSan": 106,
+    "actual_Runtime_fixture": 799,
+    "regression": "Live thread checks use retained reads; identity changes are observed; successful stop blocks further reads. Attach and manager checks remain maps-backed.",
+    "phone_boot_verified": true,
+    "deployment": "Reversible single-library Magisk override; raw system image unchanged.",
+    "selinux": "Enforcing",
+    "owner_touchscreen_response": "much faster",
+    "profile_before": "InputReader dominated by memory-map formatting/parsing.",
+    "profile_after": "Memory-map parsing absent from symbols above the 1% report threshold.",
+    "profile_limit": "Different input activity; no controlled percentage speedup claim.",
+    "frame_timings": "inconclusive; zero frames recorded by gfxinfo"
   }
 }

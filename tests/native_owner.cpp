@@ -12,8 +12,11 @@
 using namespace titan_native_owner;
 struct FakeMemory:Memory {
  std::map<uintptr_t,unsigned char> bytes;
+ mutable std::atomic<unsigned> checkedReads{},retainedReads{};
  template<class T>void put(uintptr_t address,T value){unsigned char data[sizeof(T)];std::memcpy(data,&value,sizeof(T));for(size_t i=0;i<sizeof(T);++i)bytes[address+i]=data[i];}
- bool read(uintptr_t address,void* out,size_t size)const noexcept override {auto p=static_cast<unsigned char*>(out);for(size_t i=0;i<size;++i){auto it=bytes.find(address+i);if(it==bytes.end())return false;p[i]=it->second;}return true;}
+ bool read(uintptr_t address,void* out,size_t size)const noexcept override {++checkedReads;return copy(address,out,size);}
+ bool readRetained(uintptr_t address,void* out,size_t size)const noexcept override {++retainedReads;return copy(address,out,size);}
+ bool copy(uintptr_t address,void* out,size_t size)const noexcept {auto p=static_cast<unsigned char*>(out);for(size_t i=0;i<size;++i){auto it=bytes.find(address+i);if(it==bytes.end())return false;p[i]=it->second;}return true;}
 };
 struct FakeStop:StopOperations {
  std::atomic<bool> done{false};std::atomic<int32_t> result{-110};std::atomic<int> calls{},maintains{};std::function<void()> onPrepare;
@@ -34,6 +37,15 @@ struct Fixture {
 };
 int main(){int checks=0;auto check=[&](bool v){assert(v);++checks;};
  {Fixture f;Core c(f.layout,f.memory);check(f.attach(c));check(c.alive()&&c.startsEmpty());check(c.binding().listener==f.listener);check(c.binding().readerContext==f.reader+8);check(c.isThread(77)&&!c.isThread(78));check(!f.attach(c));check(c.readerStop(1,std::chrono::milliseconds(0))==0);check(!c.alive());}
+ {Fixture f;Core c(f.layout,f.memory);check(f.attach(c));
+  const auto checked=f.memory->checkedReads.load();
+  check(c.isThread(77));check(f.memory->checkedReads==checked);check(f.memory->retainedReads==2);
+  f.memory->put(0x600040,uint64_t{88});
+  check(!c.isThread(77));check(c.isThread(88));check(f.memory->checkedReads==checked);
+  check(c.readerStop(1,std::chrono::milliseconds(0))==0);
+  const auto retained=f.memory->retainedReads.load();
+  check(!c.isThread(88));check(f.memory->retainedReads==retained);
+ }
  for(auto offset:{0,8,16,0x88,0xa0,0x2f0,0x2f8,0x300,0x308,0x318,0x320,0x328,0x330,0x310,0x338}){Fixture f;f.memory->put(f.reader+offset,uintptr_t{1});Core c(f.layout,f.memory);check(!f.attach(c));}
  {Fixture f;f.memory->put(f.listener,uintptr_t{f.layout.base+0x3d8938});Core c(f.layout,f.memory);check(!f.attach(c));}
  {Fixture f;Core c(f.layout,f.memory);check(!c.attach(f.reader,f.hub,f.layout.wake+4));}

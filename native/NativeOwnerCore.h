@@ -11,7 +11,9 @@
 #include <algorithm>
 namespace titan_native_owner {
 using Time=int64_t;
-struct Memory {virtual ~Memory()=default;virtual bool read(uintptr_t,void*,size_t)const noexcept=0;};
+struct Memory {virtual ~Memory()=default;virtual bool read(uintptr_t,void*,size_t)const noexcept=0;
+ // Only under Core mutex while the stop gate retains Reader/thread storage.
+ virtual bool readRetained(uintptr_t address,void* out,size_t size)const noexcept{return read(address,out,size);}};
 struct Layout {uintptr_t base,readerVtable,readerContextVtable,hubVtable,listenerVtable,managerVtable,wake;};
 struct Binding {uintptr_t reader,hub,listener,readerContext;};
 struct StopOperations {
@@ -84,7 +86,8 @@ public:
  uintptr_t reader()const {std::lock_guard guard(mutex_);return binding_.reader;}
  bool isThread(uint64_t self)const {
   std::lock_guard guard(mutex_);if(!alive_)return false;uintptr_t thread{};uint64_t id{};
-  return read(binding_.reader+0x50,thread)&&aligned(thread)&&read(thread+0x40,id)&&id==self;
+  return memory_->readRetained(binding_.reader+0x50,&thread,sizeof(thread))&&aligned(thread)&&
+   memory_->readRetained(thread+0x40,&id,sizeof(id))&&id==self;
  }
  bool attachEndpoint(std::shared_ptr<StopOperations> next) {
   std::lock_guard guard(mutex_);if(!alive_||closing_||!next||(stop_&&!stop_->safe()))return false;stop_=std::move(next);return true;

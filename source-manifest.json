@@ -1,7 +1,7 @@
 {
   ".gitignore": "8cd8edb54db7143c688d16824bda286238bca253ddbe22ab703b363e443654bc",
   "LICENSES/Apache-2.0.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-  "README.md": "da889a4875e7914e1fb6eb40bbbc9232ce355fe08edb699c09f5295180ee8a61",
+  "README.md": "e4bf6c75002dfa0b41603c2b08ebb67c41a2bf6280bd70ab3cca83a5b031ffcc",
   "THIRD_PARTY.md": "804fbbf5a9be1c2730b99e40eb03036dcc1fd4daaf649bf005ee0db8df99230c",
   "hardware/README.md": "aa10d4ea4714a1c99b49257c3cd9fd031ce75766ebca46a79113a376a43a1d0f",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c",
@@ -245,8 +245,8 @@
   "native/NativeMetadata.h": "c1975ca6ea41e6d7cb2e881332851ac1053c69556089aad1c694cef2e4345f1c",
   "native/NativeMotionAdapter.cpp": "7cf86c7b3427c40da00709f1d57091ff49f7dbccc7b97fe17823c78ab09f11d1",
   "native/NativeMotionAdapter.h": "ae2cf9dfb2467ec37063950d6cefcdef9fb05847a37e8a0c52a3250a1149115c",
-  "native/NativeOwnerCore.h": "2cb1b8b201c137783cb561776f62c1cac483bd94458c589eef0f798caf272151",
-  "native/NativeReaderOwner.cpp": "53336725d5e52a25364567c71a93ba526d731ab95e2da63d31fe1934241ac19e",
+  "native/NativeOwnerCore.h": "9b47f0a6307b184f183c916465996a97bb3035f39dbe4f0347562b050caec6fd",
+  "native/NativeReaderOwner.cpp": "3448de0fdb90abc50c610b5e9d438794a01f67adf559dd695b79572111112e5a",
   "native/NativeReaderOwner.h": "51bed169be6949491292675b7df23f1deda41e021076d3e9cd6bf2341e003d44",
   "native/NativeReaderThread.h": "51195d7fbd2e175654b92b265a07733d5e05834def8737a242da9f402475ac06",
   "native/OpaqueReaderRegistry.h": "7bdc59c9fe771c9369e21ca17fd8e7956bcb25e7c95c65ca184e0eb67828e401",
@@ -318,12 +318,12 @@
   "tests/java/com/android/server/input/ProductionSessionStateTest.java": "e01ff3e08d70064a53f5fc09bccb8746ca2b1205e3c790106be56302557354be",
   "tests/keyguard-regression/KeyguardRegression.java": "50cc4d165cb507ec86d96580621c9ae490956415b4fa71d0c35ccd77d307bee1",
   "tests/keyguard-regression/old-session-methods.smali": "605b453b61034982924105e211276cec6adea0637913730244deb8a291619829",
-  "tests/native_owner.cpp": "817433ef390290f71643b9ca387e3d52f716b0c2d50f0da51c153ef7c8c46ed0",
+  "tests/native_owner.cpp": "074dd4486b6a530e773d62a1a55c697d1cf5e86a50c2a51b406ecddd46094fdd",
   "tests/runtime.cpp": "b2fa61f5acb7ad212f97661df00d08f52c05f7fe065c6a05d1a3c82778f8b011",
   "tools/build_native.py": "b5eb94f0bb2ff58c4f1e8541fdc0ca79d7e47e3c8d817f351fabe4e7754bb1da",
   "tools/build_services.py": "3514e683418137de632c46a71e4c48da3b867528201690afb87e3ec2c95cce5e",
   "tools/test.py": "b528ee90e3b44e77e5bff68be4b2992f06a570f7ef007656ff97f750d4a5ebf0",
   "tools/test_keyguard.py": "e6523c3e049c4b9ad5063c9b20115b5339d9289461c9677ed351c1bec67927be",
   "tools/test_runtime.py": "31367bf6e50887a147b78b974956ba6662751542daf293e8a616499dc91d0783",
-  "verification.json": "84fb668fca09ef04ce34d563420eb845b4eee0af93ea93943b2280a842ac002c"
+  "verification.json": "cf26e9e70fe34f0d246befe312ce1eeb62c99f5446d2e4969fa1c4e92432846b"
 }

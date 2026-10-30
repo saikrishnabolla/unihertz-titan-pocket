@@ -15,6 +15,8 @@ The port uses the stock MediaTek kernel and vendor drivers. A permanent clean in
 | Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, remaining permanent-install hardware rechecks, and full stock restore. |
 | Cellular | No SIM is available. Carrier calls, SMS, mobile data and VoLTE remain untested. |
 
+A performance fix removes repeated `/proc/self/maps` scans from live input-thread checks. The phone boots with the fixed library in a reversible Magisk override; the owner reports faster touchscreen scrolling and animations. A second input-thread profile no longer lists memory-map parsing among symbols above 1%. These profiles used different input activity and do not establish a percentage speedup.
+
 The old kernel/vendor security level is unchanged by the newer Android system. An unlocked bootloader and custom system may fail app integrity checks. Relocking has not been tested and must not be attempted. NVRAM, proinfo, TEE, bootloader and DTBO raw hashes match their pre-install values. Four vendor ext4 partitions changed raw hashes while mounted read/write; their calibration files have not been compared individually. Stock firmware backups exist; a full stock userdata backup was waived before erasure.
 
 ## Build and test

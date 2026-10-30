@@ -18,6 +18,10 @@ void reject(const char* reason,bool tagged=false)noexcept {
 #endif
 }
 class ProcessMemory final:public titan_native_owner::Memory {
+ bool readRetained(uintptr_t address,void* out,size_t size)const noexcept override {
+  if(!address||!out||!size||size>UINTPTR_MAX-address)return false;
+  std::memcpy(out,reinterpret_cast<const void*>(address),size);return true;
+ }
  bool read(uintptr_t address,void* out,size_t size)const noexcept override {
   if(!address||!size||size>UINTPTR_MAX-address)return false;
 #if defined(__ANDROID__) && defined(__aarch64__)
