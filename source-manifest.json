@@ -1,7 +1,7 @@
 {
   ".gitignore": "8cd8edb54db7143c688d16824bda286238bca253ddbe22ab703b363e443654bc",
   "LICENSES/Apache-2.0.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-  "README.md": "9fbae4421e9f685cc2e8c77f6744d44307cd7a284957008601e95e3dd9abe3d1",
+  "README.md": "2c8e77725069bfedfeaf0a31ffa83c088c946c2b9722b32a014e78869c3c2844",
   "THIRD_PARTY.md": "804fbbf5a9be1c2730b99e40eb03036dcc1fd4daaf649bf005ee0db8df99230c",
   "hardware/README.md": "aa10d4ea4714a1c99b49257c3cd9fd031ce75766ebca46a79113a376a43a1d0f",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c",
@@ -325,5 +325,5 @@
   "tools/test.py": "b528ee90e3b44e77e5bff68be4b2992f06a570f7ef007656ff97f750d4a5ebf0",
   "tools/test_keyguard.py": "e6523c3e049c4b9ad5063c9b20115b5339d9289461c9677ed351c1bec67927be",
   "tools/test_runtime.py": "31367bf6e50887a147b78b974956ba6662751542daf293e8a616499dc91d0783",
-  "verification.json": "97d8e57609c02c3a4d74d785e05f87e2ffcbbee7927200a871eaf4dd58cd2054"
+  "verification.json": "6b704578e20b3b4f0a17a011bcb843360537f209f388421c5be8d563e686c826"
 }

@@ -47,6 +47,8 @@
     "owner_first_unlock_scrolls": true,
     "owner_cursor_visible": false,
     "owner_typing_normal": true,
-    "cellular": "untested without SIM"
+    "cellular": "untested without SIM",
+    "owner_lock_wake_cycles_passed": 2,
+    "owner_touchscreen_and_keyboard_scroll_interoperate": true
   }
 }

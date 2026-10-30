@@ -10,7 +10,7 @@ The port uses the stock MediaTek kernel and vendor drivers in a DSU guest. Stock
 | Area | Evidence |
 |---|---|
 | Boot | September guest boots with SELinux Enforcing; installed SYSTEM and payload hashes verified. |
-| Keyboard surface | Physical scrolling works after the first unlock, without an extra sleep/wake cycle. No cursor; normal typing passed owner tests. |
+| Keyboard surface | First-unlock scrolling and two lock/wake cycles passed owner tests. Touchscreen and keyboard scrolling both work; no cursor; normal typing works. |
 | Earlier hardware checks | Physical PIN, Alt+A, navigation keys, keyboard light timeout, fingerprint enrollment, Bluetooth music, front camera preview and green notification LED passed owner tests. |
 | Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, and full stock restore/permanent installation. |
 | Cellular | No SIM is available. Carrier calls, SMS, mobile data and VoLTE remain untested. |
