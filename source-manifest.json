@@ -1,9 +1,9 @@
 {
   ".gitignore": "8cd8edb54db7143c688d16824bda286238bca253ddbe22ab703b363e443654bc",
   "LICENSES/Apache-2.0.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-  "README.md": "33816a67de60e6843fc757d5e0a730c54b06f0010c2953ad90c2ed62181834c1",
+  "README.md": "fddbeb5d09654c15733f7b1f9e01b03f6717464a8b6d7c4a66ec594db62432da",
   "THIRD_PARTY.md": "a3055ca8e3ba3c4b723170a8275af85d5dd1f2cd268370fae83253afbac981ab",
-  "hardware/README.md": "4c183ec8bea4a1cd223b069705f700a60b316ea19ca0ebf96b9af604060497f0",
+  "hardware/README.md": "43ba3582d6f2b2643c3ebb14972ad0a52c9df422796d6ec858e87783a2b3e4e7",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightPolicy.java": "22c397d01f11c696cf17eb3e8febe92932d6aee4717fd684b8ab763b3f9ad899",
   "hardware/backlight/adapter/stubs/android/content/ContentResolver.java": "e7e159d3b9c42591c63c6de5b639297f92bcec4f338b111f328fd399941a6e30",
@@ -56,13 +56,13 @@
   "hardware/backlight/system-rebuild/helpers/inventory_helpers.py": "3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0",
   "hardware/backlight/system-rebuild/packaging-pins.json": "fbae4c747d7aadfa81ebc9a38468161c2c31dbfe4eb28830c9671c95bb94183b",
   "hardware/backlight/system-rebuild/source-manifest.json": "157375c84d8e7e97050ad025e93492e30a1a78b4ceea3f9ed3bec660cb71afa7",
-  "hardware/base-apps/README.md": "943a7acf882be30d9a8f1e1c3a4b477ceafae752f838c52d943cb170d6a1ed0d",
+  "hardware/base-apps/README.md": "82b315d5a896df3fcd2fa569e59447268eeab17cf49e1d5ae95941fce1136803",
   "hardware/base-apps/build.py": "08e98761215d95ca7636a13ea5271573760df0933f0767d3903bd0ba166b3142",
   "hardware/base-apps/helpers/check_google_dsu_pair_avb.py": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51",
   "hardware/base-apps/helpers/image_helpers.py": "bc2f05b93a8047a47bbf314b157921efe628ee717d2547d50be6a988cfa7ade7",
   "hardware/base-apps/helpers/inventory_helpers.py": "e54adf92d0600af72061cf1cc3561668d9c61ce2205e72628f735c391f30ba94",
   "hardware/base-apps/private-inputs.example.json": "091364d965c192f8a303ff46fcc3916385682b2ff177abec739757009723946b",
-  "hardware/base-apps/source-manifest.json": "fb088cd2b9da652fd15be52f9dd9ca186c2e16ee1e690966b89d8077683a3293",
+  "hardware/base-apps/source-manifest.json": "b8b4d594bcdb907a958d8afec3d9ff012cd9fb6a5e45835412ff21d495508ebd",
   "hardware/base-apps/super_helpers/assemble_super.py": "2b493ee71ff3f96af7ae48e67d6323c00b627e71d4cc503fa06aef2989b466b7",
   "hardware/base-apps/super_helpers/build_metadata.py": "2e911320295b0080c196a610a02cf34f950c3e24414c1b18b65c82032382ef4e",
   "hardware/bluetooth-module/rebuild-v2/helpers/zip_helpers.py": "39327f1f8c8f7fb5f349acec99dbeac4c9a53eaa2896c8001185d8f93d8626b9",
@@ -336,5 +336,8 @@
   "tools/test.py": "b528ee90e3b44e77e5bff68be4b2992f06a570f7ef007656ff97f750d4a5ebf0",
   "tools/test_keyguard.py": "e6523c3e049c4b9ad5063c9b20115b5339d9289461c9677ed351c1bec67927be",
   "tools/test_runtime.py": "31367bf6e50887a147b78b974956ba6662751542daf293e8a616499dc91d0783",
-  "verification.json": "aed67b8f0291a7ab6fed280fc5563d1c964fd573887cf7def3e95376699b76cd"
+  "verification.json": "aed67b8f0291a7ab6fed280fc5563d1c964fd573887cf7def3e95376699b76cd",
+  "docs/BUILDING.md": "dc7692bc05be898c16d0334fa9aac49e5c4656ebaf0e713ecb111f3180acaa7f",
+  "docs/images/guest-app-drawer.png": "515d58211cd7312e98b389c8eb2d02cb4db979da232f748f30c0507b315acaf2",
+  "docs/images/play-store-first-launch.png": "810cd452f0319b1289037d4460896072fc2893513fa2fea7cb98125af8737f15"
 }

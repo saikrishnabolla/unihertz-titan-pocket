@@ -1,28 +1,60 @@
-# Titan Pocket Android 17
+# Android 17 on the Unihertz Titan Pocket
 
-Source patches, build steps and test findings for the Unihertz Titan Pocket running the September Android 17 GSI, `CP3A.260905.010`. This package builds the native scrolling extension, patches its exact `libinputflinger.so`, and patches `services.jar`. It does not build a complete ROM or install anything on a phone.
+I wanted to keep using the Titan Pocket's physical keyboard without staying on its old Android release. Getting Android 17 to boot turned out to be the start of the work. The keyboard needed its symbols back. The keyboard surface needed to scroll without a mouse cursor. Lights, fingerprint support and the square-screen layout all needed attention too.
 
+The first Android 17 image that worked for me was a Restless GSI. Google's September preview took more work: we tested compatibility changes in a DSU guest before moving to a permanent install. This repo contains the source patches, build recipes and test findings from that process.
 
-The port uses the stock MediaTek kernel and vendor drivers. A permanent clean installation now boots on the test phone, without DSU. Installation erased its apps and settings with the owner’s consent. This is an unofficial port; the source package does not provide a complete ROM build or a general-purpose installer.
+The test phone now boots `CP3A.260905.010` directly, without a guest ROM. It still uses the stock MediaTek Linux 4.14 kernel and vendor drivers. This is an unofficial port for the **Titan Pocket**, with work still needed before I can call it a daily driver.
+
+## Start here
+
+- **Understand the port:** read the [phone tests](#phone-tests) below, then the [hardware source map](hardware/README.md).
+- **Run tests or build components:** follow the [build and usage guide](docs/BUILDING.md). The host tests can run without a phone or firmware.
+- **Rebuild the current app layer:** use the [base-app recipe](hardware/base-apps/README.md). It requires an already-patched, exact-match SYSTEM image and private inputs.
+- **Install on another phone:** there is no public flashable release or general-purpose installer in this repo. The recipes produce offline candidates; cloning this repo is not enough to reproduce the installed phone.
+
+Firmware, APKs, signing keys, original compiled Android components and private device logs are excluded. Some build inputs still depend on the original development environment. Those limits are described in the guide.
+
+## Screenshots
+
+These are real captures from the work, before the final base-app update. They show earlier stages, not the exact current app selection. Neither image contains account details.
+
+| Android 17 guest app drawer | Play Store's first launch on the permanent install |
+|---|---|
+| <img src="docs/images/guest-app-drawer.png" width="320" alt="Android 17 app drawer on the Titan Pocket's square display during guest testing"> | <img src="docs/images/play-store-first-launch.png" width="320" alt="Play Store sign-in screen on the permanent Android 17 install, before account sign-in"> |
+
+The drawer still shows the old camera, Search and test browser. The current base removes those apps and includes GrapheneOS Camera and Ungoogled Chromium. The Play Store capture shows its sign-in screen; it does not prove account sign-in or app downloads. [Capture details](docs/BUILDING.md#screenshot-provenance).
 
 ## Phone tests
 
-| Area | Evidence |
+These results come from one test phone. Guest checks and permanent-install checks are listed separately so you can see what still needs repeating.
+
+| Area | What we checked |
 |---|---|
-| Boot | Permanent September build boots with SELinux Enforcing and encrypted userdata. Full SUPER, BOOT, recovery and vbmeta readback hashes match; a normal reboot passed. |
-| Keyboard surface | First-unlock scrolling, normal typing, Alt+A and keyboard light timeout passed owner checks after the permanent install. The same SYSTEM also passed two lock/wake cycles, touchscreen/keyboard scrolling together and no-cursor checks in the guest. |
-| Camera app | GrapheneOS Camera 93 is built into SYSTEM. AOSP Camera2, Camera Go and BSG are absent. Photo/video capture intents resolve to GrapheneOS Camera; capture quality remains unverified. |
-| Earlier hardware checks | In the earlier guest, physical PIN, Alt+A, navigation keys, keyboard light timeout, fingerprint enrollment, Bluetooth music, front camera preview and green notification LED passed owner tests. The clean install requires fresh enrollment and pairing. |
-| Still unverified | Camera capture/video/flash, BLE and call audio, other LED colors, sensors in use, endurance, remaining permanent-install hardware rechecks, and full stock restore. |
-| Cellular | No SIM is available. Carrier calls, SMS, mobile data and VoLTE remain untested. |
+| Boot | Permanent September build boots with SELinux Enforcing and encrypted userdata. Full SUPER, BOOT, recovery and vbmeta readback hashes matched at installation; a normal reboot passed. |
+| Keyboard | First-unlock surface scrolling, normal typing, Alt+A for `@` and keyboard-light timeout passed owner checks on the permanent install. In the guest, scrolling also survived two lock/wake cycles, worked alongside touchscreen scrolling and showed no mouse cursor. Physical PIN entry passed earlier testing. |
+| Navigation and screen | Physical navigation keys worked in the guest, with Android's on-screen bar removed through a resource overlay. Display density is 260 on the permanent install. Guest tests covered the enlarged boot animation and keyboard/button lights turning off with the screen. |
+| Fingerprint, Bluetooth and LED | Fingerprint enrollment/unlock, Bluetooth music and the green notification LED passed earlier guest checks. Fresh enrollment, pairing and hardware rechecks are still needed after a clean install. |
+| Camera | GrapheneOS Camera 93 is built into SYSTEM, and photo/video capture intents resolve to it. AOSP Camera2, Camera Go and BSG are absent. Capture quality remains unverified. |
+| Browser and WebView | Ungoogled Chromium 155 is the default browser. Cromite WebView 153 prepared both ARM32 and ARM64 providers. Actual page rendering after the final update remains unverified. These are pinned builds, not a promise of current browser security. |
+| Cellular | No SIM was available. Modem detection does not establish working carrier calls, SMS, mobile data or VoLTE. |
+| Still to test | Photo/video/flash, BLE, call audio, other LED colors, sensors in use, battery endurance, remaining permanent-install hardware checks, factory reset and a full stock restore. |
 
-A performance fix removes repeated `/proc/self/maps` scans from live input-thread checks. The fixed library is now built into SYSTEM; the owner reported faster touchscreen scrolling and animations when it was first tested as an override. A second input-thread profile no longer lists memory-map parsing among symbols above 1%. These profiles used different input activity and do not establish a percentage speedup.
+The touchpad initially made touchscreen scrolling and animations slower. Profiling found repeated `/proc/self/maps` parsing on the live input thread. The fix keeps those scans out of the live checks, and the owner reported that the phone felt much faster. A later profile no longer showed memory-map parsing above the 1% report threshold. The two profiles used different input activity, so they do not establish a percentage speedup.
 
-The old kernel/vendor security level is unchanged by the newer Android system. An unlocked bootloader and custom system may fail app integrity checks. Relocking has not been tested and must not be attempted. NVRAM, proinfo, TEE, bootloader and DTBO raw hashes match their pre-install values. Four vendor ext4 partitions changed raw hashes while mounted read/write; their calibration files have not been compared individually. Stock firmware backups exist; a full stock userdata backup was waived before erasure.
+The detailed recorded results and output hashes are in [verification.json](verification.json). They describe checks from the porting work; they are not a fresh test run on every clone.
+
+## What remains stock
+
+The newer Android system depends on the old kernel and proprietary vendor support. Replacing SYSTEM does **not** patch the kernel and vendor vulnerabilities discovered since their release. This is not a mainline-kernel port or official Unihertz firmware.
+
+The permanent installation erased the test phone's apps and settings with the owner's consent. Stock firmware backups exist, but a full stock userdata backup was waived before erasure. NVRAM, proinfo, TEE, bootloader and DTBO raw hashes matched their pre-install values. Four writable vendor-data partitions changed raw hashes while mounted; individual calibration files have not been compared.
+
+An unlocked bootloader and custom system can fail app integrity checks. **Do not relock the bootloader with this port.** Relocking has not been tested. The [usage guide](docs/BUILDING.md#installation-and-recovery-boundary) explains what is missing from a repeatable installation and recovery path.
 
 ## Build and test
 
-Core tests require Python 3, Clang with C++20 and sanitizer support, and JDK 17:
+With Python 3, Clang with C++20 and sanitizer support, and JDK 17 on your PATH, run from the repo root:
 
 ```sh
 python3 tools/test.py --output build/core
@@ -30,28 +62,14 @@ python3 tools/test.py --output build/core-tsan --sanitizer thread
 python3 tools/test_keyguard.py --output build/keyguard
 ```
 
-Android builds also need LLVM tools, matching CP3 platform/generated headers, and the private Android link libraries. Copy `private-inputs.example.json` to `private-inputs.json`, supply its header directories and hash-matched libraries, then run:
-
-```sh
-python3 tools/build_native.py --inputs private-inputs.json --output build/native
-python3 tools/test_runtime.py --inputs private-inputs.json --output build/runtime
-```
-
-The header directories in the example describe the existing build environment. Downloading or generating that header tree is not automated. The Runtime test substitutes Android originals and the native owner; it cannot establish phone behavior or ABI compatibility by itself.
-
-Supply private originals for the remaining builds. The hooks builder requires `libinputflinger.so` with SHA256 `38761f904a5952bdc958b6348f00d65d467b608bff8d86a696c275f57fc72955`. The services builder requires the backlight-patched base `services.jar` with SHA256 `6806a4dcf3ef38d8368727297f62a0c7680e575365efbabb156c6bf246694e54` and a tool JAR providing D8 and `com.android.tools.smali` (the tested tool is JADX 1.5.3's complete JAR):
-
-```sh
-python3 hooks/build.py --original inputs/libinputflinger.so --output build/hooks
-python3 tools/build_services.py --original inputs/services.jar --dex-tools inputs/dex-tools.jar --output build/services
-```
-
-Use an empty services output directory. Firmware, Google/system binaries, device logs, credentials and personal data are not included. See `THIRD_PARTY.md` for retained upstream notices.
+These commands test host-side input ownership, session state and the first-unlock regression. They do not connect to the phone. See the [build and usage guide](docs/BUILDING.md) for tool checks, expected results, private-input setup and component builds.
 
 ## Other hardware sources
 
-The base-app recipe at [hardware/base-apps](hardware/base-apps/README.md) integrates the camera, Ungoogled Chromium 155.0.8059.39, mixed-ABI Cromite WebView 153 and the input performance fix. It removes AOSP Camera2, QuickSearchBox and the test-shell browser. Chromium replaces the earlier Brave choice in the base image; Brave is also uninstalled from the phone. The phone booted after a SUPER-only update with userdata retained, matching firmware readback and unchanged protected partitions. WebView prepared both architectures. Chromium 155 and WebView 153 are behind current Chromium 156; browser page rendering remains unverified. Factory-reset behavior has not been tested.
+The [hardware source map](hardware/README.md) covers boot compatibility, keyboard layout, PIN entry, lighting, fingerprint, Bluetooth, navigation and UI spacing. Many directories record pinned experiments from the guest stage. They are not a sequence of scripts to run on your phone.
 
-The earlier camera add-on is built with `python3 hardware/system-camera/build.py --apk inputs/Camera-93.apk --output build/system-camera`. See [its instructions](hardware/system-camera/README.md) for the pinned download, installation and checks.
+The [current base-app recipe](hardware/base-apps/README.md) integrates GrapheneOS Camera, Ungoogled Chromium, mixed-ABI Cromite WebView and the touchpad performance fix. The [earlier camera add-on](hardware/system-camera/README.md) is retained for the previous base image and is superseded on the current image.
 
-See [hardware/README.md](hardware/README.md) for the recovered boot-chain, keyboard, lighting, fingerprint, Bluetooth, camera and layout sources, their pinned inputs and remaining build limits. Firmware, signing keys, original compiled components and animation assets must be supplied separately. Upstream notices are retained; no new license is granted for third-party material.
+For a bug report, include your build ID, whether it is a guest or permanent install, the affected feature and steps to reproduce it. Remove serial numbers, account details and personal content from any logs or screenshots.
+
+Upstream notices and the limits on reuse are in [THIRD_PARTY.md](THIRD_PARTY.md). No project-wide license has been chosen for the remaining code.

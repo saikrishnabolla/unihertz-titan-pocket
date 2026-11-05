@@ -1,6 +1,6 @@
 # Titan Pocket hardware work
 
-Source and offline build steps for the Titan Pocket Android 17 guest. The phone still uses its stock kernel, vendor drivers and stock Android as the recovery system. This is not official Unihertz firmware or a full firmware rebuild.
+Source and offline build steps from the Titan Pocket Android 17 port. Much of this work was tested in a DSU guest; the test phone now boots Android 17 permanently with the stock kernel and vendor drivers retained. Stock Android is no longer its normal operating system. See the [build and usage guide](../docs/BUILDING.md) before running a builder. This is unofficial firmware work, and these directories do not form a complete ROM build pipeline.
 
 - `boot-chain`: recovered init, zygote, IR, policy, connectivity and diagnostic builders, with their tests. These are historical pinned steps; some use Linux `/tmp/opencode` tool defaults. `prepare_google_zygote_stdio_guest.py` moves its input image into the output directory. Use a disposable copy.
 - `backlight`: light policy, Android bridge, host tests and pinned framework/image rebuilds.
@@ -8,7 +8,7 @@ Source and offline build steps for the Titan Pocket Android 17 guest. The phone 
 - `bluetooth-module`, `bluetooth-system`: controller patch and pinned APEX/image rebuilds.
 - `navigation-overlay`, `native-ui-v1`, `ui-spacing-v1`: physical navigation and layout changes.
 - `notification-led-v1`: notification light resource overlay and image builder.
-- `camera-layout-fix`, `camera-app-update`: camera layout patch, verifier and signing source. The current replacement is [`system-camera`](system-camera/README.md): a pinned GrapheneOS Camera system add-on that masks AOSP Camera2. The earlier camera patches remain historical sources.
+- `camera-layout-fix`, `camera-app-update`: camera layout patch, verifier and signing source. The current image integrates GrapheneOS Camera through [`base-apps`](base-apps/README.md), which removes AOSP Camera2. The [`system-camera`](system-camera/README.md) add-on and earlier camera patches remain historical sources for previous images.
 - `legacy-kernel`: CLAT label adapter, local-network capability guards and LPM backport experiments. Host tests do not prove a kernel module is safe to load.
 
 Firmware, APKs, APEX files, framework JARs, decompiled original classes, tool binaries and signing keys are excluded. Builders retain exact input hashes and reject a different build. Supply your own matching inputs and signing keys; follow the source manifests for each step. Original source notices remain in the files. This directory grants no new license for third-party material.
