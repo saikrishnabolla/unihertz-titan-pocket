@@ -111,8 +111,9 @@ This records the observed button route. It is not a full stock restoration guide
 
 ## Screenshot provenance
 
-The README uses two unedited captures reviewed for visible private information:
+The README uses three unedited captures reviewed for visible private information:
 
+- [Guest home screen](images/guest-home-screen.png): the earlier boot-compatibility guest, before the navigation-bar and search-widget changes.
 - [Guest app drawer](images/guest-app-drawer.png): the UI-spacing trial, before the final base-app update. It includes historical apps and the LED test utility.
 - [Play Store first launch](images/play-store-first-launch.png): the Google Play core trial on the permanent install, before sign-in. It shows the app launching, not account or download verification.
 

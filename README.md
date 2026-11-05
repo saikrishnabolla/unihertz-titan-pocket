@@ -17,13 +17,13 @@ Firmware, APKs, signing keys, original compiled Android components and private d
 
 ## Screenshots
 
-These are real captures from the work, before the final base-app update. They show earlier stages, not the exact current app selection. Neither image contains account details.
+These are real captures from the work, before the final base-app update. They show earlier stages, not the exact current app selection. The images contain no account details.
 
-| Android 17 guest app drawer | Play Store's first launch on the permanent install |
-|---|---|
-| <img src="docs/images/guest-app-drawer.png" width="320" alt="Android 17 app drawer on the Titan Pocket's square display during guest testing"> | <img src="docs/images/play-store-first-launch.png" width="320" alt="Play Store sign-in screen on the permanent Android 17 install, before account sign-in"> |
+| Android 17 guest home screen | Android 17 guest app drawer | Play Store's first launch on the permanent install |
+|---|---|---|
+| <img src="docs/images/guest-home-screen.png" width="320" alt="Earlier Android 17 guest home screen with the original search widget and on-screen navigation bar"> | <img src="docs/images/guest-app-drawer.png" width="320" alt="Android 17 app drawer on the Titan Pocket's square display during guest testing"> | <img src="docs/images/play-store-first-launch.png" width="320" alt="Play Store sign-in screen on the permanent Android 17 install, before account sign-in"> |
 
-The drawer still shows the old camera, Search and test browser. The current base removes those apps and includes GrapheneOS Camera and Ungoogled Chromium. The Play Store capture shows its sign-in screen; it does not prove account sign-in or app downloads. [Capture details](docs/BUILDING.md#screenshot-provenance).
+The home screen predates the navigation-bar removal and still has the old search widget. The drawer still shows the old camera, Search and test browser. The current base removes those apps and includes GrapheneOS Camera and Ungoogled Chromium. The Play Store capture shows its sign-in screen; it does not prove account sign-in or app downloads. [Capture details](docs/BUILDING.md#screenshot-provenance).
 
 ## Phone tests
 

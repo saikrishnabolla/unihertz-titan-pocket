@@ -1,7 +1,7 @@
 {
   ".gitignore": "8cd8edb54db7143c688d16824bda286238bca253ddbe22ab703b363e443654bc",
   "LICENSES/Apache-2.0.txt": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
-  "README.md": "fddbeb5d09654c15733f7b1f9e01b03f6717464a8b6d7c4a66ec594db62432da",
+  "README.md": "e1229bb2fcad4315b0eba7d110f4194a691d4c4fdd83ca6f5ac411725971622b",
   "THIRD_PARTY.md": "a3055ca8e3ba3c4b723170a8275af85d5dd1f2cd268370fae83253afbac981ab",
   "hardware/README.md": "43ba3582d6f2b2643c3ebb14972ad0a52c9df422796d6ec858e87783a2b3e4e7",
   "hardware/backlight/adapter/src/com/android/server/input/LegacyKeyboardLightBridge.java": "a72e1e7c65a4f6ea6b9f33bef83d5a188dbcdf784c5f49abe7678b47ca9d6d3c",
@@ -337,7 +337,8 @@
   "tools/test_keyguard.py": "e6523c3e049c4b9ad5063c9b20115b5339d9289461c9677ed351c1bec67927be",
   "tools/test_runtime.py": "31367bf6e50887a147b78b974956ba6662751542daf293e8a616499dc91d0783",
   "verification.json": "aed67b8f0291a7ab6fed280fc5563d1c964fd573887cf7def3e95376699b76cd",
-  "docs/BUILDING.md": "dc7692bc05be898c16d0334fa9aac49e5c4656ebaf0e713ecb111f3180acaa7f",
+  "docs/BUILDING.md": "86d715c79f3ba28f8f009db63f87121ec27661234fda24780b6bc2fc91b7c6d1",
   "docs/images/guest-app-drawer.png": "515d58211cd7312e98b389c8eb2d02cb4db979da232f748f30c0507b315acaf2",
-  "docs/images/play-store-first-launch.png": "810cd452f0319b1289037d4460896072fc2893513fa2fea7cb98125af8737f15"
+  "docs/images/play-store-first-launch.png": "810cd452f0319b1289037d4460896072fc2893513fa2fea7cb98125af8737f15",
+  "docs/images/guest-home-screen.png": "0b17f89f254ff1c016dc4cd101e9ac7803286275d4f2f7b62521b98465092842"
 }
