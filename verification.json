@@ -116,9 +116,10 @@
     "bsg_removed": true,
     "photo_video_and_secure_camera_intents_resolve": true,
     "selinux": "Enforcing",
-    "photo_video_capture_quality": "unverified",
     "aosp_camera_removed_from_base": true,
-    "deployment": "Integrated into SYSTEM; superseded Magisk override disabled."
+    "deployment": "Integrated into SYSTEM; superseded Magisk override disabled.",
+    "image_quality": "Owner tested: comparable to the stock camera, with no observed regression.",
+    "video_recording_playback_and_flash": "unverified"
   },
   "base_apps_update": {
     "super_sha256": "c91de3a132c40fa2310811d5aa3dc4fae78e8ef30290505ebd0dbf881db7fb49",

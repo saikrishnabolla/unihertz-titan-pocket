@@ -35,10 +35,10 @@ These results come from one test phone. Guest checks and permanent-install check
 | Keyboard | First-unlock surface scrolling, normal typing, Alt+A for `@` and keyboard-light timeout passed owner checks on the permanent install. In the guest, scrolling also survived two lock/wake cycles, worked alongside touchscreen scrolling and showed no mouse cursor. Physical PIN entry passed earlier testing. |
 | Navigation and screen | Physical navigation keys worked in the guest, with Android's on-screen bar removed through a resource overlay. Display density is 260 on the permanent install. Guest tests covered the enlarged boot animation and keyboard/button lights turning off with the screen. |
 | Fingerprint, Bluetooth and LED | Fingerprint enrollment/unlock, Bluetooth music and the green notification LED passed earlier guest checks. Fresh enrollment, pairing and hardware rechecks are still needed after a clean install. |
-| Camera | GrapheneOS Camera 93 is built into SYSTEM, and photo/video capture intents resolve to it. AOSP Camera2, Camera Go and BSG are absent. Capture quality remains unverified. |
+| Camera | GrapheneOS Camera 93 is built into SYSTEM, and photo/video capture intents resolve to it. AOSP Camera2, Camera Go and BSG are absent. The owner tested camera image quality and found it comparable to the stock camera, with no observed regression. |
 | Browser and WebView | Ungoogled Chromium 155 is the default browser. Cromite WebView 153 prepared both ARM32 and ARM64 providers. Actual page rendering after the final update remains unverified. These are pinned builds, not a promise of current browser security. |
 | Cellular | No SIM was available. Modem detection does not establish working carrier calls, SMS, mobile data or VoLTE. |
-| Still to test | Photo/video/flash, BLE, call audio, other LED colors, sensors in use, battery endurance, remaining permanent-install hardware checks, factory reset and a full stock restore. |
+| Still to test | Video recording/playback and flash, BLE, call audio, other LED colors, sensors in use, battery endurance, remaining permanent-install hardware checks, factory reset and a full stock restore. |
 
 The touchpad initially made touchscreen scrolling and animations slower. Profiling found repeated `/proc/self/maps` parsing on the live input thread. The fix keeps those scans out of the live checks, and the owner reported that the phone felt much faster. A later profile no longer showed memory-map parsing above the 1% report threshold. The two profiles used different input activity, so they do not establish a percentage speedup.
 
@@ -72,4 +72,4 @@ The [current base-app recipe](hardware/base-apps/README.md) integrates GrapheneO
 
 For a bug report, include your build ID, whether it is a guest or permanent install, the affected feature and steps to reproduce it. Remove serial numbers, account details and personal content from any logs or screenshots.
 
-Upstream notices and the limits on reuse are in [THIRD_PARTY.md](THIRD_PARTY.md). No project-wide license has been chosen for the remaining code.
+The project's original code and documentation are licensed under [Apache 2.0](LICENSE). Third-party code retains its upstream license, including the GPL-2.0 Linux kernel sources and module. See [THIRD_PARTY.md](THIRD_PARTY.md) for the scope and notices.
