@@ -1,0 +1,37 @@
+{
+  "status": "OFFLINE_REBUILD_VERIFIED",
+  "phone_flash_performed": false,
+  "original_inputs_extracted_fresh": true,
+  "public_compiler_built_from_clean_checkout": true,
+  "lexer_generated_from_source": true,
+  "policy_sha256": "cb2e4b879e2de0c0acb97309c9a8380e2c25771a16ed0557733ef80bfd3b2e22",
+  "stock_derived_vendor_sha256": "5defb3673f77079c1e4de2cccd8b6fc1e95eaba55c33bb86fdf35ed490dd5588",
+  "signing_key": "Fresh local RSA2048 test key; private key excluded",
+  "filesystem_check_passed": true,
+  "avb_signature_verification_passed": true,
+  "comparison_target_vendor_sha256": "4428076fb5e54681e06fc38faa648a9d71f8686acc6e3da017e79744445bb62c",
+  "all_paths_match": true,
+  "all_file_contents_match": true,
+  "matched_metadata": [
+    "type",
+    "permissions",
+    "uid",
+    "gid",
+    "size",
+    "links",
+    "symlink_target",
+    "SELinux xattrs",
+    "ctime",
+    "atime",
+    "mtime",
+    "crtime"
+  ],
+  "excluded_from_metadata_comparison": [
+    "inode number",
+    "allocated block count"
+  ],
+  "same_signed_image_hash_expected": false,
+  "fresh_signed_image_phone_tested": false,
+  "compared_paths": 1845,
+  "unit_tests_passed": 9
+}

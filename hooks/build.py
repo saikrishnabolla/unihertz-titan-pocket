@@ -1,4 +1,5 @@
-"""Hash-pinned offline lifecycle experiment. Never an installation candidate."""
+"""Rebuild the pinned CP3 Inputflinger hooks offline; never access a device."""
+if not __debug__:raise RuntimeError("Run without Python optimization; hook validation is required")
 from pathlib import Path
 import argparse,shutil
 import struct as S, hashlib as H, json, subprocess
@@ -8,12 +9,13 @@ parser.add_argument('--original',type=Path,required=True)
 parser.add_argument('--output',type=Path,required=True)
 parser.add_argument('--llvm-bin',type=Path)
 args=parser.parse_args()
-R=args.output.resolve();R.mkdir(parents=True,exist_ok=True)
-if not args.original.is_file():parser.error('Missing private original libinputflinger.so')
+if args.output.is_symlink() or args.output.exists():parser.error("Use a fresh output directory")
+R=args.output.resolve();R.mkdir(parents=True,exist_ok=False)
+if args.original.is_symlink() or not args.original.is_file():parser.error('Supply the original Google libinputflinger.so as a regular file')
 SRC=args.original.resolve()
 PIN='38761f904a5952bdc958b6348f00d65d467b608bff8d86a696c275f57fc72955'
 LLVM=(str(args.llvm_bin.resolve())+'/' if args.llvm_bin else '')
-b=SRC.read_bytes(); assert H.sha256(b).hexdigest()==PIN,'Private original libinputflinger hash differs; this patch supports only the pinned CP3 input'
+b=SRC.read_bytes(); assert H.sha256(b).hexdigest()==PIN,'Original Google libinputflinger hash differs; this patch supports only the pinned CP3 input'
 h=list(S.unpack_from('<16sHHIQQQIHHHHHH',b)); assert h[2]==183
 ph=[list(S.unpack_from('<IIQQQQQQ',b,h[5]+i*56)) for i in range(h[10])]
 sh=[list(S.unpack_from('<IIQQQQIIQQ',b,h[6]+i*64)) for i in range(h[12])]
@@ -222,5 +224,6 @@ out=R/'libinputflinger-final-hooks-v3-OFFLINE-ONLY.so';out.write_bytes(new)
 read=subprocess.run([LLVM+'llvm-readelf','-l','-d','-rW','--dyn-syms',str(out)],text=True,capture_output=True);assert read.returncode==0 and not read.stderr,read.stderr
 (R/'patched-readelf.txt').write_text(read.stdout);assert 'TEXTREL' not in read.stdout
 (R/'hooks-relocations.json').write_text(json.dumps(fixups,indent=2)+'\n')
-report={'status':'OFFLINE EXPERIMENT; NOT AN INSTALL CANDIDATE','source_sha256':PIN,'output_sha256':H.sha256(new).hexdigest(),'mapper_aliases':mapper_aliases,'mapper_specs':mapper_specs,'constructor_aliases':[x[0] for x in ctor],'destructor_aliases':[x[0] for x in dtor],'direct_entry_edges':edges,'patched_entrypoints':[(hex(a),hex(d)) for a,d in entries],'append_segments':ph[-3:],'sidecar_imports':[x[0] for x in imports],'all_other_original_code_bytes_preserved':True,'original_notes_preserved':True,'no_RWX_no_TEXTREL':True,'new_got_is_RW_not_RELRO':True,'runtime_loader_and_lifecycle_proof':False,'wrapper_CFI_and_header_static_proof':True,'original_byte_changes':diffs}
+assert H.sha256(new).hexdigest()=='d7ce6ab0a55591aa87515307771a43ce9f2c4465e0f1c301fefecd21726a3b10','Output differs from recorded installed hook library'
+report={'status':'OFFLINE REBUILD MATCHES RECORDED INSTALLED LIBRARY','source_sha256':PIN,'output_sha256':H.sha256(new).hexdigest(),'mapper_aliases':mapper_aliases,'mapper_specs':mapper_specs,'constructor_aliases':[x[0] for x in ctor],'destructor_aliases':[x[0] for x in dtor],'direct_entry_edges':edges,'patched_entrypoints':[(hex(a),hex(d)) for a,d in entries],'append_segments':ph[-3:],'sidecar_imports':[x[0] for x in imports],'all_other_original_code_bytes_preserved':True,'original_notes_preserved':True,'no_RWX_no_TEXTREL':True,'new_got_is_RW_not_RELRO':True,'runtime_loader_and_lifecycle_proof':False,'wrapper_CFI_and_header_static_proof':True,'original_byte_changes':diffs}
 (R/'result.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='original_byte_changes'},indent=2))

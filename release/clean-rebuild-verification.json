@@ -1,0 +1,267 @@
+{
+  "scope": "Offline reconstruction of the port from pinned original Google images, public patch sources and downloads, and owner-supplied stock firmware. No saved patched SYSTEM or guest VENDOR input.",
+  "system": {
+    "source_sha256": "e5db44e3365f9e542ee3f6d4caf88ece554a460e2987086b8bf21f6c440a25ec",
+    "filesystem_sha256": "84e65e0d36ad230ce994892865aa1cb4ec2ba1edd53fb5456b051f25e1887005",
+    "filesystem_bytes": 3221225472,
+    "target_logical_inventory_verified": true,
+    "signed": true,
+    "device_tested": false,
+    "signer_public_key_sha256": "5964775fc881b102238b6db346773f31703a9bd58349c13894f33b05df811ba5",
+    "system_sha256": "61cc80bcdd015655bca79b2da16e03e47aa3d5502f4dadffb9e088456db48fb9",
+    "signing_key_phone_compatibility": "unverified"
+  },
+  "vendor": {
+    "vendor_sha256": "5defb3673f77079c1e4de2cccd8b6fc1e95eaba55c33bb86fdf35ed490dd5588",
+    "source_sha256": "d991ee39bb233c7f717d9007b1acf9f83c41b3db3e8af188a9c78d4f27b1408f",
+    "changed_paths": [
+      "/etc/fstab.mt6771",
+      "/etc/init/hw/init.mt6771.rc",
+      "/etc/selinux/plat_pub_versioned.cil",
+      "/etc/selinux/precompiled_sepolicy",
+      "/etc/selinux/precompiled_sepolicy.plat_sepolicy_and_mapping.sha256",
+      "/etc/selinux/precompiled_sepolicy.product_sepolicy_and_mapping.sha256",
+      "/etc/selinux/precompiled_sepolicy.system_ext_sepolicy_and_mapping.sha256",
+      "/etc/selinux/vendor_sepolicy.cil",
+      "/usr/idc/aw9523-key.idc",
+      "/usr/keychars/aw9523-key.kcm",
+      "/usr/keylayout/aw9523-key.kl"
+    ],
+    "added_paths": [
+      "/usr",
+      "/usr/idc",
+      "/usr/idc/aw9523-key.idc",
+      "/usr/keychars",
+      "/usr/keychars/aw9523-key.kcm",
+      "/usr/keylayout",
+      "/usr/keylayout/aw9523-key.kl"
+    ],
+    "content_and_metadata_verified": true,
+    "filesystem_layout_reproduced": false,
+    "filesystem_bytes": 503316480,
+    "container_bytes": 536870912,
+    "no_device_actions": true,
+    "status": "OFFLINE CANDIDATE; PHONE BOOT UNVERIFIED",
+    "boot_chain_requirement": "Unlocked bootloader; never relock"
+  },
+  "super": {
+    "version": 1,
+    "file": "super.img",
+    "bytes": 4831838208,
+    "sha256": "40153e55c89c3525968371b5191563818916735abb09b9b919c4ae1343cbf53e",
+    "prefix_bytes": 274432,
+    "prefix_sha256": "b79a001a076880b6679c02d52e51842850e22841ff16b7bc20d999b7459e2acf",
+    "payloads": [
+      {
+        "name": "system",
+        "offset": 1048576,
+        "bytes": 3288334336,
+        "sha256": "61cc80bcdd015655bca79b2da16e03e47aa3d5502f4dadffb9e088456db48fb9"
+      },
+      {
+        "name": "vendor",
+        "offset": 3289382912,
+        "bytes": 536870912,
+        "sha256": "5defb3673f77079c1e4de2cccd8b6fc1e95eaba55c33bb86fdf35ed490dd5588"
+      }
+    ],
+    "streamed_payload_hashes": {
+      "system": "61cc80bcdd015655bca79b2da16e03e47aa3d5502f4dadffb9e088456db48fb9",
+      "vendor": "5defb3673f77079c1e4de2cccd8b6fc1e95eaba55c33bb86fdf35ed490dd5588"
+    },
+    "persisted_payload_hashes_verified": true,
+    "persisted_metadata_verified": true,
+    "gaps_and_tail_zero_verified": true,
+    "reserve_bytes": 4294967296,
+    "flash_approved": false,
+    "device_operations": false
+  },
+  "system_payload_count": 35,
+  "system_entries_compared": 4368,
+  "vendor_entries_compared": 1845,
+  "payloads": [
+    {
+      "path": "/system/apex/com.android.art.apex",
+      "size": 45907968,
+      "sha256": "e55b5204e1822182ec891a321a5e509c7e93ce24162f4fb8085b5b0545cba753"
+    },
+    {
+      "path": "/system/apex/com.android.bt.apex",
+      "size": 28217344,
+      "sha256": "0d943a6d22c27440f568f8d1107b9db5cd085b7c44e7d7593a880f8d06fc05e7"
+    },
+    {
+      "path": "/system/apex/com.android.tethering.apex",
+      "size": 35131392,
+      "sha256": "a78cefc2934f37ddda616e470087c71e0ec7ebd993f6334bf3e7e393b0c8dde6"
+    },
+    {
+      "path": "/system/apex/com.android.virt.apex",
+      "size": 96542720,
+      "sha256": "052834a1342cb4e3d74cc49122a4b3100980ee2840a383063c9ecc6eb23a66a3"
+    },
+    {
+      "path": "/system/bin/init",
+      "size": 2590360,
+      "sha256": "eee6a0639eac03fa6dcde7d335a1474fbf5eca2e636131c97891dde55d1860bb"
+    },
+    {
+      "path": "/system/bin/titan-diag",
+      "size": 5880,
+      "sha256": "b980ba79f628a91e4caa89e038523fbbf9fd63a41263fb0162c7a0c6957a65c8"
+    },
+    {
+      "path": "/system/build.prop",
+      "size": 5756,
+      "sha256": "0342d8f1a17043a9380975139620ab8d6f77b6c846783387c9125593f50707cd"
+    },
+    {
+      "path": "/system/etc/cgroups.json",
+      "size": 771,
+      "sha256": "0ee7030c6d7ccfd77f519372b0d4c13f8607cb8104e330b1886187e1eb71de36"
+    },
+    {
+      "path": "/system/etc/init/credstore.rc",
+      "size": 133,
+      "sha256": "f1a46ccf1ca9a916ef3467756d4522da83683160ca3d37120103ce7458210148"
+    },
+    {
+      "path": "/system/etc/init/hw/init.rc",
+      "size": 57037,
+      "sha256": "6da0dfab3952fb123c37ad435b3f0c2031d5b98486106f91003e3fa12d6befc5"
+    },
+    {
+      "path": "/system/etc/init/perfetto.rc",
+      "size": 8404,
+      "sha256": "37fab4270fce930e0c76a8b8c93c0d2befb52c55ecb27e97453811f321194cc8"
+    },
+    {
+      "path": "/system/etc/init/titan-diag.rc",
+      "size": 176,
+      "sha256": "c38609a7905494952a18566b25ab575363ff512a9974d1303bd3ec40695c90e9"
+    },
+    {
+      "path": "/system/etc/init/tombstoned.rc",
+      "size": 315,
+      "sha256": "f9c8f6aa65c1b354bfbeb93ac162fc2133b03cbbdd5c4e3aa94d12fc98abf25b"
+    },
+    {
+      "path": "/system/etc/init/vold.rc",
+      "size": 395,
+      "sha256": "612be3b06be9179c0ca045927ab543f7b20b90dd70c95d8041f794d932d09a76"
+    },
+    {
+      "path": "/system/etc/permissions/platform.xml",
+      "size": 22930,
+      "sha256": "9f03fa51b7dcd7bdf7be15b37e97f3930efb3b702e53d2d3863100887cd2c933"
+    },
+    {
+      "path": "/system/etc/selinux/mapping/30.0.cil",
+      "size": 125034,
+      "sha256": "22a897761e5c9f5e37d61c908819a00183ce5b52c10cc89608d8226eb892bf24"
+    },
+    {
+      "path": "/system/etc/selinux/mapping/30.0.compat.cil",
+      "size": 3048,
+      "sha256": "162c01e64db8206631160c14aa132a2e5a36f4cf6a5db229df6fdf81825e4a18"
+    },
+    {
+      "path": "/system/etc/selinux/plat_file_contexts",
+      "size": 51177,
+      "sha256": "8268f97750cda3fd1b22b6f9dde56b579aead0e2b8cc2923d6c02de112c951eb"
+    },
+    {
+      "path": "/system/etc/selinux/plat_sepolicy.cil",
+      "size": 3367859,
+      "sha256": "7b3d3f682e3f9a722dcfcea4f5db418eb75e81a6d7763735d21028231b382702"
+    },
+    {
+      "path": "/system/etc/selinux/plat_sepolicy_and_mapping.sha256",
+      "size": 65,
+      "sha256": "056433d5f41c81d3d0336471e12dd2a8ff313582cd797d017fb259916d9867b8"
+    },
+    {
+      "path": "/system/etc/ueventd.rc",
+      "size": 3860,
+      "sha256": "6871a8b51645643ca29a96198fd81037fd904b5233f2ebba85402bd6fb826243"
+    },
+    {
+      "path": "/system/etc/vintf/compatibility_matrix.device.xml",
+      "size": 745,
+      "sha256": "c052c7b6c40542602bdd9605e2467fdb5e164cce54cbae51c9439810008bf905"
+    },
+    {
+      "path": "/system/framework/services.jar",
+      "size": 25778909,
+      "sha256": "33f7f32494303add655e889110973dc6d0ae32ba3652380a96520f32c56132da"
+    },
+    {
+      "path": "/system/lib64/libinputflinger.so",
+      "size": 4784264,
+      "sha256": "d7ce6ab0a55591aa87515307771a43ce9f2c4465e0f1c301fefecd21726a3b10"
+    },
+    {
+      "path": "/system/lib64/libtitan_keyboard_surface.so",
+      "size": 234016,
+      "sha256": "a8b78c2fc7a04b3652d03125fc9f7ba075114554c1ba9de3d55d87089014a179"
+    },
+    {
+      "path": "/system/product/app/Chromium/Chromium.apk",
+      "size": 364938292,
+      "sha256": "44e0f664d80bf3b1c390f8030ff9a260aab06f137d17f2aa0e3816cc2bd61aee"
+    },
+    {
+      "path": "/system/product/app/TitanCamera/TitanCamera.apk",
+      "size": 3931896,
+      "sha256": "6e1d05a7b96b308f3a9dff3103db55cfee2cbea38b3249b5879fe35cfcf179ff"
+    },
+    {
+      "path": "/system/product/app/TitanWebView/TitanWebView.apk",
+      "size": 305322500,
+      "sha256": "dcb233a86d58ca922f8aa08dd4216c9158450866286d727a1358e502e935baa3"
+    },
+    {
+      "path": "/system/product/media/bootanimation.zip",
+      "size": 10533398,
+      "sha256": "b370920629c6a751a5a67e8f7e09e37824c5e02bf818eeca480f9bb54d969714"
+    },
+    {
+      "path": "/system/product/overlay/TitanPocketFingerprint.apk",
+      "size": 8339,
+      "sha256": "40a0322207dc74fbd716b8d7306528b46503ddbb10f7235bfcfef552d975a7a2"
+    },
+    {
+      "path": "/system/product/overlay/TitanPocketLauncherSpacing.apk",
+      "size": 8339,
+      "sha256": "29db785963ded652716704983908209f3b999545e154835af57badeb9e946d2f"
+    },
+    {
+      "path": "/system/product/overlay/TitanPocketNotificationLight.apk",
+      "size": 8339,
+      "sha256": "7b642a35ec75a2af1c5e8f80a9a663adb3a2a05f19de1a9a1bbda388ac0249c9"
+    },
+    {
+      "path": "/system/system_ext/apex/com.android.vndk.v30.apex",
+      "size": 114733056,
+      "sha256": "ab5bbcbcfd254195bbb4e8773ea5ae85b09153e0ed06506e2f8ed0213e6e4f87"
+    },
+    {
+      "path": "/system/system_ext/etc/vintf/manifest.xml",
+      "size": 885,
+      "sha256": "6a0ba8db62519cc63ad78c9aa9b5227c4007a6e8617152aeb88d6f1762a95b48"
+    },
+    {
+      "path": "/system/system_ext/priv-app/SystemUI/SystemUI.apk",
+      "size": 43623735,
+      "sha256": "0c7b88f96d4e895b8431a3808191602b32a36cc1f9415a3cfc86820ed455803e"
+    }
+  ],
+  "boot_sha256": "c3aa2e73c3efbce4b6fe6558558d91826be868d8981f99d04242b4d0cb6876ce",
+  "boot_rebuilt_offline_on_linux_arm64": true,
+  "native_library_rebuilt_from_official_downloads": true,
+  "optional_google_play_core_files_reproduced": 11,
+  "phone_modified": false,
+  "new_candidate_boot_tested": false,
+  "filesystem_layout_and_signatures_match_installed_image": false,
+  "private_keys_or_firmware_redistributed": false
+}

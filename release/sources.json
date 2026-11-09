@@ -57,6 +57,27 @@
       "bytes": 116608944,
       "filename": "jadx-1.5.3.zip",
       "license": "Apache-2.0; jadx and bundled dependencies retain upstream notices."
+    },
+    "google13-donor": {
+      "url": "https://dl.google.com/developers/android/tm/images/gsi/aosp_arm64-exp-TQ3A.230805.001.A3-10454027-66e107ed.zip",
+      "sha256": "66e107edaf84b74ba1572be9a4216bf7ae45b3b7f0b516ba2b7aa365ba763905",
+      "bytes": 832870349,
+      "filename": "aosp-arm64-TQ3A.230805.001.A3.zip",
+      "license": "Obtain from Google under its GSI release terms; not redistributed here."
+    },
+    "boot-animation": {
+      "url": "https://raw.githubusercontent.com/docbt/GeminiBootAnimation/353e7a10d429cdfb5b281856d3a3c94098ab628c/system/media/bootanimation.zip",
+      "sha256": "97d77f7d8ce57b8d47102d541938e60113c0a489628fd8a1308def33a1e4b8a6",
+      "bytes": 15590648,
+      "filename": "bootanimation-original.zip",
+      "license": "Upstream module MIT; animation remains Google property, personal non-commercial use notice. Assets are not redistributed by this project. See upstream LICENSE at the pinned commit."
+    },
+    "magisk": {
+      "url": "https://github.com/topjohnwu/Magisk/releases/download/v31.1/Magisk-v31.1.apk",
+      "sha256": "89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7",
+      "bytes": 10679283,
+      "filename": "Magisk-v31.1.apk",
+      "license": "GPL-3.0; external official release, not redistributed here."
     }
   }
 }

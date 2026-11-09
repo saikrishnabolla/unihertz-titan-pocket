@@ -1,0 +1,41 @@
+{
+  "source_sha256": "97d77f7d8ce57b8d47102d541938e60113c0a489628fd8a1308def33a1e4b8a6",
+  "candidate_sha256": "b370920629c6a751a5a67e8f7e09e37824c5e02bf818eeca480f9bb54d969714",
+  "candidate_bytes": 10533398,
+  "frames": 365,
+  "entries": 370,
+  "source_dimensions": [
+    1080,
+    2340
+  ],
+  "output_dimensions": [
+    720,
+    720
+  ],
+  "crop_rectangle": [
+    -60,
+    570,
+    1140,
+    1770
+  ],
+  "minimum_clear_edge_pixels": 46,
+  "frames_with_excluded_top_content": 0,
+  "frames_with_excluded_bottom_content": 84,
+  "fps": 60,
+  "parts": [
+    "c 1 90 part0",
+    "c 1 0 part1",
+    "p 240 0 part2",
+    "p 0 0 part3"
+  ],
+  "crc_pass": true,
+  "all_frames_decoded": true,
+  "stored_only": true,
+  "no_traversal": true,
+  "part_references_pass": true,
+  "conversion": "centered1200x1200 crop at y570 with60pxblack horizontal padding, resized720x720 LANCZOS RGB PNG; no repainting",
+  "pillow_version": "12.3.0",
+  "upstream_repository": "https://github.com/docbt/GeminiBootAnimation",
+  "upstream_commit": "353e7a10d429cdfb5b281856d3a3c94098ab628c",
+  "assets_redistributed": false
+}

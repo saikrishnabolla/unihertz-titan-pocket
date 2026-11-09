@@ -18,3 +18,7 @@ The base-app recipe takes Ungoogled Chromium and Cromite WebView APKs as externa
 Linux-derived LPM implementations in `hardware/legacy-kernel/lpm-source/backport/` and the Linux kernel module in `hardware/legacy-kernel/lpm-source/module/module.c` retain GPL version 2. The upstream notices and module license declaration remain in place. The GPL-2.0 text is in `LICENSES/GPL-2.0.txt`. These files are exceptions to the project's Apache 2.0 license.
 
 The build-tool helper fetches aapt2 and its NOTICE from Google Maven, and AVB source from AOSP. AVB retains its MIT license header. Downloaded tools and generated outputs keep their upstream licenses.
+
+Boot-animation source is downloaded from `docbt/GeminiBootAnimation` at the revision pinned in `release/sources.json`. Its module code is MIT licensed, but its LICENSE reserves the animation to Google and limits it to personal, non-commercial use. Neither the original nor resized frames are included here. The project's Apache license does not cover those assets.
+
+The stock VENDOR recipe fetches AOSP `external/selinux` to build its compiler and transformer. Those external sources retain LGPL-2.1/GPL-2.0; they are not included here. BOOT construction uses the external Magisk 31.1 release under GPL-3.0. The optional Google Play recipe extracts proprietary APKs and filters configuration from the caller's Google GMS image; none are published in this repository.

@@ -1,0 +1,600 @@
+{
+  "plat_sepolicy.cil": {
+    "source_sha256": "f6422dd5853e815d340f2e9c4dcba2bb1016b55ffc2a073fc916ac23dfe66fc2",
+    "intermediate_sha256": "73aeaf4f77a6455d0892e7bdf7ab5065ef629eb9956d89031a2a56e2ce33baa7",
+    "operations": [
+      {
+        "start_line_zero": 22096,
+        "end_line_zero": 22097,
+        "lines": [
+          "(allow titan_diag_without_9 init_service_status_private_prop (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 22126,
+        "end_line_zero": 22127,
+        "lines": [
+          "(allow titan_diag_without_9 setupwizard_prop (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 22136,
+        "end_line_zero": 22137,
+        "lines": [
+          "(allow titan_diag_without_9 sqlite_log_prop (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 22191,
+        "end_line_zero": 22192,
+        "lines": [
+          "(allow titan_diag_without_9 zygote_wrap_prop (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 22206,
+        "end_line_zero": 22207,
+        "lines": [
+          "(allow titan_diag_without_9 default_prop (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24458,
+        "end_line_zero": 24459,
+        "lines": [
+          "(allow titan_diag_without_10 self (dir (ioctl read getattr lock open watch watch_reads search)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24463,
+        "end_line_zero": 24465,
+        "lines": [
+          "(allow titan_diag_without_10 self (file (ioctl read getattr lock map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 self (lnk_file (ioctl read getattr lock map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24469,
+        "end_line_zero": 24471,
+        "lines": [
+          "(allow titan_diag_without_10 self (file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 self (fifo_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24475,
+        "end_line_zero": 24476,
+        "lines": [
+          "(allow titan_diag_without_10 self (unix_dgram_socket (ioctl read write create getattr setattr lock append map bind connect getopt setopt shutdown sendto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24480,
+        "end_line_zero": 24481,
+        "lines": [
+          "(allow titan_diag_without_10 self (unix_stream_socket (ioctl read write create getattr setattr lock append map bind connect listen accept getopt setopt shutdown connectto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24535,
+        "end_line_zero": 24536,
+        "lines": [
+          "(allow titan_diag_without_10 owntty_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24540,
+        "end_line_zero": 24541,
+        "lines": [
+          "(allow titan_diag_without_10 null_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24545,
+        "end_line_zero": 24546,
+        "lines": [
+          "(allow titan_diag_without_10 zero_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24550,
+        "end_line_zero": 24551,
+        "lines": [
+          "(allow titan_diag_without_10 ashmem_device (chr_file (ioctl read write getattr lock append map)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24555,
+        "end_line_zero": 24556,
+        "lines": [
+          "(allow titan_diag_without_10 ashmem_libcutils_device (chr_file (ioctl read write getattr lock append map)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24560,
+        "end_line_zero": 24561,
+        "lines": [
+          "(allow titan_diag_without_10 self (memfd_file (read write create getattr map)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24565,
+        "end_line_zero": 24566,
+        "lines": [
+          "(allow titan_diag_without_2 binder_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24603,
+        "end_line_zero": 24604,
+        "lines": [
+          "(allow titan_diag_without_3 hwbinder_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24608,
+        "end_line_zero": 24609,
+        "lines": [
+          "(allow titan_diag_without_10 ptmx_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24613,
+        "end_line_zero": 24614,
+        "lines": [
+          "(allow titan_diag_without_10 random_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24664,
+        "end_line_zero": 24665,
+        "lines": [
+          "(allow titan_diag_without_10 logdw_socket (sock_file (write)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24669,
+        "end_line_zero": 24670,
+        "lines": [
+          "(allow titan_diag_without_10 logd (unix_dgram_socket (sendto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24674,
+        "end_line_zero": 24675,
+        "lines": [
+          "(allow titan_diag_without_10 pmsg_device (chr_file (write lock append map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24712,
+        "end_line_zero": 24713,
+        "lines": [
+          "(allow titan_diag_without_10 system_linker_exec (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24722,
+        "end_line_zero": 24723,
+        "lines": [
+          "(allow titan_diag_without_10 system_lib_file (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24743,
+        "end_line_zero": 24744,
+        "lines": [
+          "(allow titan_diag_without_9 system_file (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24768,
+        "end_line_zero": 24769,
+        "lines": [
+          "(allow titan_diag_without_10 vndk_sp_file (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24783,
+        "end_line_zero": 24784,
+        "lines": [
+          "(allow titan_diag_without_10 vendor_file_type (lnk_file (read getattr open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24808,
+        "end_line_zero": 24809,
+        "lines": [
+          "(allow titan_diag_without_10 debugfs_type (lnk_file (read getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24914,
+        "end_line_zero": 24915,
+        "lines": [
+          "(allow titan_diag_without_10 selinuxfs (dir (search)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24919,
+        "end_line_zero": 24920,
+        "lines": [
+          "(allow titan_diag_without_10 selinuxfs (file (getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24929,
+        "end_line_zero": 24930,
+        "lines": [
+          "(allow titan_diag_without_10 selinuxfs (filesystem (getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24949,
+        "end_line_zero": 24950,
+        "lines": [
+          "(allow titan_diag_without_10 debugfs_trace_marker (file (write lock append map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24959,
+        "end_line_zero": 24960,
+        "lines": [
+          "(allow titan_diag_without_10 fs_type (filesystem (getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 24964,
+        "end_line_zero": 24965,
+        "lines": [
+          "(allow titan_diag_without_10 fs_type (dir (getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25080,
+        "end_line_zero": 25081,
+        "lines": [
+          "(allow titan_diag_without_4 system_server (binder (call)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25115,
+        "end_line_zero": 25116,
+        "lines": [
+          "(allow titan_diag_without_10 crash_dump_exec (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25120,
+        "end_line_zero": 25121,
+        "lines": [
+          "(allow titan_diag_without_10 crash_dump (process (transition)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25157,
+        "end_line_zero": 25158,
+        "lines": [
+          "(allow titan_diag_without_5 heapprofd_socket (sock_file (write)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25162,
+        "end_line_zero": 25163,
+        "lines": [
+          "(allow titan_diag_without_5 heapprofd (unix_stream_socket (connectto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25172,
+        "end_line_zero": 25173,
+        "lines": [
+          "(allow titan_diag_without_5 heapprofd_tmpfs (file (read write getattr map)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25177,
+        "end_line_zero": 25178,
+        "lines": [
+          "(allow titan_diag_without_5 heapprofd (memfd_file (read write getattr map)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25212,
+        "end_line_zero": 25213,
+        "lines": [
+          "(allow titan_diag_without_6 traced_perf_socket (sock_file (write)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25217,
+        "end_line_zero": 25218,
+        "lines": [
+          "(allow titan_diag_without_6 traced_perf (unix_stream_socket (connectto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25232,
+        "end_line_zero": 25234,
+        "lines": [
+          "(allow titan_diag_without_10 sysfs_fs_incfs_features (file (ioctl read getattr lock map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 sysfs_fs_incfs_features (lnk_file (ioctl read getattr lock map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25249,
+        "end_line_zero": 25250,
+        "lines": [
+          "(allow titan_diag_without_7 cgroup (dir (write lock open add_name remove_name search)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25254,
+        "end_line_zero": 25255,
+        "lines": [
+          "(allow titan_diag_without_7 cgroup (file (write lock append map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25259,
+        "end_line_zero": 25261,
+        "lines": [
+          "(allow titan_diag_without_7 cgroup_v2 (dir (write lock open add_name remove_name search)))\n",
+          "(allow titan_diag_without_7 cgroup_app (dir (write lock open add_name remove_name search)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25265,
+        "end_line_zero": 25267,
+        "lines": [
+          "(allow titan_diag_without_7 cgroup_v2 (file (write lock append map open)))\n",
+          "(allow titan_diag_without_7 cgroup_app (file (write lock append map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25291,
+        "end_line_zero": 25292,
+        "lines": [
+          "(allow titan_diag_without_10 vendor_cgroup_desc_file (file (ioctl read getattr lock map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25342,
+        "end_line_zero": 25343,
+        "lines": [
+          "(allow titan_diag_without_9 core_property_type (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25615,
+        "end_line_zero": 25616,
+        "lines": [
+          "(allow titan_diag_without_10 prng_seeder_socket (sock_file (write)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25620,
+        "end_line_zero": 25621,
+        "lines": [
+          "(allow titan_diag_without_10 prng_seeder (unix_stream_socket (connectto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 25625,
+        "end_line_zero": 25627,
+        "lines": [
+          "(allow titan_diag_without_8 shell_exec (file (ioctl read getattr lock map execute open watch watch_reads execute_no_trans)))\n",
+          "(allow titan_diag_without_8 toolbox_exec (file (ioctl read getattr lock map execute open watch watch_reads execute_no_trans)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 87074,
+        "end_line_zero": 87074,
+        "lines": [
+          "\n",
+          "; Existing approved consolidated-artifact rules, not diagnostic-domain additions.\n",
+          "(allow credstore kmsg_device (chr_file (write)))\n",
+          "(allow tombstoned kmsg_device (chr_file (write)))\n",
+          "(allow traced kmsg_device (chr_file (write)))\n",
+          "(allow zygote kmsg_device (chr_file (write)))\n",
+          "\n",
+          "; Kernel-only recorder; release requires verify.py success.\n",
+          "(type titan_diag)\n",
+          "(roletype r titan_diag)\n",
+          "(typeattribute titan_diag_domains)\n",
+          "(typeattributeset titan_diag_domains (titan_diag))\n",
+          "(typeattributeset domain (titan_diag))\n",
+          "(typeattributeset coredomain (titan_diag))\n",
+          "(type titan_diag_exec)\n",
+          "(type titan_diag_metadata_file)\n",
+          "(roletype object_r titan_diag_exec)\n",
+          "(roletype object_r titan_diag_metadata_file)\n",
+          "(typeattributeset file_type (titan_diag_exec titan_diag_metadata_file))\n",
+          "(typeattributeset exec_type (titan_diag_exec))\n",
+          "(typeattributeset system_file_type (titan_diag_exec))\n",
+          "(typetransition init metadata_file dir \"titan-pocket-diag\" titan_diag_metadata_file)\n",
+          "(allow init titan_diag_metadata_file (dir (create search open read getattr setattr relabelto)))\n",
+          "(allow init titan_diag_exec (file (read getattr open map execute)))\n",
+          "(allow init titan_diag (process (transition siginh rlimitinh sigkill signal)))\n",
+          "(allow titan_diag titan_diag_exec (file (entrypoint read getattr open map execute)))\n",
+          "(typetransition init titan_diag_exec process titan_diag)\n",
+          "(allow titan_diag init (process (sigchld)))\n",
+          "(allow titan_diag init (fd (use)))\n",
+          "(allow titan_diag init (fifo_file (write getattr)))\n",
+          "(allow titan_diag self (process (setrlimit)))\n",
+          "(allow titan_diag self (capability2 (syslog)))\n",
+          "(allow titan_diag kernel (system (syslog_read)))\n",
+          "(allow titan_diag rootfs (dir (search open read getattr)))\n",
+          "(allow titan_diag device (dir (search getattr)))\n",
+          "(allow titan_diag metadata_file (dir (search open read getattr)))\n",
+          "(allow titan_diag labeledfs (filesystem (getattr)))\n",
+          "(allow titan_diag titan_diag_metadata_file (dir (search open read getattr create write add_name)))\n",
+          "(allow titan_diag titan_diag_metadata_file (file (create open write getattr)))\n",
+          "(typetransition titan_diag titan_diag_metadata_file dir titan_diag_metadata_file)\n",
+          "(typetransition titan_diag titan_diag_metadata_file file titan_diag_metadata_file)\n",
+          "; Read source plus inherited init stderr. No append/ioctl/policy control.\n",
+          "(allow titan_diag kmsg_device (chr_file (read open getattr write)))\n",
+          "\n",
+          "(typeattribute titan_diag_without_0)\n",
+          "(typeattributeset titan_diag_without_0 (and (base_typeattr_212_30_0) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_1)\n",
+          "(typeattributeset titan_diag_without_1 (and (base_typeattr_213_30_0) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_2)\n",
+          "(typeattributeset titan_diag_without_2 (and (base_typeattr_402) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_3)\n",
+          "(typeattributeset titan_diag_without_3 (and (base_typeattr_403) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_4)\n",
+          "(typeattributeset titan_diag_without_4 (and (base_typeattr_405) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_5)\n",
+          "(typeattributeset titan_diag_without_5 (and (base_typeattr_406) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_6)\n",
+          "(typeattributeset titan_diag_without_6 (and (base_typeattr_407) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_7)\n",
+          "(typeattributeset titan_diag_without_7 (and (base_typeattr_408) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_8)\n",
+          "(typeattributeset titan_diag_without_8 (and (base_typeattr_411) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_9)\n",
+          "(typeattributeset titan_diag_without_9 (and (coredomain) (not (titan_diag_domains))))\n",
+          "(typeattribute titan_diag_without_10)\n",
+          "(typeattributeset titan_diag_without_10 (and (domain) (not (titan_diag_domains))))\n",
+          "\n"
+        ]
+      }
+    ]
+  },
+  "plat_pub_versioned.cil": {
+    "source_sha256": "08e8f20eeb57eb9d7033b0b1bbcd8315a4e2d509a500b6ea94f334a2327ce5fc",
+    "intermediate_sha256": "76234e88b3bd10224c7ec5a5c9e64a078fd6a23bdd0bce309d5bbe780f95f809",
+    "operations": [
+      {
+        "start_line_zero": 5129,
+        "end_line_zero": 5136,
+        "lines": [
+          "(allow titan_diag_without_10 self (dir (ioctl read getattr lock open watch watch_reads search)))\n",
+          "(allow titan_diag_without_10 self (file (ioctl read getattr lock map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 self (lnk_file (ioctl read getattr lock map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 self (file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 self (fifo_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 self (unix_dgram_socket (ioctl read write create getattr setattr lock append map bind connect getopt setopt shutdown sendto)))\n",
+          "(allow titan_diag_without_10 self (unix_stream_socket (ioctl read write create getattr setattr lock append map bind connect listen accept getopt setopt shutdown connectto)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5144,
+        "end_line_zero": 5150,
+        "lines": [
+          "(allow titan_diag_without_10 owntty_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 null_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 zero_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 ashmem_device_30_0 (chr_file (ioctl read write getattr lock append map)))\n",
+          "(allow titan_diag_without_10 ashmem_libcutils_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_0 binder_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5152,
+        "end_line_zero": 5155,
+        "lines": [
+          "(allow titan_diag_without_1 hwbinder_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 ptmx_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n",
+          "(allow titan_diag_without_10 random_device_30_0 (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5167,
+        "end_line_zero": 5168,
+        "lines": [
+          "(allow titan_diag_without_10 exported_system_prop_30_0 (file (read getattr map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5182,
+        "end_line_zero": 5185,
+        "lines": [
+          "(allow titan_diag_without_10 logdw_socket_30_0 (sock_file (write)))\n",
+          "(allow titan_diag_without_10 logd_30_0 (unix_dgram_socket (sendto)))\n",
+          "(allow titan_diag_without_10 pmsg_device_30_0 (chr_file (write lock append map open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5194,
+        "end_line_zero": 5195,
+        "lines": [
+          "(allow titan_diag_without_10 system_linker_exec_30_0 (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5196,
+        "end_line_zero": 5197,
+        "lines": [
+          "(allow titan_diag_without_10 system_lib_file_30_0 (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5201,
+        "end_line_zero": 5202,
+        "lines": [
+          "(allow titan_diag_without_9 system_file_30_0 (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5206,
+        "end_line_zero": 5207,
+        "lines": [
+          "(allow titan_diag_without_10 vndk_sp_file_30_0 (file (read getattr map execute open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5209,
+        "end_line_zero": 5210,
+        "lines": [
+          "(allow titan_diag_without_10 vendor_file_type (lnk_file (read getattr open)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5214,
+        "end_line_zero": 5215,
+        "lines": [
+          "(allow titan_diag_without_10 sysfs_30_0 (lnk_file (read getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5236,
+        "end_line_zero": 5238,
+        "lines": [
+          "(allow titan_diag_without_10 selinuxfs_30_0 (dir (search)))\n",
+          "(allow titan_diag_without_10 selinuxfs_30_0 (file (getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5239,
+        "end_line_zero": 5240,
+        "lines": [
+          "(allow titan_diag_without_10 selinuxfs_30_0 (filesystem (getattr)))\n"
+        ]
+      },
+      {
+        "start_line_zero": 5243,
+        "end_line_zero": 5246,
+        "lines": [
+          "(allow titan_diag_without_10 debugfs_trace_marker_30_0 (file (write lock append map open)))\n",
+          "(allow titan_diag_without_10 fs_type (filesystem (getattr)))\n",
+          "(allow titan_diag_without_10 fs_type (dir (getattr)))\n"
+        ]
+      }
+    ]
+  },
+  "vendor_sepolicy.cil": {
+    "source_sha256": "8ab247dd60da8544f7e92be8fb013bd8fd31c1e4d4b2e9714310446de9ddf298",
+    "intermediate_sha256": "166e80022bf7ff521733ff10efe8ecc8f69c2046b222c6b8d82ba26c3d7da18f",
+    "operations": [
+      {
+        "start_line_zero": 8524,
+        "end_line_zero": 8525,
+        "lines": [
+          "(allow titan_diag_without_10 exm0_device (chr_file (ioctl read write getattr lock append map open watch watch_reads)))\n"
+        ]
+      }
+    ]
+  }
+}

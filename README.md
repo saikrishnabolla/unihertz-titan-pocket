@@ -9,11 +9,11 @@ The test phone now boots `CP3A.260905.010` directly, without a guest ROM. It sti
 ## Start here
 
 - **Understand the port:** read the [phone tests](#phone-tests) below, then the [hardware source map](hardware/README.md).
-- **Run tests or build components:** follow the [build and usage guide](docs/BUILDING.md). Host tests need no phone or firmware. The scrolling library now rebuilds exactly using headers downloaded from official Android sources.
+- **Rebuild the port:** follow the [build guide](docs/BUILDING.md), [Google SYSTEM and BOOT recipe](hardware/from-google/README.md), and [stock VENDOR recipe](hardware/permanent-vendor/from-stock/README.md). You supply matching stock firmware; scripts fetch or rebuild the other inputs.
 - **Rebuild the current app layer:** use the [base-app recipe](hardware/base-apps/README.md). It requires an already-patched, exact-match SYSTEM image and private inputs.
-- **Install on another phone:** there is no public flashable ROM or verified clean-install pipeline yet. The [installation tools](tools/install/README.md) check inputs and support a guarded SUPER-only update on an existing installation; they have host-only test coverage.
+- **Install on another phone:** read the [installation boundary](docs/BUILDING.md#installation-and-recovery-boundary). There is no public flashable ROM. The manual first-install reference and guarded [SUPER update tool](tools/install/README.md) are documented; newly rebuilt images have not been boot-tested.
 
-Firmware, APKs, signing keys, original compiled Android components and private device logs are excluded. The full Google-to-port pipeline still needs recovered intermediate build steps. The [app-layer rebuild](release/base-rebuild-verification.json) matches the installed SYSTEM and SUPER byte-for-byte, starting from the preserved patched SYSTEM. Those limits are described in the guide.
+Firmware, APKs, signing keys, original compiled Android components and private device logs are excluded. The [complete offline rebuild](release/clean-rebuild-verification.json) starts from the original Google images and stock firmware, without a saved patched SYSTEM or guest VENDOR. All 35 SYSTEM payloads rebuilt or matched pinned downloads, all recorded SYSTEM/VENDOR file contents and metadata matched, and SUPER passed readback. BOOT and the optional Google Play module also rebuilt. The new filesystem layout and signatures can differ from the installed images; this is a rebuild check, not a new phone test.
 
 ## Screenshots
 
@@ -68,7 +68,7 @@ These commands test host-side input ownership, session state and the first-unloc
 
 The [hardware source map](hardware/README.md) covers boot compatibility, keyboard layout, PIN entry, lighting, fingerprint, Bluetooth, navigation and UI spacing. Many directories record pinned experiments from the guest stage. They are not a sequence of scripts to run on your phone.
 
-The [current base-app recipe](hardware/base-apps/README.md) integrates GrapheneOS Camera, Ungoogled Chromium, mixed-ABI Cromite WebView and the touchpad performance fix. The [earlier camera add-on](hardware/system-camera/README.md) is retained for the previous base image and is superseded on the current image.
+The [complete SYSTEM recipe](hardware/from-google/README.md) integrates the hardware patches and current apps. The [optional Google Play core recipe](hardware/google-play-core/README.md) rebuilds the separate Magisk module. The [base-app recipe](hardware/base-apps/README.md) remains available for an incremental rebuild. The [earlier camera add-on](hardware/system-camera/README.md) is retained for the previous base image and is superseded on the current image.
 
 For a bug report, include your build ID, whether it is a guest or permanent install, the affected feature and steps to reproduce it. Remove serial numbers, account details and personal content from any logs or screenshots.
 

@@ -18,21 +18,32 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Install host test compiler
-        run: sudo apt-get update && sudo apt-get install -y clang libclang-rt-dev
+        run: sudo apt-get update && sudo apt-get install -y clang libclang-rt-dev e2fsprogs
       - name: Check published source inventory
         run: python3 tools/check_source_manifest.py
       - name: Check download verification
         run: |
           python3 -m unittest discover -s tests -p 'test_fetch_inputs.py' -v
           python3 -m unittest discover -s tests -p 'test_prepare_build_tools.py' -v
+          python3 -m unittest discover -s tests -p 'test_extract_stock.py' -v
+          python3 -m unittest discover -s tests -p 'test_extract_gsi.py' -v
+          python3 -m unittest discover -s tests -p 'test_extract_vndk.py' -v
+          python3 -m unittest discover -s tests -p 'test_assemble_port.py' -v
+          python3 -m unittest discover -s tests -p 'test_collect_payloads.py' -v
       - name: Check native input acquisition
         run: python3 -m unittest discover -s tests -p 'test_native_inputs.py' -v
       - name: Check permanent vendor transform
         run: |
           python3 -m unittest discover -s hardware/permanent-vendor -p 'test_*.py' -v
           python3 -m unittest discover -s hardware/permanent-vendor/boot-chain -p 'test_*.py' -v
+          python3 -m unittest discover -s hardware/permanent-vendor/from-stock -p 'test_*.py' -v
       - name: Check metadata and signing policy
         run: python3 -m unittest discover -s hardware/base-apps -p 'test_*.py' -v
+      - name: Check Google source recipes
+        run: |
+          python3 -m unittest discover -s hardware/from-google -p 'test_*.py' -v
+          python3 -m unittest discover -s hardware/from-google/recovered -p 'test_*.py' -v
+          python3 -m unittest discover -s hardware/google-play-core -p 'test_*.py' -v
       - name: Run address and undefined behavior checks
         run: python3 tools/test.py --output build/core
       - name: Run thread sanitizer checks

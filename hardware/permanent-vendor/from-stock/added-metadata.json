@@ -1,0 +1,173 @@
+{
+  "/usr": {
+    "inode": 1848,
+    "type": "directory",
+    "permissions": "0755",
+    "uid": 0,
+    "gid": 0,
+    "size": 4096,
+    "links": 5,
+    "allocated_512_blocks": 8,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 26,
+        "debugfs_value": "\"u:object_r:vendor_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ]
+  },
+  "/usr/keylayout": {
+    "inode": 1849,
+    "type": "directory",
+    "permissions": "0755",
+    "uid": 0,
+    "gid": 0,
+    "size": 4096,
+    "links": 2,
+    "allocated_512_blocks": 8,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 36,
+        "debugfs_value": "\"u:object_r:vendor_keylayout_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ]
+  },
+  "/usr/keylayout/aw9523-key.kl": {
+    "inode": 1852,
+    "type": "regular",
+    "permissions": "0644",
+    "uid": 0,
+    "gid": 0,
+    "size": 1546,
+    "links": 1,
+    "allocated_512_blocks": 8,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 36,
+        "debugfs_value": "\"u:object_r:vendor_keylayout_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ],
+    "content_sha256": "a881ff89f2c236584a8b8c6937e8e2ce9cf199ed85c9c1740bb96c72fba33c39"
+  },
+  "/usr/idc": {
+    "inode": 1851,
+    "type": "directory",
+    "permissions": "0755",
+    "uid": 0,
+    "gid": 0,
+    "size": 4096,
+    "links": 2,
+    "allocated_512_blocks": 8,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 30,
+        "debugfs_value": "\"u:object_r:vendor_idc_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ]
+  },
+  "/usr/keychars": {
+    "inode": 1850,
+    "type": "directory",
+    "permissions": "0755",
+    "uid": 0,
+    "gid": 0,
+    "size": 4096,
+    "links": 2,
+    "allocated_512_blocks": 8,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 35,
+        "debugfs_value": "\"u:object_r:vendor_keychars_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ]
+  },
+  "/usr/idc/aw9523-key.idc": {
+    "inode": 1854,
+    "type": "regular",
+    "permissions": "0644",
+    "uid": 0,
+    "gid": 0,
+    "size": 283,
+    "links": 1,
+    "allocated_512_blocks": 8,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 30,
+        "debugfs_value": "\"u:object_r:vendor_idc_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ],
+    "content_sha256": "12583fb3c7e089692d5ae72fc6f50f294db4f7f62843ba233f5e6a23f307adb3"
+  },
+  "/usr/keychars/aw9523-key.kcm": {
+    "inode": 1853,
+    "type": "regular",
+    "permissions": "0644",
+    "uid": 0,
+    "gid": 0,
+    "size": 7090,
+    "links": 1,
+    "allocated_512_blocks": 16,
+    "symlink_target": null,
+    "xattrs": [
+      {
+        "name": "security.selinux",
+        "size": 35,
+        "debugfs_value": "\"u:object_r:vendor_keychars_file:s0\\000\""
+      }
+    ],
+    "timestamps_debugfs": [
+      "ctime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "atime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "mtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009",
+      "crtime: 0x495c0780:00000000 -- Thu Jan  1 00:00:00 2009"
+    ],
+    "content_sha256": "357335f66d3eada044ec9f944fa9623efde1c23289fc65a4a14329ea07af3427"
+  }
+}

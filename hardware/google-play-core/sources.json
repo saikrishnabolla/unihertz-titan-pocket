@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "sources": {
+    "google-gms-gsi": {
+      "url": "https://dl.google.com/developers/android/cinnamonbun/images/gsi/gsi_gms_arm64-exp-CP3A.260905.010-16176746-d55d64aa.zip",
+      "sha256": "d55d64aaebc71b2a895d792c152cfc408841bfde38565b082f495b850a2ae3e1",
+      "bytes": 2076347889,
+      "filename": "gsi-gms-arm64-CP3A.260905.010.zip",
+      "license": "Obtain from Google under its GSI terms; Google APKs and configuration are not redistributed by this repository."
+    }
+  }
+}

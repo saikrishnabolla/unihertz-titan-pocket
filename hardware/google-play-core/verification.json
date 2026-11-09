@@ -1,0 +1,11 @@
+{
+  "status": "OFFLINE_MODULE_REBUILD_VERIFIED",
+  "archive_sha256": "d55d64aaebc71b2a895d792c152cfc408841bfde38565b082f495b850a2ae3e1",
+  "source_system_sha256": "8b525e2bff18a54b277c4b9a950a0ee667e50ad2e91bcc4c1daa6f081402407e",
+  "all_eleven_file_hashes_match_original": true,
+  "original_apks_modified": false,
+  "source_apks_in_repository": false,
+  "source_google_xml_in_repository": false,
+  "unit_tests_passed": 9,
+  "installed_on_device": false
+}

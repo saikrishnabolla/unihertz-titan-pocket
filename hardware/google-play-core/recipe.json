@@ -1,0 +1,62 @@
+{
+  "source_url": "https://dl.google.com/developers/android/cinnamonbun/images/gsi/gsi_gms_arm64-exp-CP3A.260905.010-16176746-d55d64aa.zip",
+  "source_archive_sha256": "d55d64aaebc71b2a895d792c152cfc408841bfde38565b082f495b850a2ae3e1",
+  "packages": [
+    "com.google.android.gms",
+    "com.android.vending",
+    "com.google.android.gsf"
+  ],
+  "internal_gms_modules": [
+    "com.google.android.gms.policy_sidecar_aps"
+  ],
+  "files": {
+    "system/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk": {
+      "sha256": "d1c3761bfc9f6db648b1c7af8343e1188f8fcfa7ea11b96ae05b7ffb5a4316a1",
+      "bytes": 224361957
+    },
+    "system/product/priv-app/PrebuiltGmsCore/m/independent/AndroidPlatformServices/AndroidPlatformServices.apk": {
+      "sha256": "e41c84c7981babf0338b61b4dcf406c9e274318f5ddda5b78f73fb0f4fe41f2e",
+      "bytes": 13841872
+    },
+    "system/product/priv-app/Phonesky/Phonesky.apk": {
+      "sha256": "c4627b39afac148f0d9871d0f8b6a8715d63214aae178d2be39a819cbc8c1f7c",
+      "bytes": 106209470
+    },
+    "system/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk": {
+      "sha256": "641aff778be5270448cf0b1aafc00d961e5349d8e1c8c18078ea5c4469fa7157",
+      "bytes": 1128580
+    },
+    "system/product/etc/permissions/privapp-permissions-titan-google-core.xml": {
+      "sha256": "534bdcd8408a6c6b1377dab337b67ecdf19dff1b8999d612396c56c71e9cb783",
+      "bytes": 13270
+    },
+    "system/system_ext/etc/permissions/privapp-permissions-titan-google-core.xml": {
+      "sha256": "5c849e91f49c8b1cb069516a328177654acaacdee9733c0ce7561cb567592e35",
+      "bytes": 1338
+    },
+    "system/product/etc/sysconfig/titan-core-google-hiddenapi-package-whitelist.xml": {
+      "sha256": "fd57fe7994fb7be1c0677cb27fb6be13c25406a7465f8bd8e27dc8927adba2ee",
+      "bytes": 122
+    },
+    "system/product/etc/sysconfig/titan-core-google.xml": {
+      "sha256": "837580b214dafdc8cf0618753813424c25bf36edfe0a64832c8af3f8cd02c491",
+      "bytes": 1373
+    },
+    "system/product/etc/sysconfig/titan-core-preinstalled-packages-gms-mandatory-product.xml": {
+      "sha256": "a2e4e51230b22a3c28e7f17979bcc1c7690ddab6bafd703be674eac635e89415",
+      "bytes": 275
+    },
+    "module.prop": {
+      "sha256": "762ee5c1c125ef1513a09af001ba2338fdbcaaa9ce33f082cd0b5ba4e9488d59",
+      "bytes": 229
+    },
+    "service.sh": {
+      "sha256": "3c9643a55e6515174aafd6313cd11989c2e1a9f33bf3315d1aa3ffadcf01c8b8",
+      "bytes": 192
+    }
+  },
+  "no_setup_wizard": true,
+  "no_other_google_apps": true,
+  "no_raw_partition_writes": true,
+  "boot_timeout_rollback_seconds": 360
+}

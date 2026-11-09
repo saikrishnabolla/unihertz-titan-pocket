@@ -7,5 +7,8 @@
   "matches_installed_native_library": true,
   "system_used_for_link_extraction": "permanent-install-v1/chromium-base-v2/candidate/system.img",
   "original_google_gsi_link_extraction_verified": true,
-  "original_google_system_sha256": "e5db44e3365f9e542ee3f6d4caf88ece554a460e2987086b8bf21f6c440a25ec"
+  "original_google_system_sha256": "e5db44e3365f9e542ee3f6d4caf88ece554a460e2987086b8bf21f6c440a25ec",
+  "original_google_gsi_native_rebuild_sha256": "a8b78c2fc7a04b3652d03125fc9f7ba075114554c1ba9de3d55d87089014a179",
+  "runtime_fixture_checks": 799,
+  "runtime_fixture_uses_host_substitutes": true
 }

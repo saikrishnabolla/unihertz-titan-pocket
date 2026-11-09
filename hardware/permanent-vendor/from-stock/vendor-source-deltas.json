@@ -1,0 +1,55 @@
+{
+  "/etc/fstab.mt6771": {
+    "source_sha256": "636d367ce75245ac78a2d8ca85c6fe29394c4a7dc458f53d02ae0c93ed825ba6",
+    "intermediate_sha256": "9c43e161d21c998ec30acd52cce56e7cee99bef86279009e1f371f6ddefcca91",
+    "operations": [
+      {
+        "start_line_zero": 19,
+        "end_line_zero": 20,
+        "lines": [
+          "/dev/block/by-name/md_udc /metadata ext4 noatime,nosuid,nodev,discard wait,check,first_stage_mount\n"
+        ]
+      },
+      {
+        "start_line_zero": 23,
+        "end_line_zero": 24,
+        "lines": [
+          "/dev/block/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check\n"
+        ]
+      },
+      {
+        "start_line_zero": 25,
+        "end_line_zero": 29,
+        "lines": [
+          "/dev/block/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check\n",
+          "/dev/block/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check\n",
+          "/dev/block/by-name/nvdata /mnt/vendor/nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check\n",
+          "/dev/block/by-name/nvcfg /mnt/vendor/nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check\n"
+        ]
+      },
+      {
+        "start_line_zero": 31,
+        "end_line_zero": 32,
+        "lines": [
+          "/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check\n"
+        ]
+      },
+      {
+        "start_line_zero": 35,
+        "end_line_zero": 36,
+        "lines": []
+      }
+    ]
+  },
+  "/etc/init/hw/init.mt6771.rc": {
+    "source_sha256": "56af2acb7cf989ea043d7782287f0b66a826b61c1b0bc41ab6c3993d54ce4766",
+    "intermediate_sha256": "e4f684e7b68fa9794111a4a99d274646da96a5eb3807647be714504fec39796e",
+    "operations": [
+      {
+        "start_line_zero": 115,
+        "end_line_zero": 116,
+        "lines": []
+      }
+    ]
+  }
+}

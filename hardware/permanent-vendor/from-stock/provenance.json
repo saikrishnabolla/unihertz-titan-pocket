@@ -1,0 +1,35 @@
+{
+  "google13_donor": {
+    "url": "https://dl.google.com/developers/android/tm/images/gsi/aosp_arm64-exp-TQ3A.230805.001.A3-10454027-66e107ed.zip",
+    "archive_sha256": "66e107edaf84b74ba1572be9a4216bf7ae45b3b7f0b516ba2b7aa365ba763905",
+    "archive_bytes": 832870349,
+    "system_sha256": "9598540f142962bbd0ce3ea623b60b5dfdd842ebcc2523fd93c95d7ed1e42ca6",
+    "system_bytes": 1899503616
+  },
+  "stock_vendor": {
+    "sha256": "d991ee39bb233c7f717d9007b1acf9f83c41b3db3e8af188a9c78d4f27b1408f",
+    "bytes": 452378624,
+    "source": "Owner-supplied stock Titan Pocket SUPER image"
+  },
+  "stock_system": {
+    "sha256": "174708e0b8f566267717f512fc6d521bfd0ca9db106b29d19bb1b480edb33339",
+    "bytes": 1790775296,
+    "source": "Owner-supplied stock Titan Pocket SUPER image"
+  },
+  "compiler": {
+    "repository": "https://android.googlesource.com/platform/external/selinux",
+    "commit": "a8c5e74f85f869bf236a01ba24181b78f5e39a52",
+    "licenses": [
+      "LGPL-2.1",
+      "GPL-2.0"
+    ],
+    "source_fetched_at_build_time": true
+  },
+  "mapping_compat": {
+    "url": "https://android.googlesource.com/platform/system/sepolicy/+/refs/tags/android-16.0.0_r1/private/compat/30.0/30.0.compat.cil?format=TEXT",
+    "decoded_sha256": "2b40198379e1bb65ca2af156b25562381273144d94c5ae223b5ed9905d7437cc",
+    "license": "Apache-2.0"
+  },
+  "included_original_firmware": false,
+  "included_private_keys": false
+}

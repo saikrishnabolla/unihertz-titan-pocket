@@ -1,6 +1,7 @@
 from pathlib import Path,PurePosixPath
 from PIL import Image,ImageOps,ImageDraw,ImageChops
 import zipfile,io,hashlib,json,argparse
+if not __debug__:raise RuntimeError('Run without Python optimization; animation validation is required')
 parser=argparse.ArgumentParser(description='Convert the pinned original animation to the reviewed square format.')
 parser.add_argument('--source',type=Path,required=True);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
 source=args.source.resolve();ROOT=args.output.resolve();assert source.is_file() and not args.output.is_symlink()
