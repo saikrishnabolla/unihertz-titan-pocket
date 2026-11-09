@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import subprocess
+import shlex
 import sys
 import tempfile
 import unittest
@@ -50,7 +51,7 @@ class PlannerTests(unittest.TestCase):
         with self.assertRaisesRegex(subject.ValidationError, message):
             self.plan()
 
-    def fake_tool(self, kind, overrides=None):
+    def fake_tool(self, kind, overrides=None, root_helper=None):
         responses = {'devices': ['BOUND device\n', '']} if kind == 'adb' else {'devices': ['BOUND fastboot\n', '']}
         if kind == 'adb':
             properties = {'ro.product.vendor.device': 'Titan_pocket', 'ro.board.platform': 'mt6771',
@@ -61,7 +62,10 @@ class PlannerTests(unittest.TestCase):
             live_hashes = {name: entry['sha256'] for name, entry in self.data['protected_backups'].items()}
             live_hashes['super'] = self.data['rollback_super']['sha256']
             for name, value in live_hashes.items():
-                responses['-s BOUND shell sha256sum /dev/block/by-name/' + name] = [value + '  /dev/block/by-name/' + name + '\n', '']
+                command = 'sha256sum /dev/block/by-name/' + name
+                if root_helper:
+                    command = shlex.join([root_helper, '-c', command])
+                responses['-s BOUND shell ' + command] = [value + '  /dev/block/by-name/' + name + '\n', '']
         else:
             variables = {'product': 'g66v71c2k_dfl_tee', 'is-userspace': 'no', 'unlocked': 'yes',
                          'slot-count': '0', 'partition-size:super': hex(4831838208),
@@ -164,7 +168,7 @@ class PlannerTests(unittest.TestCase):
     def test_adb_preflight_uses_bound_serial_and_hashes(self):
         tool, log = self.fake_tool('adb')
         result = subject.preflight(self.plan(), 'BOUND', 'adb', adb=tool)
-        self.assertTrue(result['protected_baseline_hashes_match'])
+        self.assertTrue(result['immutable_baseline_hashes_match'])
         self.assertEqual(result['device_identity_sha256'], hashlib.sha256(b'BOUND').hexdigest())
         self.assertNotIn('BOUND', json.dumps(result))
         calls = [json.loads(line) for line in log.read_text().splitlines()]
@@ -205,6 +209,35 @@ class PlannerTests(unittest.TestCase):
                 tool, _ = self.fake_tool('adb', {command: ['0' * 64 + '  /dev/block/by-name/' + name + '\n', '']})
                 with self.assertRaisesRegex(subject.ValidationError, 'does not match baseline'):
                     subject.preflight(self.plan(), 'BOUND', 'adb', adb=tool)
+
+    def test_writable_vendor_changes_are_observed_without_false_baseline_claim(self):
+        changed = '0' * 64
+        overrides = {'-s BOUND shell sha256sum /dev/block/by-name/' + name:
+                     [changed + '  /dev/block/by-name/' + name + '\n', '']
+                     for name in subject.WRITABLE_VENDOR}
+        tool, _ = self.fake_tool('adb', overrides)
+        result = subject.preflight(self.plan(), 'BOUND', 'adb', adb=tool)
+        self.assertTrue(result['immutable_backup_hashes_match'])
+        self.assertNotIn('protected_backup_hashes_match', result)
+        self.assertNotIn('protected_baseline_hashes_match', result)
+        for name, observation in result['writable_partition_observations'].items():
+            self.assertEqual(observation['live_sha256'], changed)
+            self.assertEqual(observation['backup_sha256'], self.data['protected_backups'][name]['sha256'])
+            self.assertFalse(observation['raw_hash_matches_backup'])
+
+    def test_root_helper_quotes_the_entire_hash_command(self):
+        helper = '/system_ext/bin/su'
+        tool, log = self.fake_tool('adb', root_helper=helper)
+        result = subject.preflight(self.plan(), 'BOUND', 'adb', adb=tool, root_helper=helper)
+        self.assertTrue(result['rollback_super_hash_matches'])
+        calls = [json.loads(line) for line in log.read_text().splitlines()]
+        hashes = [call[3] for call in calls[1:] if not call[3].startswith('getprop ')]
+        self.assertEqual(len(hashes), len(subject.PROTECTED) + 1)
+        for command in hashes:
+            words = shlex.split(command)
+            self.assertEqual(words[:2], [helper, '-c'])
+            self.assertEqual(len(words), 3)
+            self.assertTrue(words[2].startswith('sha256sum /dev/block/by-name/'))
 
     def test_active_dsu_guest_rejected(self):
         tool, _ = self.fake_tool('adb', {'-s BOUND shell getprop ro.gsid.image_running': ['1\n', '']})

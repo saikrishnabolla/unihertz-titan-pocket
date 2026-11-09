@@ -17,7 +17,7 @@ python3 tools/install/plan_install.py preflight --manifest private/install-manif
 python3 tools/install/plan_install.py preflight --manifest private/install-manifest.json --output private/fastboot-preflight.json --transport fastboot --fastboot /absolute/path/to/fastboot --serial YOUR_DEVICE_SERIAL
 ```
 
-ADB preflight requires boot-completed Android, the Titan Pocket/MT6771 hardware identifiers, an unlocked bootloader, and matching live BOOT/recovery/vbmeta hashes, all protected backup hashes and a live SUPER hash equal to the rollback image. Update mode also requires the September build outside DSU. The optional root helper supports the existing port's root binary only. Fastboot preflight checks physical bootloader mode, the exact product, unlocked state, non-A/B layout and partition sizes. Neither command changes device mode; enter the required mode yourself.
+ADB preflight requires boot-completed Android, the Titan Pocket/MT6771 hardware identifiers, an unlocked bootloader, and matching live hashes for BOOT/recovery/vbmeta and the other immutable protected partitions, plus a live SUPER hash equal to the rollback image. Every backup file is checked against its manifest hash. The live raw hashes of the mounted writable vendor partitions (`nvdata`, `persist`, `protect1`, `protect2`) are recorded with their backup comparison; differences do not block the update. Update mode also requires the September build outside DSU. The optional root helper supports the existing port's root binary only. Fastboot preflight checks physical bootloader mode, the exact product, unlocked state, non-A/B layout and partition sizes. Neither command changes device mode; enter the required mode yourself.
 
 Use a fresh output filename each time. Records are created with mode 600. Keep manifests, backups and results private: calibration data and hashes belong to your phone. Remaining checks are listed in each result. In particular, the tool does not prove the recovery-button route or hardware behavior.
 
@@ -31,7 +31,7 @@ Tests use small real byte fixtures and fake ADB/fastboot executables. The produc
 
 ## Execute an update
 
-This executor supports only an `update` plan. It does not perform the initial clean installation, erase userdata or install a boot chain. First run the rooted ADB preflight above and verify your manual recovery route. Its receipt must be less than one hour old and match this plan, device identity, build and baseline. Live SUPER and every protected backup must match before execution is allowed. Keep the matching rollback SUPER and protected backups outside the working image directory.
+This executor supports only an `update` plan. It does not perform the initial clean installation, erase userdata or install a boot chain. First run the rooted ADB preflight above and verify your manual recovery route. Its receipt must be less than one hour old and match this plan, device identity, build and baseline. Live SUPER and the immutable protected partitions must match their backups before execution is allowed. Keep the verified rollback SUPER and original protected backups outside the working image directory. Every backup must come from this exact phone; the tool cannot prove the origin of a supplied writable-partition backup. Those mounted filesystems can change during normal use, and a raw copy taken while they are mounted is not a consistent recovery snapshot. Keeping the supplied originals does not establish that they can restore the current writable state. The executor never restores protected partitions.
 
 Enter the physical bootloader yourself. The following command rehashes every planned input, requires an exact match with the saved offline plan, runs a fresh fastboot preflight bound to the explicit serial, then rehashes the candidate again before writing SUPER:
 
@@ -39,7 +39,7 @@ Enter the physical bootloader yourself. The following command rehashes every pla
 python3 tools/install/execute_update.py --manifest private/install-manifest.json --plan private/install-plan.json --adb-preflight private/adb-preflight.json --journal private/update-journal.json --fastboot /absolute/path/to/fastboot --serial YOUR_DEVICE_SERIAL
 ```
 
-The journal must be a new file. It uses mode 600 and records the serial only as a SHA256 identity. Success means fastboot returned success; it does not mean Android booted or the write passed readback. No reboot occurs. A failure stops execution and records unknown device state if a write began. The tool never attempts rollback or writes BOOT, recovery, vbmeta, calibration or bootloader partitions.
+The journal must be a new file. Updates use a synced temporary file, atomic replacement and a directory sync. It uses mode 600 and records the serial only as a SHA256 identity. Success means fastboot returned success; it does not mean Android booted or the write passed readback. No reboot occurs. A failure stops execution and records unknown device state if a write began. The tool never attempts rollback or writes BOOT, recovery, vbmeta, calibration or bootloader partitions.
 
 After a successful write, reboot manually when ready:
 
@@ -63,4 +63,4 @@ If recovery is needed, use the proven button route to Android Recovery, then cho
 
 This restores only SUPER. It is not a full factory restoration. Keep the device in the bootloader if the restore fails; do not erase or overwrite protected partitions to bypass an error. The public update executor has host-only fake-tool coverage. Neither this executor nor the documented recovery command has been run on a phone.
 
-Run the test command above from the repository root. The executor tests check changed plans/images, failed preflight, failed flash and the absence of reboot or automatic rollback.
+Run the test command above from the repository root. The tests cover writable vendor hash changes, immutable mismatches, the root-helper command, interrupted journal saves, changed plans/images, failed preflight, failed flash and the absence of reboot or automatic rollback.

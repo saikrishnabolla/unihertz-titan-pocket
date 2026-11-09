@@ -9,6 +9,7 @@ from pathlib import Path
 import stat
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 
 import plan_install as planner
@@ -16,6 +17,31 @@ import plan_install as planner
 
 def timestamp():
     return datetime.now(timezone.utc).isoformat()
+
+
+def save_journal(path, record):
+    """Keep the previous complete record until its replacement is durable."""
+    info = path.stat(follow_symlinks=False)
+    planner.require(stat.S_ISREG(info.st_mode) and stat.S_IMODE(info.st_mode) == 0o600,
+                    'Journal permissions changed')
+    fd, temporary = tempfile.mkstemp(prefix='.' + path.name + '.', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'w') as stream:
+            json.dump(record, stream, indent=2)
+            stream.write('\n')
+            stream.flush()
+            os.fsync(stream.fileno())
+        planner.require(planner.identity(path.stat(follow_symlinks=False)) == planner.identity(info),
+                        'Journal changed during save')
+        os.replace(temporary, path)
+        directory = os.open(path.parent, os.O_RDONLY | getattr(os, 'O_DIRECTORY', 0))
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
 
 
 def execute(manifest, plan_file, journal, serial, fastboot, adb_preflight, *, _validator=None):
@@ -30,15 +56,26 @@ def execute(manifest, plan_file, journal, serial, fastboot, adb_preflight, *, _v
     planner.require(isinstance(serial, str) and planner.re.fullmatch(r'[A-Za-z0-9._:-]{1,128}', serial),
                     'Invalid explicit serial')
     _, baseline = planner.load_manifest(adb_preflight)
-    planner.require(baseline.get('status') == 'READ-ONLY PREFLIGHT PASSED; NOT INSTALLED'
+    planner.require(baseline.get('schema_version') == 2
+                    and baseline.get('status') == 'READ-ONLY PREFLIGHT PASSED; NOT INSTALLED'
                     and baseline.get('transport') == 'adb'
                     and baseline.get('plan_sha256') == planner.plan_fingerprint(verified)
                     and baseline.get('device_identity_sha256') == hashlib.sha256(serial.encode()).hexdigest()
                     and baseline.get('build') == planner.BUILD and baseline.get('model') == planner.MODEL
                     and baseline.get('expected_partitions') == verified['expected_partitions']
-                    and baseline.get('protected_backup_hashes_match') is True
+                    and baseline.get('immutable_backup_hashes_match') is True
                     and baseline.get('rollback_super_hash_matches') is True,
                     'Rooted ADB preflight does not match this plan, baseline and device')
+    observations = baseline.get('writable_partition_observations')
+    planner.keys(observations, planner.WRITABLE_VENDOR, 'writable partition observations')
+    for name, observation in observations.items():
+        planner.keys(observation, ('backup_sha256', 'live_sha256', 'raw_hash_matches_backup'),
+                     'writable partition observation')
+        live = planner.checksum(observation['live_sha256'])
+        expected = verified['protected_backups'][name]['sha256']
+        planner.require(observation['backup_sha256'] == expected
+                        and observation['raw_hash_matches_backup'] is (live == expected),
+                        'Writable partition observation differs from its verified backup')
     age = (datetime.now(timezone.utc) - datetime.fromisoformat(baseline['checked_utc'])).total_seconds()
     planner.require(0 <= age <= 3600, 'Rooted ADB preflight must be less than one hour old')
     record = {'schema_version': 1, 'status': 'VALIDATED_NOT_FLASHED', 'started_utc': timestamp(),
@@ -51,19 +88,7 @@ def execute(manifest, plan_file, journal, serial, fastboot, adb_preflight, *, _v
     journal = Path(journal)
     planner.write_record(journal, record)
     def save():
-        fd = os.open(journal, os.O_WRONLY | os.O_NOFOLLOW)
-        try:
-            info = os.fstat(fd)
-            planner.require(stat.S_ISREG(info.st_mode) and stat.S_IMODE(info.st_mode) == 0o600,
-                            'Journal permissions changed')
-            with os.fdopen(fd, 'w', closefd=False) as stream:
-                json.dump(record, stream, indent=2)
-                stream.write('\n')
-                stream.flush()
-                os.ftruncate(fd, stream.tell())
-                os.fsync(fd)
-        finally:
-            os.close(fd)
+        save_journal(journal, record)
     try:
         record['preflight'] = planner.preflight(verified, serial, 'fastboot', fastboot=fastboot)
         # Rehash again after device checks, immediately before the write.

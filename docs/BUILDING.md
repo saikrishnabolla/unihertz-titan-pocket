@@ -79,7 +79,15 @@ These builders need private originals from the pinned build:
 | `libinputflinger.so` | `38761f904a5952bdc958b6348f00d65d467b608bff8d86a696c275f57fc72955` |
 | Backlight-patched base `services.jar` | `6806a4dcf3ef38d8368727297f62a0c7680e575365efbabb156c6bf246694e54` |
 
-The services builder also needs Java/Javac, the `patch` command and a tool JAR providing D8 and `com.android.tools.smali`. The tested tool was JADX 1.5.3's complete JAR. Use a fresh services output directory.
+The services builder also needs Java/Javac, the `patch` command and a tool JAR providing D8 and `com.android.tools.smali`. The tested tool was JADX 1.5.3's complete JAR. Use a fresh services output directory. Download the pinned release and extract its single tool JAR:
+
+```sh
+python3 tools/fetch_inputs.py --output inputs dex-tools
+unzip -p inputs/jadx-1.5.3.zip lib/jadx-1.5.3-all.jar > inputs/dex-tools.jar
+shasum -a 256 inputs/dex-tools.jar
+```
+
+The extracted JAR must hash to `05b8f908d6f5cdde2e5fae25e87c2d74095ca2e0fc1ef6aa8aa9b9619ecc3cb3`. Keep JADX's bundled notices with the tool. Use a new destination file; the extraction command overwrites an existing `inputs/dex-tools.jar`.
 
 ```sh
 python3 hooks/build.py --original inputs/libinputflinger.so --output build/hooks

@@ -31,6 +31,8 @@ PARTITION_BYTES = {'boot': 33554432, 'recovery': 33554432, 'vbmeta': 8388608,
                    'persist': 50331648, 'protect1': 8388608, 'protect2': 11395072,
                    'tee1': 5242880, 'tee2': 12582912, 'lk': 1048576,
                    'lk2': 1048576, 'dtbo': 8388608}
+WRITABLE_VENDOR = ('nvdata', 'persist', 'protect1', 'protect2')
+IMMUTABLE_PROTECTED = tuple(name for name in PROTECTED if name not in WRITABLE_VENDOR)
 HEX = re.compile(r'[0-9a-f]{64}')
 
 
@@ -183,7 +185,7 @@ def plan_fingerprint(plan):
 
 def preflight(plan, serial, transport, adb=None, fastboot=None, root_helper=None):
     require(isinstance(serial, str) and re.fullmatch(r'[A-Za-z0-9._:-]{1,128}', serial), 'Invalid explicit serial')
-    record = {'status': 'READ-ONLY PREFLIGHT PASSED; NOT INSTALLED',
+    record = {'schema_version': 2, 'status': 'READ-ONLY PREFLIGHT PASSED; NOT INSTALLED',
               'device_identity_sha256': hashlib.sha256(serial.encode()).hexdigest(),
               'transport': transport, 'device_contacted': True, 'device_writes': False,
               'plan_sha256': plan_fingerprint(plan),
@@ -209,19 +211,28 @@ def preflight(plan, serial, transport, adb=None, fastboot=None, root_helper=None
             require(root_helper == '/system_ext/bin/su', 'Unsupported root helper')
         live_hashes = {name: artifact['sha256'] for name, artifact in plan['protected_backups'].items()}
         live_hashes['super'] = plan['rollback_super']['sha256']
+        writable_observations = {}
         for partition, expected in live_hashes.items():
             command = 'sha256sum /dev/block/by-name/' + partition
             if root_helper:
                 command = shlex.join([root_helper, '-c', command])
             actual = shell(command).split()
-            require(len(actual) == 2 and actual[0] == expected and
+            require(len(actual) == 2 and HEX.fullmatch(actual[0]) and
                     actual[1] == '/dev/block/by-name/' + partition,
-                    'Live protected partition does not match baseline')
+                    'Invalid live partition hash response')
+            if partition in WRITABLE_VENDOR:
+                writable_observations[partition] = {
+                    'backup_sha256': expected, 'live_sha256': actual[0],
+                    'raw_hash_matches_backup': actual[0] == expected,
+                }
+            else:
+                require(actual[0] == expected, 'Live protected partition does not match baseline')
         record.update(model=MODEL, platform='mt6771', bootloader_unlocked=True,
-                      boot_completed=True, protected_baseline_hashes_match=True,
+                      boot_completed=True, immutable_baseline_hashes_match=True,
                       build=BUILD if plan['mode']=='update' else None,
                       expected_partitions=plan['expected_partitions'],
-                      protected_backup_hashes_match=True, rollback_super_hash_matches=True,
+                      immutable_backup_hashes_match=True, rollback_super_hash_matches=True,
+                      writable_partition_observations=writable_observations,
                       remaining=['Physical bootloader partition-size checks', 'Manual recovery-route verification'])
     elif transport == 'fastboot':
         tool = binary_path(fastboot)

@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 import execute_update as executor
 import plan_install as planner
@@ -51,7 +52,9 @@ class UpdateTests(unittest.TestCase):
         for key, value in [('plan_sha256', '0' * 64),
                            ('device_identity_sha256', '0' * 64),
                            ('rollback_super_hash_matches', False),
-                           ('protected_backup_hashes_match', False),
+                           ('immutable_backup_hashes_match', False),
+                           ('schema_version', 1),
+                           ('writable_partition_observations', {}),
                            ('checked_utc', '2000-01-01T00:00:00+00:00')]:
             with self.subTest(key=key):
                 changed = dict(baseline)
@@ -99,6 +102,42 @@ class UpdateTests(unittest.TestCase):
         with self.assertRaisesRegex(planner.ValidationError, 'flash failed'):
             self.run_update({command: ['', 'FAILED (remote: write failed)\n']})
         self.assertEqual(json.loads(self.journal.read_text())['status'], 'FLASH_FAILED_STATE_UNKNOWN')
+
+    def test_changed_writable_partition_does_not_block_super_update(self):
+        baseline = json.loads(self.baseline_file.read_text())
+        for observation in baseline['writable_partition_observations'].values():
+            observation.update(live_sha256='0' * 64, raw_hash_matches_backup=False)
+        self.baseline_file.write_text(json.dumps(baseline))
+        command = '-s BOUND flash super ' + str(self.root / 'candidate.img')
+        record = self.run_update({command: ['', 'Writing super OKAY\n']})
+        self.assertEqual(record['status'], 'FLASH_RETURNED_SUCCESS_READBACK_REQUIRED')
+
+    def test_false_writable_hash_claim_blocks_all_fastboot_commands(self):
+        baseline = json.loads(self.baseline_file.read_text())
+        baseline['writable_partition_observations']['nvdata']['live_sha256'] = '0' * 64
+        self.baseline_file.write_text(json.dumps(baseline))
+        with self.assertRaisesRegex(planner.ValidationError, 'observation differs'):
+            self.run_update()
+        self.assertFalse(self.log.exists())
+
+    def test_atomic_journal_replace_failure_preserves_previous_record(self):
+        previous = {'status': 'FLASH_IN_PROGRESS_STATE_UNKNOWN'}
+        planner.write_record(self.journal, previous)
+        before = self.journal.read_bytes()
+        with patch.object(executor.os, 'replace', side_effect=OSError('simulated failed replace')):
+            with self.assertRaises(OSError):
+                executor.save_journal(self.journal, {'status': 'FLASH_RETURNED_SUCCESS_READBACK_REQUIRED'})
+        self.assertEqual(self.journal.read_bytes(), before)
+        self.assertEqual(list(self.root.glob('.journal.json.*')), [])
+
+    def test_atomic_journal_sync_failure_preserves_previous_record(self):
+        planner.write_record(self.journal, {'status': 'VALIDATED_NOT_FLASHED'})
+        before = self.journal.read_bytes()
+        with patch.object(executor.os, 'fsync', side_effect=OSError('simulated failed sync')):
+            with self.assertRaises(OSError):
+                executor.save_journal(self.journal, {'status': 'FLASH_IN_PROGRESS_STATE_UNKNOWN'})
+        self.assertEqual(self.journal.read_bytes(), before)
+        self.assertEqual(list(self.root.glob('.journal.json.*')), [])
 
     def test_existing_journal_blocks_all_device_commands(self):
         self.journal.write_text('keep')

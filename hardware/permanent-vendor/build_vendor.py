@@ -8,7 +8,7 @@ from pathlib import Path
 import argparse, hashlib, json, os, re, shutil, stat, struct, subprocess, sys
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
-HELPER_PINS = {'image_helpers.py':'8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140', 'inventory_helpers.py':'3d09f6c8d3b731f50d9074230458b6f75f0f6ea6a6445bf7ae3ea6a3b34ed5a0', 'check_google_dsu_pair_avb.py':'19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51'}
+HELPER_PINS = {'image_helpers.py':'8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140', 'inventory_helpers.py':'e54adf92d0600af72061cf1cc3561668d9c61ce2205e72628f735c391f30ba94', 'check_google_dsu_pair_avb.py':'19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51'}
 for helper, pin in HELPER_PINS.items():
     if hashlib.sha256((HERE / 'helpers' / helper).read_bytes()).hexdigest() != pin:
         raise ValueError('Helper hash differs: ' + helper)
