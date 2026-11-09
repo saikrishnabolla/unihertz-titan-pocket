@@ -15,47 +15,27 @@
     "-mno-outline-atomics"
   ],
   "include_dirs": [
-    "inputs/headers/continuation-v2/libsystem-include",
-    "inputs/headers/continuation-v2/perfetto-include/perfetto/base/build_configs/android_tree",
-    "inputs/headers/continuation-v2/perfetto-include",
-    "inputs/headers/continuation-v2/generated/protos",
-    "inputs/headers/continuation-v2/generated",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/include",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/include",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/mapper",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/mapper/gestures",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/include",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/include/android",
-    "inputs/headers/libui-include",
-    "inputs/headers/libmath-include",
-    "inputs/headers/libcutils-include",
-    "inputs/headers/jni",
-    "inputs/headers/fmt-include",
-    "inputs/headers/libutils-binder-include",
-    "inputs/headers/binder-include",
-    "inputs/headers/gui-include",
-    "inputs/headers/nativewindow-include",
-    "inputs/headers/batteryservice-include",
-    "inputs/headers/gestures",
-    "inputs/headers/arect-include",
-    "inputs/headers/generated",
-    "inputs/headers/binder-ndk-include",
-    "inputs/headers/generated-aconfig/include",
-    "inputs/headers/stats-api-include",
-    "inputs/headers/libutils-include",
-    "inputs/headers/libbase-include",
-    "inputs/headers/liblog-include",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/mapper/accumulator",
-    "inputs/headers/continuation-v4-metadata-proof/target-tree/frameworks/native/services/inputflinger/reader/controller"
+    "inputs/native-headers/headers/native-include",
+    "inputs/native-headers/headers/native-include/android",
+    "inputs/native-headers/headers/libui-include",
+    "inputs/native-headers/headers/libmath-include",
+    "inputs/native-headers/headers/libcutils-include",
+    "inputs/native-headers/headers/jni",
+    "inputs/native-headers/headers/fmt-include",
+    "inputs/native-headers/headers/libutils-binder-include",
+    "inputs/native-headers/headers/binder-include",
+    "inputs/native-headers/headers/arect-include",
+    "inputs/native-headers/headers/generated",
+    "inputs/native-headers/headers/libutils-include",
+    "inputs/native-headers/headers/libbase-include",
+    "inputs/native-headers/headers/liblog-include"
   ],
   "system_include_dirs": [
-    "inputs/headers/platform-libcxx",
-    "inputs/headers/bionic",
-    "inputs/headers/uapi/asm-arm64",
-    "inputs/headers/uapi",
-    "inputs/headers/android-uapi"
+    "inputs/native-headers/headers/platform-libcxx",
+    "inputs/native-headers/headers/bionic",
+    "inputs/native-headers/headers/uapi/asm-arm64",
+    "inputs/native-headers/headers/uapi",
+    "inputs/native-headers/headers/android-uapi"
   ],
   "link_libraries": [
     {
@@ -76,7 +56,7 @@
     },
     {
       "path": "inputs/link/libm.so",
-      "sha256": "d55f716c4e4be4d7999c2baacb5b8dda433125580a997670f9f4205d8824400d"
+      "sha256": "105cf4240e3bd950222c878ec5828bc27d9d0316c593485d165de77f481212c1"
     }
   ]
 }

@@ -179,3 +179,59 @@ def validate_minimal(blob):
     if parsed['partitions'] != PARTITIONS:
         raise ValueError('Partition layout differs from fixed minimal policy')
     return parsed
+
+
+def name_bytes(name):
+    if not re.fullmatch(r'[A-Za-z0-9_]{1,35}', name):
+        raise ValueError('Invalid metadata name')
+    return name.encode().ljust(36, b'\0')
+
+def build_slot():
+    partitions = b''.join(struct.pack('<36sIIII', name_bytes(p['name']), p['attributes'], i, 1, p['group'])
+                          for i, p in enumerate(PARTITIONS))
+    extents = b''.join(struct.pack('<QIQI', *p['extents'][0]) for p in PARTITIONS)
+    groups = b''.join(struct.pack('<36sIQ', name_bytes(g['name']), g['flags'], g['maximum_size']) for g in GROUPS)
+    devices = b''.join(struct.pack('<QIIQ36sI', d['first_logical_sector'], d['alignment'],
+                                  d['alignment_offset'], d['size'], name_bytes(d['name']), d['flags'])
+                       for d in DEVICES)
+    tables = partitions + extents + groups + devices
+    header = bytearray(128)
+    struct.pack_into('<IHHI', header, 0, 0x414c5030, 10, 0, 128)
+    struct.pack_into('<I', header, 44, len(tables))
+    header[48:80] = hashlib.sha256(tables).digest()
+    offset = 0
+    for at, data, count, stride in [(80,partitions,2,52),(92,extents,2,24),(104,groups,2,48),(116,devices,1,64)]:
+        struct.pack_into('<III', header, at, offset, count, stride)
+        offset += len(data)
+    header[12:44] = hashlib.sha256(header).digest()
+    return (bytes(header) + tables).ljust(MAXIMUM, b'\0')
+
+def build_prefix():
+    """Recreate the fixed tested geometry without a private metadata fixture."""
+    geometry = bytearray(BLOCK)
+    struct.pack_into('<II', geometry, 0, 0x616c4467, 52)
+    struct.pack_into('<III', geometry, 40, MAXIMUM, SLOTS, BLOCK)
+    geometry[8:40] = hashlib.sha256(geometry[:52]).digest()
+    blob = bytes(BLOCK) + bytes(geometry) * 2 + build_slot() * (2 * SLOTS)
+    validate_minimal(blob)
+    expected = 'b79a001a076880b6679c02d52e51842850e22841ff16b7bc20d999b7459e2acf'
+    if sha(blob) != expected:
+        raise ValueError('Generated prefix differs from tested metadata')
+    return blob
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('output', type=Path, help='New regular metadata file; no device destination')
+    args = parser.parse_args()
+    blob = build_prefix()
+    fd = os.open(args.output, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+    with os.fdopen(fd, 'wb') as stream:
+        stream.write(blob)
+        stream.flush()
+        os.fsync(stream.fileno())
+    print(json.dumps({'bytes': len(blob), 'sha256': sha(blob), 'device_operations': False}))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,30 @@
+{
+  "status": "OFFLINE BASE APP AND WEBVIEW CANDIDATE; PHONE TEST PENDING",
+  "source_system_sha256": "8eadb0b59dfd536354cf88e8bffb5dcb8fbb6b52124ee96eda19fd2fbea71dab",
+  "system_sha256": "55353cb51948fce0201b069cefb8455841bfa42b9bda9f5ec30055702ec8824b",
+  "system_bytes": 3288334336,
+  "filesystem_sha256": "91453b718e8cc11df172e59c12395d532534a518c40bb61d4436ddab671c5c38",
+  "super_sha256": "c91de3a132c40fa2310811d5aa3dc4fae78e8ef30290505ebd0dbf881db7fb49",
+  "super_bytes": 4831838208,
+  "vendor_sha256": "4428076fb5e54681e06fc38faa648a9d71f8686acc6e3da017e79744445bb62c",
+  "vendor_unchanged": true,
+  "super_layout_unchanged": true,
+  "modified_paths": [
+    "/system/lib64/libtitan_keyboard_surface.so"
+  ],
+  "all_other_path_content_and_metadata_unchanged": true,
+  "allowed_parent_metadata_fields": [
+    "size",
+    "links",
+    "allocated_512_blocks"
+  ],
+  "e2fsck_pass": true,
+  "avb_verified": true,
+  "webview_provider": "com.android.webview; original framework whitelist; no RRO",
+  "raw_partition_writes": false,
+  "phone_tested": false,
+  "new_signing_key_requested": false,
+  "signing_public_pem_sha256": "4b942e8aa74a0ace264cca09d78bcc5e1c09b87412d05402c9775db3e64a1fe9",
+  "matches_recorded_installed_system_and_super": true,
+  "verification_scope": "Offline rebuild from retained already-patched SYSTEM, independently rebuilt original-key VENDOR, rebuilt native library, pinned APKs, generated metadata and live inventory. Not a clean Google-to-port build."
+}

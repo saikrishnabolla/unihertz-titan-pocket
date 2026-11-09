@@ -9,11 +9,11 @@ The test phone now boots `CP3A.260905.010` directly, without a guest ROM. It sti
 ## Start here
 
 - **Understand the port:** read the [phone tests](#phone-tests) below, then the [hardware source map](hardware/README.md).
-- **Run tests or build components:** follow the [build and usage guide](docs/BUILDING.md). The host tests can run without a phone or firmware.
+- **Run tests or build components:** follow the [build and usage guide](docs/BUILDING.md). Host tests need no phone or firmware. The scrolling library now rebuilds exactly using headers downloaded from official Android sources.
 - **Rebuild the current app layer:** use the [base-app recipe](hardware/base-apps/README.md). It requires an already-patched, exact-match SYSTEM image and private inputs.
-- **Install on another phone:** there is no public flashable release or general-purpose installer in this repo. The recipes produce offline candidates; cloning this repo is not enough to reproduce the installed phone.
+- **Install on another phone:** there is no public flashable ROM or verified clean-install pipeline yet. The [installation tools](tools/install/README.md) check inputs and support a guarded SUPER-only update on an existing installation; they have host-only test coverage.
 
-Firmware, APKs, signing keys, original compiled Android components and private device logs are excluded. Some build inputs still depend on the original development environment. Those limits are described in the guide.
+Firmware, APKs, signing keys, original compiled Android components and private device logs are excluded. The full Google-to-port pipeline still needs recovered intermediate build steps. The [app-layer rebuild](release/base-rebuild-verification.json) matches the installed SYSTEM and SUPER byte-for-byte, starting from the preserved patched SYSTEM. Those limits are described in the guide.
 
 ## Screenshots
 

@@ -1,0 +1,43 @@
+name: Verify public source
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  public-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install host test compiler
+        run: sudo apt-get update && sudo apt-get install -y clang libclang-rt-dev
+      - name: Check published source inventory
+        run: python3 tools/check_source_manifest.py
+      - name: Check download verification
+        run: |
+          python3 -m unittest discover -s tests -p 'test_fetch_inputs.py' -v
+          python3 -m unittest discover -s tests -p 'test_prepare_build_tools.py' -v
+      - name: Check native input acquisition
+        run: python3 -m unittest discover -s tests -p 'test_native_inputs.py' -v
+      - name: Check permanent vendor transform
+        run: |
+          python3 -m unittest discover -s hardware/permanent-vendor -p 'test_*.py' -v
+          python3 -m unittest discover -s hardware/permanent-vendor/boot-chain -p 'test_*.py' -v
+      - name: Check metadata and signing policy
+        run: python3 -m unittest discover -s hardware/base-apps -p 'test_*.py' -v
+      - name: Run address and undefined behavior checks
+        run: python3 tools/test.py --output build/core
+      - name: Run thread sanitizer checks
+        run: python3 tools/test.py --output build/core-tsan --sanitizer thread
+      - name: Check installation inputs
+        run: python3 -m unittest discover -s tools/install -p 'test_*.py' -v
+      - name: Check first-unlock regression
+        run: python3 tools/test_keyguard.py --output build/keyguard

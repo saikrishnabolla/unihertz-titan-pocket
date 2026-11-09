@@ -1,6 +1,6 @@
 # Building and reading the Titan Pocket port
 
-Run the commands in this guide from the repository root unless a step says otherwise. All build and test commands here are offline: they do not flash or reboot a phone.
+Run the commands in this guide from the repository root unless a step says otherwise. Build and test commands do not flash or reboot a phone. Input acquisition commands download from the pinned upstream sources.
 
 ## Get the source
 
@@ -55,20 +55,20 @@ These tests cannot establish Android ABI compatibility, touch-surface behavior o
 
 ## Build the native extension
 
-In addition to the host tools, supply LLVM tools, the matching CP3 platform/generated headers and the private Android link libraries listed in the example configuration:
+Use LLVM tools, `debugfs` from e2fsprogs, Android SDK Build Tools 37.0.0 (`aidl`), and an extracted raw SYSTEM image from the pinned Google CP3 GSI. Header acquisition downloads public Android 17 sources; the build and library extraction run offline and never access a phone.
 
 ```sh
-cp private-inputs.example.json private-inputs.json
+python3 tools/acquire_native_headers.py --manifest release/native-header-sources.json --aidl /path/to/android-37.0/aidl --output inputs/native-headers
+python3 tools/prepare_native_inputs.py --system /path/to/system.img --headers inputs/native-headers --output inputs/link
+python3 tools/build_native.py --inputs inputs/link/native-inputs.json --output build/native
+python3 tools/test_runtime.py --inputs inputs/link/native-inputs.json --output build/runtime
 ```
 
-Edit `private-inputs.json` before building. Set `cxx`, `linker` and `readelf` to compatible tools, supply every header directory, and provide link libraries with the listed hashes. Relative input paths resolve from the configuration file's directory. The header layout reflects the original development environment; this repo does not automate downloading or generating it. An Android NDK alone does not supply all those platform/generated headers.
+The acquisition script requires a new output directory, verifies 1,063 header hashes and generates four headers with `aidl`. It downloads only the consumed public headers; their upstream licenses still apply. An Android NDK alone does not supply these platform headers. The preparation script requires a new output directory, checks the header inventory against the pinned source list and extracts five hash-pinned link libraries: SYSTEM's `libc++`, bootstrap `libc` and `libdl`, `liblog`, and `libm` from the runtime APEX. It rejects mismatched libraries.
 
-```sh
-python3 tools/build_native.py --inputs private-inputs.json --output build/native
-python3 tools/test_runtime.py --inputs private-inputs.json --output build/runtime
-```
+Pass `--debugfs`, `--cxx`, `--linker` and `--readelf` to the preparation script if those tools are outside PATH. The example configuration shows the portable directory layout; relative paths resolve from its containing directory.
 
-A missing directory or mismatched library is a reason to obtain the correct input. Do not remove the hash checks to force another build through. A clean-environment rebuild has not been verified.
+A fresh header download and Clang 23.1.4 build reproduced the installed native library byte for byte: `a8b78c2fc7a04b3652d03125fc9f7ba075114554c1ba9de3d55d87089014a179`. All five link libraries passed their exact hashes when extracted from both the retained patched SYSTEM and a fresh Google GSI download. See [the recorded check](../release/public-inputs-verification.json).
 
 ## Patch inputflinger and services
 
@@ -90,13 +90,24 @@ These outputs are components for further integration and verification. In partic
 
 ## Rebuild the app layer
 
+Install e2fsprogs and OpenSSL before image work. On macOS, Homebrew's e2fsprogs tools are under `$(brew --prefix e2fsprogs)/sbin`. On Ubuntu, install `e2fsprogs` and `openssl`. The pinned aapt2 package runs on macOS or x86_64 Linux; ARM Linux needs a compatible host-built aapt2 supplied in the configuration.
+
+Fetch aapt2 and the AVB Python source from their pinned upstream releases:
+
+```sh
+python3 tools/prepare_build_tools.py --cache inputs/tool-downloads --output build/image-tools
+python3 tools/fetch_inputs.py --output inputs camera chromium webview
+```
+
+The tool helper retains aapt2's NOTICE and AVB's MIT header. It downloads and unpacks tools without executing them. Configure `aapt2` and `avbtool` to the resulting files and supply absolute paths to `debugfs`, `e2fsck` and OpenSSL.
+
 Follow [hardware/base-apps/README.md](../hardware/base-apps/README.md) for the complete input list and invocation. This step replaces apps inside an existing, already-patched SYSTEM and assembles SUPER with the pinned vendor image and metadata. It does not build Android from AOSP or combine every historical hardware stage for you.
 
 The recipe adds GrapheneOS Camera 93, Ungoogled Chromium 155.0.8059.39, Cromite WebView 153.0.8010.37 with both ARM ABIs, and the performance-fixed touchpad library. It removes AOSP Camera2, QuickSearchBox, Browser2 and the old WebView. The current phone also has a separate Google Play core module; this base-app recipe does not install Google Play services or the Play Store.
 
 ## Installation and recovery boundary
 
-The permanent installation succeeded on the owner's test phone using private firmware, partition backups, signing material and device-specific deployment tooling. That deployment tooling is not a public installer in this repo. There is no documented, verified clean-clone-to-flash path yet.
+The permanent installation succeeded on the owner's test phone using private firmware, partition backups, signing material and device-specific deployment tooling. The public [installation checks](../tools/install/README.md) verify local images and backups, and inspect an explicitly selected device. A separate executor supports a SUPER-only update on an existing installation, with host-only test coverage. There is no verified clean-clone-to-flash path yet.
 
 Before attempting an installation elsewhere, you would need matching firmware and partition metadata, verified stock recovery images, a backup of personal data and device-specific calibration partitions, and a recovery route proven on that exact phone. The test phone's initial permanent installation erased its userdata. A later SUPER-only update preserved its userdata, but that does not establish safe upgrades or factory-reset behavior for other setups.
 

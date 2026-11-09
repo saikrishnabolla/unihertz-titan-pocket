@@ -1,8 +1,6 @@
 {
   "system": "inputs/system.img",
-  "source_tree": "inputs/candidate-tree-final.json",
   "vendor": "inputs/vendor.img",
-  "prefix": "inputs/minimal-super-metadata-prefix.bin",
   "camera": "inputs/Camera-93.apk",
   "browser": "inputs/ChromePublic_arm64.apk",
   "webview": "inputs/CromiteWebView.apk",

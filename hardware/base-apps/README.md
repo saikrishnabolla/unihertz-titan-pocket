@@ -1,6 +1,6 @@
 # Current base-app recipe
 
-This offline recipe updates the pinned CP3 SYSTEM image and assembles SUPER with the original vendor image and partition layout. The input SYSTEM must already contain the earlier port changes. This is the final app-layer step, not a complete Android build or an installer.
+This offline recipe updates the pinned CP3 SYSTEM image and assembles SUPER with the adapted permanent-install vendor image and partition layout. The input SYSTEM must already contain the earlier port changes. This is the final app-layer step, not a complete Android build or an installer.
 
 It removes AOSP Camera2, QuickSearchBox, Browser2 and the old WebView, including their oat files. It adds GrapheneOS Camera 93, Ungoogled Chromium 155.0.8059.39, mixed-ABI Cromite WebView 153.0.8010.37 and the verified touchpad performance library. The original WebView provider configuration is retained; no provider overlay is added. Google Play core is a separate module and is not installed by this recipe.
 
@@ -11,14 +11,14 @@ Copy `private-inputs.example.json` to `private-inputs.json` in this directory an
 | Configuration key | Required input |
 |---|---|
 | `system` | The already-patched, pinned CP3 SYSTEM image. A fresh Google GSI is not a substitute. |
-| `source_tree` | The matching `candidate-tree-final.json` filesystem inventory. |
-| `vendor` | The pinned original vendor image. |
-| `prefix` | The pinned SUPER metadata prefix for the test phone's partition layout. |
+| `source_tree` | Optional matching filesystem inventory. If omitted, the builder reads the pinned source image. |
+| `vendor` | The pinned adapted permanent-install vendor image. |
+| `prefix` | Optional pinned SUPER metadata prefix. If omitted, the builder generates it from the checked layout constants. |
 | `camera` | Official GrapheneOS Camera 93 APK. |
 | `browser` | Ungoogled Chromium 155.0.8059.39 ARM64 APK. |
 | `webview` | Cromite WebView 153.0.8010.37 APK containing both ARM32 and ARM64 libraries. |
 | `touchpad` | The pinned performance-fixed `libtitan_keyboard_surface.so`. |
-| `avb_key` | The existing private SYSTEM AVB signing key. Its public-key hash is checked; an arbitrary new key will fail. |
+| `avb_key` | Your private SYSTEM AVB signing key. The original identity is required by default; see the new-key option below. |
 | `tools` | Paths to working `debugfs`, `e2fsck`, OpenSSL, `avbtool` and `aapt2`. |
 
 Pinned APK releases:
@@ -27,7 +27,7 @@ Pinned APK releases:
 - [Ungoogled Chromium 155.0.8059.39-1](https://github.com/ungoogled-software/ungoogled-chromium-android/releases/tag/155.0.8059.39-1)
 - [Cromite 153.0.8010.37](https://github.com/uazo/cromite/releases/tag/v153.0.8010.37-11507ac1061b5ea227806f5e84db5a57df6ccf6a)
 
-Keep the signing key outside this source directory and set `avb_key` to its absolute path. The builder checks the key without copying it. Firmware, APKs, compiled libraries, private inventories, metadata and signing keys are not supplied by this repo. These dependencies prevent a complete rebuild from a clean clone alone.
+Keep the signing key outside this source directory and set `avb_key` to its absolute path. The builder checks the key without copying it. Firmware, APKs, Android link libraries and signing keys are external inputs. Download the pinned apps with `python3 tools/fetch_inputs.py --output inputs camera chromium webview` from the repo root. The native build guide explains how to rebuild the scrolling library. The earlier patched SYSTEM remains a required intermediate; this recipe alone cannot start from a fresh Google GSI.
 
 ## Run
 
@@ -44,9 +44,11 @@ Edit the configuration, then run:
 python3 build.py --inputs private-inputs.json --output /absolute/fresh/output
 ```
 
-Replace `/absolute/fresh/output` with your intended output path. That directory must not exist, its parent must exist, and the destination needs more than about 13.6 GiB free, excluding input files. Relative paths inside this configuration resolve from your working directory, unlike the native builder's config-relative paths. Absolute paths avoid that ambiguity.
+Replace `/absolute/fresh/output` with your intended output path. That directory must not exist, its parent must exist, and the destination needs more than about 13.6 GiB free, excluding input files. Relative input and tool paths resolve from the configuration file's directory.
 
-Do not run Python with `-O`: the builder uses assertions for its input and consistency checks. If an input hash differs, obtain the matching input rather than bypassing the check.
+The builder rejects Python `-O` because its input and consistency checks must run. If an input hash differs, obtain the matching input rather than bypassing the check.
+
+To sign an offline candidate with your own key, add `--new-signing-key`. The builder verifies the source with its embedded key, then verifies the output against your key. This option does not establish that the phone will accept a new signing identity. Keep the key private and the bootloader unlocked.
 
 ## Outputs and checks
 

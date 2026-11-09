@@ -1,0 +1,12 @@
+{
+  "README.md": "143c2731e29f2cb97d4fbeb5434e8b4f22c29ae6079e8ecc8f1a3abb04051395",
+  "boot-chain/build_vbmeta.py": "7eb20198c820ae5d8bacfeba5f91aad40f862548f1ede44961ef4ec5f4db144a",
+  "boot-chain/test_build_vbmeta.py": "00f9c954011e81ea3d6b36a40699b26431a7a599eacbeb7f94497872b11989d2",
+  "build_vendor.py": "b03c70764c02434846a7d416eb63f7d7b8ad33f85c8b608aba7e7cacc59e8bcf",
+  "helpers/check_google_dsu_pair_avb.py": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51",
+  "helpers/image_helpers.py": "8aa8d5d020d9d4b028b8b5f4ecb869861b0e5ebf096f7ba15a111fbf38a4b140",
+  "helpers/inventory_helpers.py": "e54adf92d0600af72061cf1cc3561668d9c61ce2205e72628f735c391f30ba94",
+  "provenance.json": "e390e487e7819216a612180b2350d47413557279fe0cf918e45a6cf5f66eb17d",
+  "test_build_vendor.py": "059302d66934939e8fbb3dad276d3a59966f25887ff334366e4f633bbc3ffb80",
+  "verification.json": "54a2b341a40489e3211cbd5f8760b63e5ccad1616804f8289a81f54293224486"
+}

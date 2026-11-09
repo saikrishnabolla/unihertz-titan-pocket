@@ -1,10 +1,11 @@
 {
-  "README.md": "67e5213b1ec4adbdf8ac0b60f08c2f1ba1d37b9e345376ee85964ebb9df1aaf3",
-  "build.py": "08e98761215d95ca7636a13ea5271573760df0933f0767d3903bd0ba166b3142",
+  "README.md": "4afe291af1de70784790993c4095306d6284a682c94e65d814b42f2b03a5305d",
+  "build.py": "303d52854d6469238c07ec105737a97c7c6fdb131fb0735516d788c8704bd98f",
   "helpers/check_google_dsu_pair_avb.py": "19accfd6de9daba5b1e9d5d2d9d568344555e1fe30bb753dd0f66faa0e7dab51",
   "helpers/image_helpers.py": "bc2f05b93a8047a47bbf314b157921efe628ee717d2547d50be6a988cfa7ade7",
   "helpers/inventory_helpers.py": "e54adf92d0600af72061cf1cc3561668d9c61ce2205e72628f735c391f30ba94",
-  "private-inputs.example.json": "091364d965c192f8a303ff46fcc3916385682b2ff177abec739757009723946b",
+  "private-inputs.example.json": "cf7a6933ecb0612e6f112c70d655a9c11c9b5266ad75d24865aa9a2cfdd09c3f",
   "super_helpers/assemble_super.py": "2b493ee71ff3f96af7ae48e67d6323c00b627e71d4cc503fa06aef2989b466b7",
-  "super_helpers/build_metadata.py": "2e911320295b0080c196a610a02cf34f950c3e24414c1b18b65c82032382ef4e"
+  "super_helpers/build_metadata.py": "3b8d4acf207e8bbe0a08f647bfcc391dc18eb5b5b5a77e1e5f62e9795fee2fda",
+  "test_portable_build.py": "c32b8747a5b6efe09b0f6f2fd8b9521c541421e6fa7c11744c3d9691e4ebfb0c"
 }

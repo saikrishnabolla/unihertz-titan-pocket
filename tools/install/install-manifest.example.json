@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "model": "Titan_pocket",
+  "build": "CP3A.260905.010",
+  "mode": "update",
+  "super": {
+    "path": "images/super.img",
+    "bytes": 4831838208,
+    "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+    "compression": "raw"
+  },
+  "rollback_super": {
+    "path": "backups/super.img.gz",
+    "bytes": 4831838208,
+    "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+    "compression": "gzip"
+  },
+  "expected_partitions": {
+    "boot": "REPLACE_WITH_LIVE_PARTITION_SHA256",
+    "recovery": "REPLACE_WITH_LIVE_PARTITION_SHA256",
+    "vbmeta": "REPLACE_WITH_LIVE_PARTITION_SHA256"
+  },
+  "protected_backups": {
+    "boot": {
+      "path": "backups/boot.img.gz",
+      "bytes": 33554432,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "recovery": {
+      "path": "backups/recovery.img.gz",
+      "bytes": 33554432,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "vbmeta": {
+      "path": "backups/vbmeta.img.gz",
+      "bytes": 8388608,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "nvram": {
+      "path": "backups/nvram.img.gz",
+      "bytes": 67108864,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "nvdata": {
+      "path": "backups/nvdata.img.gz",
+      "bytes": 67108864,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "proinfo": {
+      "path": "backups/proinfo.img.gz",
+      "bytes": 3145728,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "persist": {
+      "path": "backups/persist.img.gz",
+      "bytes": 50331648,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "protect1": {
+      "path": "backups/protect1.img.gz",
+      "bytes": 8388608,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "protect2": {
+      "path": "backups/protect2.img.gz",
+      "bytes": 11395072,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "tee1": {
+      "path": "backups/tee1.img.gz",
+      "bytes": 5242880,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "tee2": {
+      "path": "backups/tee2.img.gz",
+      "bytes": 12582912,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "lk": {
+      "path": "backups/lk.img.gz",
+      "bytes": 1048576,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "lk2": {
+      "path": "backups/lk2.img.gz",
+      "bytes": 1048576,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    },
+    "dtbo": {
+      "path": "backups/dtbo.img.gz",
+      "bytes": 8388608,
+      "sha256": "REPLACE_WITH_SHA256_OF_DECOMPRESSED_BYTES",
+      "compression": "gzip"
+    }
+  }
+}

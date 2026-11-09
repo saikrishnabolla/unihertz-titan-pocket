@@ -3,6 +3,8 @@
 from pathlib import Path
 import argparse,hashlib,json,os,re,shutil,subprocess,sys
 sys.dont_write_bytecode=True
+if not __debug__:
+ raise RuntimeError("Run without Python optimization; image validation is required")
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'helpers'))
 import image_helpers as h
@@ -35,19 +37,39 @@ def set_metadata(commands,path,directory,label,label_file):
  commands.append('ea_set -f '+h.quote(str(label_file))+' '+path+' security.selinux')
  for field in ['atime','mtime','ctime','crtime']:commands.append('set_inode_field '+path+' '+field+' 0x495c0780')
 
+def signing_policy(public, new_signing_key=False):
+ digest=hashlib.sha256(public.encode()).hexdigest()
+ historical='4b942e8aa74a0ace264cca09d78bcc5e1c09b87412d05402c9775db3e64a1fe9'
+ if digest!=historical and not new_signing_key:
+  raise ValueError('Signing key differs; use --new-signing-key for an offline candidate')
+ return digest
+
 def main():
  global SRC,TREE,VENDOR,PREFIX,AVB,AAPT
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--inputs',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--inputs',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--new-signing-key',action='store_true',help='Sign an offline candidate with your own key; phone compatibility unverified');args=ap.parse_args()
  inputs=json.loads(args.inputs.read_text())
- SRC=Path(inputs['system']);TREE=Path(inputs['source_tree']);VENDOR=Path(inputs['vendor']);PREFIX=Path(inputs['prefix']);args.key=Path(inputs['avb_key'])
+ base=args.inputs.resolve().parent
+ def path(value):
+  p=Path(value)
+  return p if p.is_absolute() else base/p
+ inputs={**inputs,**{k:str(path(v)) for k,v in inputs.items() if k!='tools'},'tools':{k:str(path(v)) for k,v in inputs['tools'].items()}}
+ SRC=Path(inputs['system']);TREE=Path(inputs['source_tree']) if 'source_tree' in inputs else None;VENDOR=Path(inputs['vendor']);PREFIX=Path(inputs['prefix']) if 'prefix' in inputs else None;args.key=Path(inputs['avb_key'])
  AVB=Path(inputs['tools']['avbtool']);AAPT=Path(inputs['tools']['aapt2'])
  for dest,name in {'/system/product/app/TitanCamera/TitanCamera.apk':'camera','/system/product/app/Chromium/Chromium.apk':'browser','/system/product/app/TitanWebView/TitanWebView.apk':'webview','/system/lib64/libtitan_keyboard_surface.so':'touchpad'}.items():ASSETS[dest]['file']=Path(inputs[name])
  out=args.output.absolute();assert not out.exists() and not out.is_symlink()
  assert out.parent.is_dir();assert shutil.disk_usage(out.parent).free>h.SIZE+metadata.SUPER_SIZE+6*1024**3
  os.umask(0o077);out.mkdir(mode=0o700)
  h.D=Path(inputs['tools']['debugfs']);h.E=Path(inputs['tools']['e2fsck'])
- h.RUN_ENV={**os.environ,'E2FSPROGS_FAKE_TIME':'1793242775'};h.RUN_ENV.pop('AVB_INVOCATION_LOGFILE',None)
- require_pin(SRC,SOURCE_SHA,h.SIZE);require_pin(TREE,TREE_SHA);require_pin(VENDOR,VENDOR_SHA,536870912);require_pin(PREFIX,PREFIX_SHA,metadata.PREFIX_SIZE)
+ # avbtool invokes openssl by name, including when our own key check uses
+ # its configured absolute path.
+ openssl=Path(inputs['tools']['openssl'])
+ if openssl.name!='openssl' or not openssl.is_file():raise ValueError('Configure an executable named openssl')
+ h.RUN_ENV={**os.environ,'E2FSPROGS_FAKE_TIME':'1793242775','PATH':str(openssl.parent)+os.pathsep+os.environ.get('PATH','')};h.RUN_ENV.pop('AVB_INVOCATION_LOGFILE',None)
+ require_pin(SRC,SOURCE_SHA,h.SIZE);require_pin(VENDOR,VENDOR_SHA,536870912);
+ if TREE is not None:require_pin(TREE,TREE_SHA)
+ else:TREE=out/'source-tree.json';h.inventory(SRC,TREE)
+ if PREFIX is not None:require_pin(PREFIX,PREFIX_SHA,metadata.PREFIX_SIZE)
+ else:PREFIX=out/'metadata-prefix.bin';PREFIX.write_bytes(metadata.build_prefix())
  before=json.loads(TREE.read_text());assert '/system/lib64/libtitan_keyboard_surface.so' in before
  asset_manifest={}
  for dest,asset in ASSETS.items():
@@ -59,10 +81,14 @@ def main():
     assert 'arm64-v8a' in text and 'armeabi-v7a' in text,'Multi-arch WebView must supply both device ABIs'
    (out/(Path(dest).stem+'-badging.txt')).write_text(text)
  public=subprocess.run([inputs['tools']['openssl'],'pkey','-in',str(args.key),'-pubout'],capture_output=True,text=True,check=True).stdout
- assert hashlib.sha256(public.encode()).hexdigest()=='4b942e8aa74a0ace264cca09d78bcc5e1c09b87412d05402c9775db3e64a1fe9'
+ public_sha=signing_policy(public,args.new_signing_key)
  pub=out/'system-public.pem';pub.write_text(public)
  avb=[sys.executable,str(AVB)]
- h.run(avb+['verify_image','--image',SRC,'--key',pub]);h.run([h.E,'-fn',SRC])
+ # avbtool resolves a hashtree descriptor through its partition name, even
+ # when the caller's input file has another basename.
+ source_check=out/'source-verification';source_check.mkdir()
+ source_link=source_check/'system.img';source_link.symlink_to(SRC.resolve())
+ h.run(avb+['verify_image','--image',source_link]);h.run([h.E,'-fn',SRC])
  original_structure=h.check(SRC,'system',h.FS,h.SIZE,h.sha(SRC,h.FS));raw_before=h.inode_bytes(SRC)
  removed={p for p in before if any(p==root or p.startswith(root+'/') for root in REMOVE_ROOTS)}
  assert all(root in removed for root in REMOVE_ROOTS)
@@ -121,7 +147,7 @@ def main():
  payloads=[assembler.Payload('system',image,1048576,h.SIZE,system_sha),assembler.Payload('vendor',VENDOR,3289382912,536870912,VENDOR_SHA)]
  super_report=assembler._assemble(prefix,payloads,metadata.SUPER_SIZE,out/'super',assembler.DEFAULT_RESERVE,verify_prefix)
  stats,_=h.run([h.D,'-R','stats',image]);(out/'filesystem-stats.txt').write_text(stats)
- report={'status':'OFFLINE BASE APP AND WEBVIEW CANDIDATE; PHONE TEST PENDING','source_system_sha256':SOURCE_SHA,'system_sha256':system_sha,'system_bytes':h.SIZE,'filesystem_sha256':fs_sha,'super_sha256':super_report['sha256'],'super_bytes':metadata.SUPER_SIZE,'vendor_sha256':VENDOR_SHA,'vendor_unchanged':True,'super_layout_unchanged':True,'assets':asset_manifest,'removed_paths':sorted(removed),'added_paths':sorted(added),'modified_paths':sorted(modified),'all_other_path_content_and_metadata_unchanged':True,'allowed_parent_metadata_fields':['size','links','allocated_512_blocks'],'changed_inode_slots':sorted(changed),'e2fsck_pass':True,'avb_verified':True,'webview_provider':'com.android.webview; original framework whitelist; no RRO','raw_partition_writes':False,'phone_tested':False}
+ report={'status':'OFFLINE BASE APP AND WEBVIEW CANDIDATE; PHONE TEST PENDING','source_system_sha256':SOURCE_SHA,'system_sha256':system_sha,'system_bytes':h.SIZE,'filesystem_sha256':fs_sha,'super_sha256':super_report['sha256'],'super_bytes':metadata.SUPER_SIZE,'vendor_sha256':VENDOR_SHA,'vendor_unchanged':True,'super_layout_unchanged':True,'assets':asset_manifest,'removed_paths':sorted(removed),'added_paths':sorted(added),'modified_paths':sorted(modified),'all_other_path_content_and_metadata_unchanged':True,'allowed_parent_metadata_fields':['size','links','allocated_512_blocks'],'changed_inode_slots':sorted(changed),'e2fsck_pass':True,'avb_verified':True,'webview_provider':'com.android.webview; original framework whitelist; no RRO','raw_partition_writes':False,'phone_tested':False,'new_signing_key_requested':args.new_signing_key,'signing_public_pem_sha256':public_sha}
  save(out/'report.json',report)
  print(json.dumps({k:v for k,v in report.items() if k not in ['assets','removed_paths','added_paths','changed_inode_slots']},indent=2),flush=True)
 if __name__=='__main__':main()

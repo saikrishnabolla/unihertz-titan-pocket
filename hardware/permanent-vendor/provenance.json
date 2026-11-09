@@ -1,0 +1,15 @@
+{
+  "source": "Recovered clean-install vendor recipe from the Titan Pocket permanent-install work.",
+  "original_files": {
+    "build_vendor.py": "36f99543aacc45dd98d140dc275630abe9da9d420deecb3df67c114a9c4dde8e",
+    "test_build_vendor.py": "fb8b04b483ae3321fe3ca2831e7fd5e9da1771a4d4d807749d09213497998dae"
+  },
+  "changes": [
+    "Require explicit opt-in to replace the AVB signing key.",
+    "Verify the output against the requested signing key and preserve all other AVB settings.",
+    "Make private-image tests optional through TITAN_VENDOR_SOURCE.",
+    "Remove machine-specific paths from the published tests."
+  ],
+  "private_inputs_included": false,
+  "device_operations": false
+}

@@ -1,0 +1,25 @@
+{
+  "unit_tests": {
+    "total": 27,
+    "private_image_header_test": "passed with TITAN_VENDOR_SOURCE",
+    "public_test_run": "26 passed, 1 private-input check skipped"
+  },
+  "original_key_rebuild": {
+    "vendor_sha256": "4428076fb5e54681e06fc38faa648a9d71f8686acc6e3da017e79744445bb62c",
+    "matches_recorded_permanent_vendor": true,
+    "signing_key_preserved": true
+  },
+  "new_key_rebuild": {
+    "vendor_sha256": "6efe42bbf10678efac4a183b81ba06c4d076ffd54fdebfe96388cf161a466b32",
+    "generated_RSA_2048_key": true,
+    "signature_verified_with_requested_key": true,
+    "only_filesystem_changed_path": "/etc/fstab.mt6771",
+    "filesystem_changed_bytes": 466,
+    "inode_metadata_unchanged": true,
+    "AVB_non_key_settings_preserved": true,
+    "phone_boot_tested": false
+  },
+  "python_optimization": "rejected",
+  "device_operations": false,
+  "private_inputs_included": false
+}
